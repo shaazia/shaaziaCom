@@ -1,122 +1,185 @@
-<main class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Approach | Shaazia Stonehocker</title>
 
-<section id="what-i-work-on">
-  <h1>What I work on</h1>
+  <!-- Global site styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
 
-  <p>
-    I focus on designing product experiences where clarity, trust, and usability are critical—especially
-    in moments when users are under time pressure, uncertainty, or cognitive load. Much of my work
-    lives at the intersection of complex systems and human decision-making.
-  </p>
+  <!-- Small page-local improvements (optional but recommended) -->
+  <style>
+    /* Make long-form reading feel intentional */
+    main.container { max-width: 920px; }
+    main.container h1 { margin-bottom: 0.75rem; }
+    main.container h2 { text-align: left; margin-top: 2rem; margin-bottom: 0.75rem; }
+    main.container p { max-width: 75ch; margin: 0.75rem auto; }
+    main.container section { margin-top: 3rem; }
+    .pageKicker { text-transform: uppercase; letter-spacing: .14em; font-size: 12px; color: #666; margin-top: 1rem; }
+    .pageLead { font-size: 1.1rem; color: #444; }
+    .anchorNav {
+      display:flex; gap: 12px; flex-wrap: wrap; margin: 1.25rem 0 2rem;
+      justify-content: flex-start;
+    }
+    .anchorNav a{
+      display:inline-block; padding: 8px 12px; border-radius: 999px;
+      border: 1px solid #e9e9e9; background: #fff; text-decoration:none;
+      color: var(--text-color);
+    }
+    .anchorNav a:hover{ border-color: #dcdcdc; color: var(--primary-color); }
+  </style>
+</head>
 
-  <p>
-    Across my career, I’ve worked on customer-facing and enterprise products at scale, often operating
-    in ambiguous spaces where requirements are evolving, constraints are real, and the cost of
-    confusion is high.
-  </p>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="/pages/portfolio.html">Portfolio</a></li>
+        <li><a href="/pages/approach.html">Approach</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h2>AI-driven customer support &amp; conversational UX</h2>
-  <p>
-    I design AI-powered support experiences across chat, voice, and multimodal surfaces. This includes
-    helping customers resolve issues like subscriptions, billing, access, and device setup—without
-    unnecessary escalation to human agents.
-  </p>
-  <p>
-    My focus is on making AI behavior understandable and trustworthy: clearly communicating intent,
-    surfacing the right information at the right time, and giving users confidence in what the system
-    is doing and why.
-  </p>
+  <main class="container">
+    <p class="pageKicker">Approach</p>
+    <h1>How I work</h1>
+    <p class="pageLead">
+      A closer look at the problem spaces I focus on and the principles I use to turn complexity into clear, scalable experiences.
+    </p>
 
-  <h2>Enterprise &amp; consumer workflows at scale</h2>
-  <p>
-    I design workflows for high-frequency, high-stakes tasks—things users do often and need to get
-    right. These include financial transactions, account management, content access, and operational
-    tools used by internal teams.
-  </p>
-  <p>
-    The work emphasizes strong information hierarchy, predictable interaction patterns, and clear
-    commit points so users can move quickly without losing confidence or control.
-  </p>
+    <nav class="anchorNav" aria-label="Approach sections">
+      <a href="#what-i-work-on">What I work on</a>
+      <a href="#how-i-design">How I design</a>
+    </nav>
 
-  <h2>Devices, TV, and multimodal experiences</h2>
-  <p>
-    I’ve designed support and service experiences across voice-first interfaces, TV platforms, and
-    connected devices—where attention is limited and context matters. This includes Alexa-enabled
-    devices, Fire TV, and integrations with entertainment platforms like Prime Video.
-  </p>
-  <p>
-    These experiences require careful consideration of modality shifts, interruption cost, and how
-    users move between voice, screen, and mobile surfaces without losing orientation.
-  </p>
+    <section id="what-i-work-on">
+      <h1>What I work on</h1>
 
-  <h2>Systems, patterns, and future vision</h2>
-  <p>
-    In addition to shipping products, I regularly work on future-state concepts and design systems.
-    This includes defining reusable interaction patterns, exploring how emerging technologies might
-    change user behavior, and helping teams align on a long-term design direction.
-  </p>
-  <p>
-    I’m especially interested in work that reduces long-term complexity—creating foundations that
-    allow teams to move faster and deliver more consistent experiences over time.
-  </p>
-</section>
-<section id="how-i-design" style="margin-top:4rem;">
-  <h1>How I design</h1>
+      <p>
+        I focus on designing product experiences where clarity, trust, and usability are critical—especially
+        in moments when users are under time pressure, uncertainty, or cognitive load. Much of my work
+        lives at the intersection of complex systems and human decision-making.
+      </p>
 
-  <p>
-    I’m most effective in ambiguous problem spaces—where goals aren’t fully defined, constraints are
-    real, and teams need help making sense of complexity. I work closely with product, engineering,
-    and research partners to shape direction early, then stay hands-on through execution.
-  </p>
+      <p>
+        Across my career, I’ve worked on customer-facing and enterprise products at scale, often operating
+        in ambiguous spaces where requirements are evolving, constraints are real, and the cost of
+        confusion is high.
+      </p>
 
-  <h2>Start with intent and mental models</h2>
-  <p>
-    Before jumping into UI, I focus on understanding user intent, mental models, and decision points.
-    I look for mismatches between how systems are structured and how people expect things to work.
-  </p>
-  <p>
-    This early framing helps ensure the experience aligns with user expectations—and prevents
-    downstream complexity that’s difficult to fix later.
-  </p>
+      <h2>AI-driven customer support &amp; conversational UX</h2>
+      <p>
+        I design AI-powered support experiences across chat, voice, and multimodal surfaces. This includes
+        helping customers resolve issues like subscriptions, billing, access, and device setup—without
+        unnecessary escalation to human agents.
+      </p>
+      <p>
+        My focus is on making AI behavior understandable and trustworthy: clearly communicating intent,
+        surfacing the right information at the right time, and giving users confidence in what the system
+        is doing and why.
+      </p>
 
-  <h2>Design for trust, not just usability</h2>
-  <p>
-    In domains like AI, finance, and customer support, usability alone isn’t enough. Users need to
-    trust the system. I design explicit trust signals—clear explanations, visible system status,
-    predictable outcomes, and strong recovery paths when things go wrong.
-  </p>
-  <p>
-    I treat trust as a first-class design requirement, not a byproduct of visual polish.
-  </p>
+      <h2>Enterprise &amp; consumer workflows at scale</h2>
+      <p>
+        I design workflows for high-frequency, high-stakes tasks—things users do often and need to get
+        right. These include financial transactions, account management, content access, and operational
+        tools used by internal teams.
+      </p>
+      <p>
+        The work emphasizes strong information hierarchy, predictable interaction patterns, and clear
+        commit points so users can move quickly without losing confidence or control.
+      </p>
 
-  <h2>Reduce cognitive load through structure</h2>
-  <p>
-    Many UX problems are really information problems. I focus heavily on hierarchy, content chunking,
-    and progressive disclosure—so users see what matters now, with details available when needed.
-  </p>
-  <p>
-    This approach helps reduce choice overload, shortens time-to-completion, and makes experiences
-    feel calmer and more approachable.
-  </p>
+      <h2>Devices, TV, and multimodal experiences</h2>
+      <p>
+        I’ve designed support and service experiences across voice-first interfaces, TV platforms, and
+        connected devices—where attention is limited and context matters. This includes Alexa-enabled
+        devices, Fire TV, and integrations with entertainment platforms like Prime Video.
+      </p>
+      <p>
+        These experiences require careful consideration of modality shifts, interruption cost, and how
+        users move between voice, screen, and mobile surfaces without losing orientation.
+      </p>
 
-  <h2>Design systems, not one-off screens</h2>
-  <p>
-    I think in systems and patterns. Rather than designing isolated screens, I define reusable
-    interaction models that scale across flows, surfaces, and teams.
-  </p>
-  <p>
-    This makes implementation more predictable for engineering partners and helps organizations
-    maintain consistency as products evolve.
-  </p>
+      <h2>Systems, patterns, and future vision</h2>
+      <p>
+        In addition to shipping products, I regularly work on future-state concepts and design systems.
+        This includes defining reusable interaction patterns, exploring how emerging technologies might
+        change user behavior, and helping teams align on a long-term design direction.
+      </p>
+      <p>
+        I’m especially interested in work that reduces long-term complexity—creating foundations that
+        allow teams to move faster and deliver more consistent experiences over time.
+      </p>
+    </section>
 
-  <h2>Stay close through execution</h2>
-  <p>
-    I stay engaged through build and iteration—reviewing edge cases, refining states, and ensuring
-    the final experience matches the intent of the design. I see design as a continuous process,
-    not a handoff.
-  </p>
-  <p>
-    This collaboration helps teams move faster while avoiding costly rework later.
-  </p>
-</section>
-</main>
+    <section id="how-i-design" style="margin-top:4rem;">
+      <h1>How I design</h1>
+
+      <p>
+        I’m most effective in ambiguous problem spaces—where goals aren’t fully defined, constraints are
+        real, and teams need help making sense of complexity. I work closely with product, engineering,
+        and research partners to shape direction early, then stay hands-on through execution.
+      </p>
+
+      <h2>Start with intent and mental models</h2>
+      <p>
+        Before jumping into UI, I focus on understanding user intent, mental models, and decision points.
+        I look for mismatches between how systems are structured and how people expect things to work.
+      </p>
+      <p>
+        This early framing helps ensure the experience aligns with user expectations—and prevents
+        downstream complexity that’s difficult to fix later.
+      </p>
+
+      <h2>Design for trust, not just usability</h2>
+      <p>
+        In domains like AI, finance, and customer support, usability alone isn’t enough. Users need to
+        trust the system. I design explicit trust signals—clear explanations, visible system status,
+        predictable outcomes, and strong recovery paths when things go wrong.
+      </p>
+      <p>
+        I treat trust as a first-class design requirement, not a byproduct of visual polish.
+      </p>
+
+      <h2>Reduce cognitive load through structure</h2>
+      <p>
+        Many UX problems are really information problems. I focus heavily on hierarchy, content chunking,
+        and progressive disclosure—so users see what matters now, with details available when needed.
+      </p>
+      <p>
+        This approach helps reduce choice overload, shortens time-to-completion, and makes experiences
+        feel calmer and more approachable.
+      </p>
+
+      <h2>Design systems, not one-off screens</h2>
+      <p>
+        I think in systems and patterns. Rather than designing isolated screens, I define reusable
+        interaction models that scale across flows, surfaces, and teams.
+      </p>
+      <p>
+        This makes implementation more predictable for engineering partners and helps organizations
+        maintain consistency as products evolve.
+      </p>
+
+      <h2>Stay close through execution</h2>
+      <p>
+        I stay engaged through build and iteration—reviewing edge cases, refining states, and ensuring
+        the final experience matches the intent of the design. I see design as a continuous process,
+        not a handoff.
+      </p>
+      <p>
+        This collaboration helps teams move faster while avoiding costly rework later.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+</body>
+</html>
