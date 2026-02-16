@@ -1,79 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Banking App | Portfolio</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo">Shaazia</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="container">
-            <h1>Mobile Banking App</h1>
-            <p>UI and workflow design for mobile banking solutions.</p>
-            
-            <div class="project-overview">
-                <div class="problem">
-                    <h2>The Challenge</h2>
-                    <p>Customers were struggling to complete banking transactions on mobile devices due to complex workflows and unclear navigation. The existing interface required too many steps to perform simple tasks like transfers, bill payments, and account inquiries, leading to abandoned transactions and support tickets.</p>
-                </div>
-                <div class="solution">
-                    <h2>Our Approach</h2>
-                    <p>We redesigned the mobile banking experience with a focus on task-based navigation and clear information hierarchy. By streamlining workflows, reducing cognitive load, and providing contextual guidance, we increased task completion rates and reduced customer support inquiries. The new interface emphasizes transparency in financial transactions while maintaining security and compliance.</p>
-                </div>
-            </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Banking App | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
 
-            <div class="project-gallery">
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/ATMScreen2.webp" alt="ATM Screen 2">
-                    <h3>ATM Interface</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/MobileBankingAppSpecs1.webp" alt="Mobile Banking App Specs 1">
-                    <h3>App Specifications</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/MobileBankingAppSpecs2.webp" alt="Mobile Banking App Specs 2">
-                    <h3>Account Management</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/UXStrategyWoodforest1.webp" alt="UX Strategy Woodforest 1">
-                    <h3>UX Strategy</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/WoodforestPersona1.webp" alt="Woodforest Persona 1">
-                    <h3>User Persona 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/WoodforestPersona2.webp" alt="Woodforest Persona 2">
-                    <h3>User Persona 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/MobileBankingApp/WoodforestProcessFlow.webp" alt="Woodforest Process Flow">
-                    <h3>Process Flow</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 82ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 84ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    /* Images */
+    figure{
+      margin: 34px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .side p{
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Mobile Banking App</h1>
+
+      <p class="dek">
+        UX and workflow design for a mobile banking experience—streamlining high-frequency tasks (transfers, bill pay, account management)
+        with a clear information hierarchy, trust-first patterns, and reusable specs that scale across teams.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">Mobile UX</span>
+        <span class="chip">Workflow Redesign</span>
+        <span class="chip">Information Architecture</span>
+        <span class="chip">Financial UX</span>
+        <span class="chip">Design Specs</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Context</h2>
+          <p class="reveal">
+            Customers increasingly manage finances on mobile—often in short sessions and high-distraction environments.
+            That makes <strong>cla
