@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Customer Service (Confidential) | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 80ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 82ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .confidential{
+      border: 1px solid #f0f0f0;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      margin: 22px 0 0;
+      box-shadow: var(--shadow);
+    }
+    .confidential strong{ color: var(--ink); }
+    .confidential p{ margin: 0; color: #333; }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll (nice but subtle) */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Amazon Customer Service (Confidential Work)</h1>
+
+      <p class="dek">
+        A collection of confidential initiatives designing AI-driven customer support across chat, voice, and devices—
+        focused on reducing customer effort, increasing automation, and scaling trusted interaction patterns.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">AI Chatbots</span>
+        <span class="chip">Voice UX</span>
+        <span class="chip">Multimodal</span>
+        <span class="chip">Future Vision</span>
+        <span class="chip">Devices & Entertainment</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Context</h2>
+          <p class="reveal">
+            This page represents multiple Amazon Customer Service programs that are not yet public. The work spans
+            conversational AI design, voice-first support, and future-vision concepts across customer service surfaces.
+            The shared goal: help customers resolve issues quickly and confidently while encouraging responsible AI automation.
+          </p>
+
+          <div class="pull reveal">
+            The design goal: make automated support feel clear, trustworthy, and action-oriented—especially in high-stakes moments
+            like billing confusion, subscription changes, and device troubleshooting.
+          </div>
+
+          <h2 class="reveal">My role</h2>
+          <ul class="bullets reveal">
+            <li>Staff-level IC design across chat, voice, and device surfaces</li>
+            <li>Interaction design, content strategy, and workflow definition</li>
+            <li>Prototyping and concept exploration in ambiguous problem spaces</li>
+            <li>Partnership with product, engineering, and research</li>
+          </ul>
+
+          <h2 class="reveal">Project areas</h2>
+
+          <h2 class="reveal">1) AI customer service chatbots (confidential)</h2>
+          <p class="reveal">
+            Designed AI-driven chatbot experiences for high-frequency customer service needs including
+            <strong>subscription management</strong> and <strong>unknown charges</strong>. The focus was on reducing friction,
+            building trust, and translating complex account/system signals into clear “next best actions.”
+          </p>
+          <ul class="bullets reveal">
+            <li><strong>Subscription management:</strong> status clarity, plan changes, eligibility explanations, confirmation states</li>
+            <li><strong>Unknown charges:</strong> investigation support, guided resolution paths, reassurance + escalation options</li>
+            <li><strong>Key UX themes:</strong> explainability, error recovery, confidence-building language, reduced handoffs</li>
+          </ul>
+
+          <h2 class="reveal">2) Future-vision customer service landing page</h2>
+          <p class="reveal">
+            Explored an AI-first customer service landing experience that proactively surfaces relevant help,
+            adapts based on customer context, and uses intelligent prediction to reduce customer service contacts.
+            Concepts included <strong>multimodal interactions</strong>, personalization, and proactive guidance to encourage AI automation responsibly.
+          </p>
+          <ul class="bullets reveal">
+            <li>Proactive assistance that reduces “search and guess” behavior</li>
+            <li>Personalized help modules based on context and intent</li>
+            <li>Guided paths that balance automation with transparency and control</li>
+          </ul>
+
+          <h2 class="reveal">3) Customer service designs for Alexa+ devices</h2>
+          <p class="reveal">
+            Designed voice-first support concepts optimized for Alexa+ surfaces, focusing on conversational clarity,
+            repair strategies for ambiguity, and multimodal handoffs when a task benefits from visuals or deeper account detail.
+          </p>
+          <ul class="bullets reveal">
+            <li>Voice interaction patterns for support tasks (not just Q&amp;A)</li>
+            <li>Graceful failure states and “conversation repair” flows</li>
+            <li>Cross-surface handoffs that keep customers oriented and in control</li>
+          </ul>
+
+          <h2 class="reveal">4) Future-vision support for Fire TV &amp; Echo family devices</h2>
+          <p class="reveal">
+            Led future-state explorations for customer service across Fire TV and Echo family devices, including
+            concepts for embedded support in entertainment contexts and visions for deeper integration with Prime Video.
+            The goal was to reduce the need to “leave the experience” to get help—especially when attention is high.
+          </p>
+          <ul class="bullets reveal">
+            <li>Context-aware support surfaced at the moment of friction</li>
+            <li>Help embedded into entertainment flows without breaking immersion</li>
+            <li>Patterns for consistent support across device families</li>
+          </ul>
+
+          <h2 class="reveal">Design principles across the work</h2>
+          <ul class="bullets reveal">
+            <li><strong>Reduce cognitive load:</strong> translate system complexity into human language</li>
+            <li><strong>Design for ambiguity:</strong> clear recovery paths and safe defaults</li>
+            <li><strong>Make AI intent visible:</strong> what the system is doing and why</li>
+            <li><strong>Encourage automation without eroding trust:</strong> transparency + control</li>
+            <li><strong>Scale patterns:</strong> reusable interaction models across chat, voice, and device UIs</li>
+          </ul>
+
+          <h2 class="reveal">Outcomes (high level)</h2>
+          <p class="reveal">
+            Detailed metrics and artifacts are confidential, but these initiatives contributed to clearer AI-led resolution paths,
+            stronger trust signals in automated support, and scalable patterns for conversational and device-based customer service experiences.
+          </p>
+
+          <div class="confidential reveal">
+            <p>
+              <strong>Confidentiality note:</strong> Visual designs, detailed flows, and specs for these projects are not public.
+              This page describes the scope, approach, and design themes without sharing confidential artifacts.
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Org:</strong> Amazon Customer Service (confidential)</li>
+            <li><strong>Surfaces:</strong> Chat, Voice, Devices</li>
+            <li><strong>Domains:</strong> Billing, subscriptions, device help, entertainment support</li>
+            <li><strong>Focus:</strong> AI automation + trust + clarity</li>
+            <li><strong>Artifacts:</strong> Concepts, flows, IA, patterns (confidential)</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">What I owned</h3>
+          <ul>
+            <li>Interaction patterns &amp; state design</li>
+            <li>Content structure and guidance</li>
+            <li>Prototyping &amp; future-vision storytelling</li>
+            <li>Cross-functional alignment</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Why it matters:</strong> Customer service is often high-stress. These designs aimed to make automated support
+            feel predictable and trustworthy—helping customers resolve issues faster and reducing unnecessary contacts.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Confidential artifacts:</strong> Screens, flows, and metrics available for review in private conversations when appropriate.
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
