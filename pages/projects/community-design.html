@@ -1,79 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community & Conversation Design | Portfolio</title>
-    <link rel="stylesheet" href="../../css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Communities & Conversation Platforms | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 88ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main h3{
+      font-size: 18px;
+      margin: 26px 0 10px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 86ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    /* Section card */
+    .sectionCard{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+      margin: 26px 0;
+    }
+
+    .brandKicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+
+    .brandTitle{
+      font-size: 24px;
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    /* Images */
+    figure{
+      margin: 18px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 12px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo">Shaazia</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="container">
-            <h1>Community & Conversation Design</h1>
-            <p>Wireframes and UI for large-scale community platforms.</p>
-            
-            <div class="project-overview">
-                <div class="problem">
-                    <h2>The Challenge</h2>
-                    <p>Large enterprises struggled to build engaged online communities where customers and employees could share knowledge, solve problems, and connect. Existing platforms were rigid, hard to moderate, and failed to foster meaningful interactions at scale.</p>
-                </div>
-                <div class="solution">
-                    <h2>Our Approach</h2>
-                    <p>We designed flexible community platforms that prioritize user engagement through clear information architecture, intuitive moderation tools, and incentive structures that reward valuable contributions. Our wireframes and UI systems support millions of asynchronous conversations while maintaining community health and driving business outcomes.</p>
-                </div>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Online Communities & Conversation Platforms</h1>
+
+      <p class="dek">
+        I designed community and conversation experiences for large brands—creating scalable information architecture,
+        interaction patterns, and moderation-ready UI systems that turn support and product discussion into healthy,
+        high-signal communities.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">Community UX</span>
+        <span class="chip">Conversation Design</span>
+        <span class="chip">Information Architecture</span>
+        <span class="chip">Wireframes</span>
+        <span class="chip">Personas</span>
+        <span class="chip">Enterprise Scale</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">What I worked on</h2>
+          <p class="reveal">
+            Across these engagements, the consistent challenge was the same: design a platform that supports thousands (or millions)
+            of asynchronous conversations while staying readable, searchable, and safe to participate in. The work emphasized
+            clear hierarchy, predictable navigation, and tools that enable moderation and community health at scale.
+          </p>
+
+          <div class="pull reveal">
+            My design focus: reduce “conversation friction” (finding answers, asking questions, contributing value) while increasing
+            trust (credibility cues, moderation clarity, and transparent norms).
+          </div>
+
+          <ul class="bullets reveal">
+            <li><strong>Information architecture:</strong> categories, boards, thread structure, search, and “find answers fast” patterns</li>
+            <li><strong>Conversation UX:</strong> posting, replying, solutions/accepted answers, sorting, and participation cues</li>
+            <li><strong>Community health:</strong> moderation affordances, governance cues, and incentive/reputation mechanics</li>
+            <li><strong>Personas:</strong> power users vs. newcomers, and the needs that drive contribution</li>
+          </ul>
+
+          <!-- ===================== AT&T ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">AT&amp;T</h3>
+            <p>
+              Wireframes for enterprise community experiences focused on discoverability, thread readability, and support workflows.
+              The design emphasized scannable lists, strong hierarchy, and fast paths to “resolved” content without overwhelming users.
+            </p>
+
+            <div class="twoUp">
+              <figure>
+                <img src="../../assets/images/CommunityDesign/ATTWireframes.webp" alt="AT&T community thread wireframes">
+                <figcaption>Thread view: optimized for scanability, replies, and solution signaling.</figcaption>
+              </figure>
+              <figure>
+                <img src="../../assets/images/CommunityDesign/ATTWireframes2.webp" alt="AT&T community category wireframes">
+                <figcaption>Category view: list structure + metadata to support quick filtering and navigation.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- ===================== NIKE ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">Nike</h3>
+            <p>
+              Community hub UI concepts designed to encourage participation and highlight valuable contributions. The experience balances
+              brand storytelling with practical community utilities—support, ideas, and social engagement—so users can both connect and self-serve.
+            </p>
+
+            <figure>
+              <img src="../../assets/images/CommunityDesign/NikeUIDesign1.webp" alt="Nike community hub UI">
+              <figcaption>Community hub: brand-forward landing paired with clear entry points into support and ideas.</figcaption>
+            </figure>
+          </section>
+
+          <!-- ===================== AUTODESK ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">Autodesk</h3>
+            <p>
+              Annotated wireframes and component guidance for a large-scale community landing experience—designed for findability,
+              repeatable modules, and predictable navigation across forums, product areas, and support destinations.
+            </p>
+
+            <figure>
+              <img src="../../assets/images/CommunityDesign/AutodeskWireframes.webp" alt="Autodesk annotated community wireframes">
+              <figcaption>System thinking: modular components and annotations to support scalable implementation.</figcaption>
+            </figure>
+          </section>
+
+          <!-- ===================== MACY'S ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">Macy’s</h3>
+            <p>
+              Community and content experiences designed around engagement loops—making it easy to discover stories, ask questions,
+              and return for new posts. The work emphasized readability, content hierarchy, and participation prompts.
+            </p>
+
+            <div class="twoUp">
+              <figure>
+                <img src="../../assets/images/CommunityDesign/MacysUI1.webp" alt="Macy's blog/community layout example">
+                <figcaption>Feed layout: scannable modules and predictable rhythm for repeated visits.</figcaption>
+              </figure>
+              <figure>
+                <img src="../../assets/images/CommunityDesign/MacysUI2.webp" alt="Macy's blog post layout example">
+                <figcaption>Content + questions: pairing editorial content with structured participation.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- ===================== MICRON ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">Micron</h3>
+            <p>
+              Persona work to clarify audience motivations, constraints, and contribution behaviors—used to inform IA, tone,
+              and the “why participate” mechanics that sustain a healthy community over time.
+            </p>
+
+            <figure>
+              <img src="../../assets/images/CommunityDesign/Micronpersona.webp" alt="Micron persona artifact">
+              <figcaption>Persona framework: motivations, pain points, and functional needs mapped to platform decisions.</figcaption>
+            </figure>
+          </section>
+
+          <!-- ===================== GOOGLE GLASS ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">Google Glass</h3>
+            <p>
+              Persona and UI design for early wearable community experiences, prioritizing glanceable information, low cognitive load,
+              and privacy-aware interaction patterns. The work explored how community support and discussion translates to a new form factor.
+            </p>
+
+            <div class="twoUp">
+              <figure>
+                <img src="../../assets/images/GoogleGlas/GoogleGlass2.webp" alt="Google Glass community UI on mobile">
+                <figcaption>Glanceable community navigation designed for lightweight, mobile-first participation.</figcaption>
+              </figure>
+              <figure>
+                <img src="../../assets/images/GoogleGlas/GoogleGlassUI.webp" alt="Google Glass community UI on web">
+                <figcaption>Web experience: clear entry points into discussions, pioneers, and activity.</figcaption>
+              </figure>
             </div>
 
-            <div class="project-gallery">
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/ATTWireframes.webp" alt="ATT Wireframes">
-                    <h3>AT&T Wireframes</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/ATTWireframes2.webp" alt="ATT Wireframes 2">
-                    <h3>Information Architecture</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/AutodeskWireframes.webp" alt="Autodesk Wireframes">
-                    <h3>Autodesk Platform</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/MacysUI1.webp" alt="Macys UI 1">
-                    <h3>Macy's Community</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/MacysUI2.webp" alt="Macys UI 2">
-                    <h3>Macy's Engagement</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/Micronpersona.webp" alt="Micron Persona">
-                    <h3>Micron Personas</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommunityDesign/NikeUIDesign1.webp" alt="Nike UI Design 1">
-                    <h3>Nike Community Hub</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
+            <figure>
+              <img src="../../assets/images/GoogleGlas/GoogleGlassPersona.webp" alt="Google Glass persona and scenario mapping">
+              <figcaption>Personas + scenarios: mapping use cases and constraints unique to wearables.</figcaption>
+            </figure>
+          </section>
+
+          <!-- ===================== INFINITI ===================== -->
+          <section class="sectionCard reveal">
+            <p class="brandKicker">Client</p>
+            <h3 class="brandTitle">Infiniti</h3>
+            <p>
+              Wireframes and personas supporting an automotive community and in-vehicle experience context—balancing feature richness
+              with safety and attention constraints. The work separated primary driving-critical behaviors from secondary exploration and content.
+            </p>
+
+            <div class="twoUp">
+              <figure>
+                <img src="../../assets/images/Infinitiy/InfinitiWireframes.webp" alt="Infiniti wireframes">
+                <figcaption>Wireframes: structured layouts and component guidance for complex navigation.</figcaption>
+              </figure>
+              <figure>
+                <img src="../../assets/images/Infinitiy/InfinityPersonas.webp" alt="Infiniti personas overview">
+                <figcaption>Personas: varying needs and sophistication levels to inform safe, usable UI decisions.</figcaption>
+              </figure>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
-    </footer>
+
+            <figure>
+              <img src="../../assets/images/Infinitiy/InfinitiUIDesign2.webp" alt="Infiniti community UI design">
+              <figcaption>UI concept: luxury positioning paired with clear community entry points and support pathways.</figcaption>
+            </figure>
+          </section>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            Across brands and domains, the deliverables established consistent patterns for findability, thread readability,
+            and participation—supporting self-service, reducing friction in getting answers, and creating healthier
+            community dynamics at scale.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Focus:</strong> Online communities</li>
+            <li><strong>Work:</strong> IA, wireframes, personas, UI</li>
+            <li><strong>Scale:</strong> Enterprise platforms</li>
+            <li><strong>Domains:</strong> Retail, telecom, software, wearables, automotive</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Design themes</h3>
+          <ul>
+            <li>Findability & search-first IA</li>
+            <li>Readable thread patterns</li>
+            <li>Healthy participation loops</li>
+            <li>Moderation readiness</li>
+            <li>Incentives & credibility cues</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Pattern I repeatedly used:</strong> make the path from “I have a problem” → “I found the answer” shorter,
+            and the path from “I can help” → “I contributed value” clearer.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Typical artifacts:</strong> annotated wireframes, component guidance, IA maps, persona frameworks,
+            and end-to-end conversation journeys (browse → post → resolve → return).
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
