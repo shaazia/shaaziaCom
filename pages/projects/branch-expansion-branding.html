@@ -1,89 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Expansion & Branding | Portfolio</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo">Shaazia</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="container">
-            <h1>Branch Expansion & Branding</h1>
-            <p>Branding and marketing for branch expansion initiatives.</p>
-            
-            <div class="project-overview">
-                <div class="problem">
-                    <h2>The Challenge</h2>
-                    <p>Woodforest National Bank was expanding into new markets and needed a cohesive branding strategy to establish local presence and build customer trust. Without clear brand guidelines and marketing consistency, new branches struggled to communicate their value proposition effectively.</p>
-                </div>
-                <div class="solution">
-                    <h2>Our Approach</h2>
-                    <p>We developed comprehensive brand guidelines and a suite of marketing materials for branch expansion. Our strategy included in-branch signage, promotional campaigns, and digital assets that reinforced the Woodforest brand identity while allowing local customization. This approach increased brand recognition and accelerated customer acquisition in new markets.</p>
-                </div>
-            </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branch Expansion & Branding | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
 
-            <div class="project-gallery">
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest.webp" alt="Branding Woodforest">
-                    <h3>Brand Identity</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest2.webp" alt="Branding Woodforest 2">
-                    <h3>Brand Guidelines</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/CashinAtCheckoutMarketing2.webp" alt="Cashin at Checkout Marketing">
-                    <h3>Marketing Campaign</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/CashinatCheckout1.webp" alt="Cashin at Checkout 1">
-                    <h3>Checkout Experience</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing.webp" alt="In Branch Marketing">
-                    <h3>In-Branch Signage</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing2.webp" alt="In Branch Marketing 2">
-                    <h3>Point of Sale</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing3.webp" alt="In Branch Marketing 3">
-                    <h3>Promotional Materials</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/VisualDesignWoodforest1.webp" alt="Visual Design Woodforest">
-                    <h3>Visual Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/BranchExpansionandBranding/WoodforestMarketing.webp" alt="Woodforest Marketing">
-                    <h3>Marketing Assets</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
-    </footer>
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 78ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 82ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    /* Images */
+    figure{
+      margin: 34px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll (nice but subtle) */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Branch Expansion & Branding</h1>
+
+      <p class="dek">
+        Branding and marketing design for new-branch expansion—creating consistent guidelines and launch-ready
+        assets that help teams establish local presence while staying true to the core Woodforest brand.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">Brand Systems</span>
+        <span class="chip">Marketing Design</span>
+        <span class="chip">Guidelines</span>
+        <span class="chip">In-Branch</span>
+        <span class="chip">Campaign Creative</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Context</h2>
+          <p class="reveal">
+            As Woodforest National Bank expanded into new markets, teams needed a cohesive way to show up consistently—
+            across in-branch, point of sale, and marketing touchpoints—while still allowing for local nuance.
+          </p>
+
+          <div class="pull reveal">
+            The design goal: create a brand toolkit that scales—so every new branch launch feels familiar, trustworthy,
+            and easy to recognize.
+          </div>
+
+          <h2 class="reveal">The challenge</h2>
+          <p class="reveal">
+            Branch expansion creates a classic consistency problem: multiple channels, multiple teams, and high visibility
+            in physical environments. Without clear guidelines, branches risked uneven messaging, fragmented visuals,
+            and slow execution during launches.
+          </p>
+
+          <h2 class="reveal">Approach</h2>
+          <p class="reveal">
+            I developed a practical brand system and a set of reusable marketing assets designed for real-world rollout.
+            The work emphasized clarity, repeatability, and flexibility—ensuring teams could deploy materials quickly
+            while maintaining a cohesive identity.
+          </p>
+
+          <h2 class="reveal">Brand identity foundations</h2>
+          <p class="reveal">
+            Established core visual building blocks—color, typography, and usage rules—so designers and marketers could
+            confidently produce consistent work across print and digital.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest.webp" alt="Primary color palette and brand identity foundations">
+            <figcaption>
+              Foundation: defined a primary palette and supporting neutrals with guidance for print and digital use.
+            </figcaption>
+          </figure>
+
+          <figure class="reveal">
+            <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest2.webp" alt="Light and dark theme guidance for brand color usage">
+            <figcaption>
+              System: created light/dark theme guidance to support flexibility while maintaining consistent contrast and readability.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Campaign creative</h2>
+          <p class="reveal">
+            Designed campaign assets that communicate value quickly, using a clear hierarchy and recognizable brand cues.
+            The emphasis was on “at-a-glance” comprehension—especially in high-traffic, physical retail environments.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/CashinAtCheckoutMarketing2.webp" alt="Cash in at checkout marketing creative">
+              <figcaption>
+                Campaign concept: simple message framing + product cueing for fast comprehension.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/CashinatCheckout1.webp" alt="Long-form marketing layout showing steps and details">
+              <figcaption>
+                Extended format: step-by-step explanation and details for longer dwell-time placements.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">In-branch and point-of-sale</h2>
+          <p class="reveal">
+            Created in-branch signage and promotional materials designed for physical constraints—distance readability,
+            concise messaging, and consistent placement of identity elements.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing.webp" alt="In-branch marketing signage example">
+              <figcaption>
+                In-branch: bold headline + brand anchor for instant recognition.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing2.webp" alt="In-branch marketing signage example showing ATM message">
+              <figcaption>
+                Point-of-need messaging: designed for quick, situational understanding.
+              </figcaption>
+            </figure>
+          </div>
+
+          <figure class="reveal">
+            <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing3.webp" alt="Promotional in-branch material for self-service branch features">
+            <figcaption>
+              Promotional materials: feature-forward messaging to reduce confusion and increase adoption of self-service options.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Visual style guidance</h2>
+          <p class="reveal">
+            Documented photographic and layout guidance to keep creative cohesive across teams and agencies—helping the
+            brand feel consistent, human, and recognizable.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/BranchExpansionandBranding/VisualDesignWoodforest1.webp" alt="Photographic style guidance and logo usage example">
+            <figcaption>
+              Style guide: photographic direction and identity usage guidance to support consistent execution.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Launch-ready assets</h2>
+          <p class="reveal">
+            Built a set of reusable templates and assets that made branch launches easier to execute—helping teams move fast
+            without reinventing the visual language each time.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/BranchExpansionandBranding/WoodforestMarketing.webp" alt="Marketing asset example for Woodforest product promotion">
+            <figcaption>
+              Example asset: consistent typography, composition, and brand color usage applied to product messaging.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            This work established a scalable brand foundation for branch expansion—creating guidelines and assets that improved
+            consistency, reduced rework, and supported faster rollout across channels.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Client:</strong> Woodforest National Bank</li>
+            <li><strong>Scope:</strong> Branch expansion branding</li>
+            <li><strong>Channels:</strong> In-branch, POS, print, digital</li>
+            <li><strong>Artifacts:</strong> Guidelines + creative assets</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Design themes</h3>
+          <ul>
+            <li>Consistency that scales</li>
+            <li>Fast comprehension</li>
+            <li>Templates for reuse</li>
+            <li>Physical-world readability</li>
+          </ul>
+
+          <div class="callout">
+            <strong>What I delivered:</strong> Brand foundations (palette/themes), visual style guidance,
+            campaign creative, and in-branch + point-of-sale materials built for repeatable rollout.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Why it matters:</strong> Expansion succeeds when customers recognize the brand instantly and
+            messages stay consistent—regardless of channel or market.
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
