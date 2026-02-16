@@ -249,11 +249,12 @@
       <p class="kicker">Case Study</p>
       <h1 class="title">Amazon CodeCatalyst</h1>
 
-      <p class="dek">
-        Exploring how generative AI support (Amazon Q) can be embedded into everyday developer workflows—
-        from creating issues to reviewing pull requests—while keeping the experience clear, trustworthy,
-        and easy to control.
-      </p>
+     <p class="dek">
+  Integrating Amazon Q into Amazon CodeCatalyst to support AI-assisted issue creation,
+  task planning, and pull request review—designed to make AI activity visible,
+  reviewable, and easy for developers to control.
+</p>
+
 
       <div class="metaRow">
         <span class="chip">UX Design</span>
@@ -269,14 +270,13 @@
         <div class="main">
 
           <h2 class="reveal">Context</h2>
+     
           <p class="reveal">
-            Developer tools live or die by flow. When AI is added into the mix, the bar gets higher:
-            people need speed, but also confidence in what the system is doing, where changes will land,
-            and how to stay in control.
-          </p>
-          <p class="reveal">
-            This project focuses on the AI-assisted workflow inside Amazon CodeCatalyst—especially the moments
-            where “helpful” can easily become “unclear” (issue creation, task planning, code generation, and PR review).
+             This project focuses on integrating Amazon Q directly into core CodeCatalyst workflows,
+  enabling AI-assisted issue creation, structured task planning, and pull request review.
+  The design challenge was not adding AI—but shaping how and where Amazon Q shows up so
+  developers understand what it’s doing, what it will change, and when human review
+  is required.
           </p>
 
           <div class="pull reveal">
@@ -314,7 +314,9 @@
           <figure class="reveal">
             <img src="../../assets/images/CodeCatalyst/frame-4761.jpg" alt="Issue page with Amazon Q activity feed showing background and approach steps">
             <figcaption>
-              A structured activity feed communicates progress and keeps the plan readable: background, approach, code, and PR creation.
+              When Amazon Q is assigned to an issue, the activity feed becomes the primary trust
+  surface—showing how the AI interprets the request, what steps it plans to take,
+  and where progress pauses for review or approval.
             </figcaption>
           </figure>
 
@@ -342,10 +344,9 @@
 
           <h2 class="reveal">Pull request review support</h2>
           <p class="reveal">
-            PR review is another high-leverage moment: comments pile up quickly, context fragments,
-            and reviewers lose time reconstructing what changed and why. A well-scoped summary can
-            accelerate review—especially if it avoids “making things up” or reinterpreting intent.
-          </p>
+           Amazon Q also supports pull request review by summarizing comment threads and surfacing
+  key feedback, helping reviewers orient faster without replacing human judgment or
+  obscuring the underlying code and discussion.
 
           <div class="miniGrid">
             <figure class="reveal">
@@ -432,10 +433,11 @@
             <li>Summaries must be time-scoped</li>
           </ul>
 
-          <div class="callout">
-            <strong>Editorial note:</strong> This case study is written from the lens of UX patterns:
-            trust surfaces, reviewability, and guardrails for enterprise adoption.
-          </div>
+         <div class="callout">
+  <strong>Amazon Q integration:</strong> AI assistance is embedded at key moments—issue
+  creation, execution planning, and PR review—while preserving developer control through
+  visible progress, approvals, and clear limits.
+</div>
         </aside>
 
       </div>
