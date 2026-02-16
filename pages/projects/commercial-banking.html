@@ -1,59 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commercial Banking | Portfolio</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo">Shaazia</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="container">
-            <h1>Commercial Banking</h1>
-            <p>UI and persona design for commercial banking solutions.</p>
-            
-            <div class="project-overview">
-                <div class="problem">
-                    <h2>The Challenge</h2>
-                    <p>Commercial banking customers require complex tools to manage multiple accounts, transactions, and compliance requirements. The existing platform was difficult to navigate, with scattered information and workflows that slowed down critical business operations.</p>
-                </div>
-                <div class="solution">
-                    <h2>Our Approach</h2>
-                    <p>We redesigned the commercial banking dashboard to prioritize business intelligence and operational efficiency. Through comprehensive user research and persona development, we created workflows that reduce friction for power users while maintaining security and regulatory compliance. The new interface enables faster decision-making and improved financial oversight.</p>
-                </div>
-            </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commercial Banking | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
 
-            <div class="project-gallery">
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Commercial Banking UI">
-                    <h3>Banking Dashboard</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommercialBanking/WoodforestCommercialPersonas.webp" alt="Commercial Banking Personas">
-                    <h3>User Personas</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/CommercialBanking/WoodforestCommericalReli2.webp" alt="Commercial Reli 2">
-                    <h3>Transaction Flow</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
-    </footer>
+  <!-- Page-only editorial styles (safe to keep here; move to styles.css later if you want) -->
+  <style>
+    /* Light editorial layout that should play nicely with your existing styles.css */
+    .article-container{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 18px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #666;
+      margin: 0 0 10px;
+    }
+
+    .headline{
+      font-size: 44px;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: #111;
+    }
+
+    @media (max-width: 640px){
+      .headline{ font-size: 34px; }
+      .article-container{ padding-top: 40px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.7;
+      color: #333;
+      max-width: 70ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 18px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid #e9e9e9;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    .heroMedia{
+      margin: 28px 0 40px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e9e9e9;
+      background: #fafafa;
+    }
+
+    .heroMedia img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .caption{
+      font-size: 13px;
+      color:#666;
+      padding: 12px 14px;
+      border-top: 1px solid #efefef;
+      background:#fff;
+    }
+
+    .article{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 28px;
+      align-items:start;
+    }
+
+    @media (max-width: 900px){
+      .article{ grid-template-columns: 1fr; }
+    }
+
+    .prose h2{
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin: 40px 0 12px;
+    }
+
+    .prose p{
+      margin: 0 0 14px;
+      color:#333;
+      max-width: 75ch;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .pullQuote{
+      border-left: 3px solid #111;
+      padding: 10px 0 10px 14px;
+      margin: 22px 0 22px;
+      color:#111;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .side{
+      position: sticky;
+      top: 18px;
+      border: 1px solid #e9e9e9;
+      border-radius: 18px;
+      padding: 18px;
+      background: #fafafa;
+    }
+    @media (max-width: 900px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color:#666;
+    }
+
+    .side ul{
+      margin: 0;
+      padding-left: 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .side .small{
+      margin-top: 14px;
+      font-size: 13px;
+      color:#666;
+      line-height: 1.6;
+    }
+
+    .editorialMedia{
+      margin: 28px 0 34px;
+      border: 1px solid #e9e9e9;
+      border-radius: 18px;
+      overflow: hidden;
+      background:#fff;
+    }
+
+    .editorialMedia img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 26px 0 34px;
+    }
+
+    @media (max-width: 720px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .twoUp figure,
+    figure{
+      margin:0;
+    }
+
+    figure .figCap{
+      font-size: 13px;
+      color:#666;
+      padding: 10px 12px;
+      border-top: 1px solid #efefef;
+      background:#fff;
+    }
+
+    .divider{
+      border-top: 1px solid #eee;
+      margin: 56px 0 0;
+    }
+
+    .nextPrev{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      padding: 18px 0 0;
+    }
+
+    .nextPrev a{
+      text-decoration:none;
+      border: 1px solid #e9e9e9;
+      border-radius: 14px;
+      padding: 12px 14px;
+      background:#fff;
+      color:#111;
+      display:inline-block;
+    }
+    .nextPrev a:hover{ background:#f7f7f7; }
+
+    /* Optional: subtle scroll-in (if you don’t want it, remove these) */
+    .reveal { opacity: 0; transform: translateY(10px); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-container">
+      <p class="kicker">Case Study</p>
+      <h1 class="headline">Commercial Banking</h1>
+      <p class="dek">
+        A redesigned dashboard and persona-driven workflows that help commercial banking customers manage
+        complex accounts, approvals, and transactions with less friction—without compromising security or compliance.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">UI Design</span>
+        <span class="chip">Personas</span>
+        <span class="chip">Workflow Design</span>
+        <span class="chip">Enterprise UX</span>
+      </div>
+
+      <!-- HERO IMAGE -->
+      <div class="heroMedia reveal">
+        <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Commercial Banking dashboard overview">
+        <div class="caption">A simplified commercial banking dashboard designed for speed, clarity, and oversight.</div>
+      </div>
+
+      <div class="article">
+        <!-- MAIN PROSE -->
+        <div class="prose">
+          <h2 class="reveal">The challenge</h2>
+          <p class="reveal">
+            Commercial banking customers often manage multiple accounts, approvals, transactions, and reporting needs at once.
+            The existing platform made routine actions harder than they needed to be—information was scattered across screens,
+            navigation was inconsistent, and key workflows felt slow for power users.
+          </p>
+          <p class="reveal">
+            The result: customers spent time hunting for context instead of acting on it. For teams moving large volumes of money,
+            speed and confidence are the product.
+          </p>
+
+          <div class="pullQuote reveal">
+            The goal was to reduce “search time” and make the next best action obvious—while staying within
+            security and compliance constraints.
+          </div>
+
+          <h2 class="reveal">Approach</h2>
+          <p class="reveal">
+            We reframed the dashboard around how commercial users actually operate: quick situational awareness, fast access to
+            high-frequency tasks, and trustworthy signals for risk and exceptions.
+          </p>
+          <p class="reveal">
+            Personas anchored the work—capturing needs for different roles (operators, approvers, and decision-makers) and
+            clarifying what “success” looks like for each. From there, we streamlined core flows and reorganized information
+            architecture so customers could move from overview to action without losing context.
+          </p>
+
+          <!-- PERSONAS IMAGE -->
+          <figure class="editorialMedia reveal">
+            <img src="../../assets/images/CommercialBanking/WoodforestCommercialPersonas.webp" alt="Commercial banking personas">
+            <div class="figCap">Personas helped define priorities for power users, approvers, and leaders who need oversight.</div>
+          </figure>
+
+          <h2 class="reveal">Design highlights</h2>
+          <p class="reveal">
+            The new experience prioritizes clarity and operational flow: a focused dashboard, predictable navigation, and
+            surfaced exceptions that reduce the need to dig through multiple screens.
+          </p>
+
+          <!-- TWO-UP EDITORIAL IMAGES -->
+          <div class="twoUp">
+            <figure class="editorialMedia reveal">
+              <img src="../../assets/images/CommercialBanking/WoodforestCommericalReli2.webp" alt="Commercial banking transaction flow">
+              <div class="figCap">Transaction flow concepts designed to reduce steps and keep critical details in view.</div>
+            </figure>
+
+            <!-- OPTIONAL: replace with another image if you have one; otherwise keep as a placeholder -->
+            <figure class="editorialMedia reveal">
+              <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Commercial banking dashboard detail">
+              <div class="figCap">A dashboard layout that supports scanning, oversight, and fast entry into key tasks.</div>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            This redesign created a stronger foundation for commercial banking workflows—making the system easier to learn,
+            faster to use for repeat tasks, and more confidence-inspiring for high-stakes actions. The interface emphasizes
+            what matters most: visibility, control, and momentum.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="nextPrev">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><b>Focus:</b> Dashboard + workflows for commercial banking</li>
+            <li><b>Methods:</b> Personas, UX flows, UI design</li>
+            <li><b>Design goals:</b> Speed, clarity, oversight</li>
+            <li><b>Constraints:</b> Security + compliance</li>
+          </ul>
+          <p class="small">
+            Want to see a prototype-style version of this work? I can share additional artifacts on request.
+          </p>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal on scroll (works great in cPanel hosting) -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
