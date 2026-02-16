@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="../../css/styles.css" />
 
   <style>
-    /* --- Editorial two-column layout --- */
-
     .article-container{
       max-width: 1100px;
       margin: 0 auto;
@@ -20,124 +18,143 @@
       letter-spacing: .14em;
       text-transform: uppercase;
       color: #666;
-      margin-bottom: 12px;
+      margin: 0 0 12px;
     }
 
     h1{
       font-size: 44px;
       line-height: 1.12;
       letter-spacing: -0.03em;
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       font-weight: 650;
+      color:#111;
     }
 
     @media (max-width: 640px){
       h1{ font-size: 34px; }
+      .article-container{ padding-top: 44px; }
     }
 
     .dek{
       font-size: 18px;
       line-height: 1.7;
       color: #333;
-      max-width: 70ch;
-      margin-bottom: 28px;
+      max-width: 72ch;
+      margin: 0 0 22px;
     }
 
-    /* Two-column grid */
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 14px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid #e9e9e9;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
     .article-grid{
-      display: grid;
+      display:grid;
       grid-template-columns: 2.2fr 1fr;
       gap: 40px;
-      align-items: start;
+      align-items:start;
     }
 
     @media (max-width: 900px){
-      .article-grid{
-        grid-template-columns: 1fr;
-      }
+      .article-grid{ grid-template-columns: 1fr; gap: 28px; }
     }
 
-    /* Main narrative column */
+    /* Main column */
     .article-main h2{
       font-size: 22px;
-      margin: 48px 0 12px;
+      margin: 44px 0 12px;
       letter-spacing: -0.01em;
     }
 
     .article-main p{
       font-size: 16px;
-      line-height: 1.8;
+      line-height: 1.85;
       color: #333;
-      margin-bottom: 16px;
-      max-width: 75ch;
+      margin: 0 0 16px;
+      max-width: 78ch;
     }
 
     .pull-quote{
       border-left: 3px solid #111;
       padding-left: 14px;
-      margin: 28px 0;
+      margin: 26px 0;
       font-size: 18px;
       line-height: 1.6;
       color: #111;
     }
 
-    /* Images */
+    /* Media */
     figure{
-      margin: 36px 0;
+      margin: 34px 0;
       border-radius: 18px;
-      overflow: hidden;
+      overflow:hidden;
       border: 1px solid #e9e9e9;
-      background: #fafafa;
+      background:#fafafa;
     }
 
     figure img{
-      width: 100%;
-      height: auto;
-      display: block;
+      width:100%;
+      height:auto;
+      display:block;
     }
 
     figcaption{
       font-size: 13px;
-      color: #666;
+      color:#666;
       padding: 12px 14px;
-      background: #fff;
+      background:#fff;
       border-top: 1px solid #efefef;
     }
 
     .two-up{
-      display: grid;
+      display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
+      margin: 18px 0 6px;
     }
 
     @media (max-width: 720px){
-      .two-up{
-        grid-template-columns: 1fr;
-      }
+      .two-up{ grid-template-columns: 1fr; }
     }
 
-    /* Sidebar column */
+    /* Sidebar */
     .article-side{
       position: sticky;
       top: 24px;
       border: 1px solid #e9e9e9;
       border-radius: 18px;
       padding: 22px;
-      background: #fafafa;
+      background:#fafafa;
+    }
+
+    @media (max-width: 900px){
+      .article-side{ position: static; }
     }
 
     .article-side h3{
       font-size: 13px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: #666;
+      color:#666;
       margin: 0 0 12px;
     }
 
     .article-side ul{
       padding-left: 18px;
       margin: 0 0 18px;
-      color: #333;
+      color:#333;
     }
 
     .article-side li{
@@ -147,8 +164,9 @@
 
     .article-side p{
       font-size: 14px;
-      color: #666;
+      color:#666;
       line-height: 1.6;
+      margin: 0 0 12px;
     }
 
     .divider{
@@ -157,25 +175,22 @@
     }
 
     .nav-links-bottom{
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
       margin-top: 24px;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
     }
 
     .nav-links-bottom a{
-      text-decoration: none;
+      text-decoration:none;
       border: 1px solid #e9e9e9;
       border-radius: 14px;
       padding: 12px 14px;
-      background: #fff;
-      color: #111;
+      background:#fff;
+      color:#111;
     }
-
-    .nav-links-bottom a:hover{
-      background: #f7f7f7;
-    }
+    .nav-links-bottom a:hover{ background:#f7f7f7; }
   </style>
 </head>
 
@@ -195,89 +210,112 @@
   <article class="article-container">
     <p class="kicker">Case Study</p>
     <h1>Commercial Banking</h1>
+
     <p class="dek">
-      Redesigning a commercial banking platform to support complex workflows,
-      faster decision-making, and confident oversight for high-value accounts.
+     <p class="dek">
+  Creating the brand identity, logo redesign, and website experience from scratch
+  for a new commercial banking division at Woodforest National Bank—establishing
+  credibility, clarity, and a scalable design foundation from day one.
+</p>
+
     </p>
+
+    <div class="metaRow">
+      <span class="chip">Branding</span>
+      <span class="chip">UI Design</span>
+      <span class="chip">Information Architecture</span>
+      <span class="chip">Personas</span>
+      <span class="chip">Content Structure</span>
+    </div>
 
     <div class="article-grid">
 
-      <!-- LEFT COLUMN -->
+      <!-- LEFT COLUMN: ARTICLE -->
       <div class="article-main">
 
-        <h2>The challenge</h2>
-        <p>
-          Commercial banking customers manage multiple accounts, approvals, and
-          transactions—often under time pressure and regulatory constraints.
-          The existing experience made it difficult to quickly understand status,
-          locate key actions, or move confidently through critical workflows.
-        </p>
+<h2>Context</h2>
+<p>
+  Woodforest National Bank was launching a new commercial banking division and
+  needed more than a website—it needed a distinct identity. The work included a
+  logo and brand refresh alongside a new digital experience that could stand on
+  its own while still feeling connected to the parent organization.
+</p>
+<p>
+  This was a from-scratch initiative. I led the effort as VP of Marketing and
+  Design, serving as lead designer and setting the strategic and visual direction
+  for both the brand and the website experience.
+</p>
+<h2>Brand & logo direction</h2>
+<p>
+  The logo and visual identity were redesigned to signal trust, stability, and
+  modern capability—qualities essential for commercial banking customers making
+  high-value decisions.
+</p>
+<p>
+  The brand system balanced approachability with rigor, ensuring it could scale
+  across marketing, product, and future service touchpoints without feeling dated
+  or overly corporate.
+</p>
 
-        <p>
-          Information was fragmented across screens, forcing users to hunt for
-          context instead of acting on it. For power users, this friction compounded
-          throughout the day.
-        </p>
 
         <figure>
-          <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Commercial banking dashboard">
+          <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Commercial Banking site UI">
           <figcaption>
-            A redesigned dashboard prioritizing visibility, control, and rapid access to high-frequency tasks.
+            Early UI direction for the new commercial banking site—built to communicate clarity, trust, and modern capability.
           </figcaption>
         </figure>
 
         <div class="pull-quote">
-          The goal was to reduce cognitive load and make the next best action obvious—without sacrificing security or compliance.
+          The goal: create a confident, modern brand presence—and make complex offerings feel navigable and approachable.
         </div>
 
-        <h2>Approach</h2>
-        <p>
-          We grounded the redesign in persona research, identifying distinct needs
-          for operators, approvers, and decision-makers. Each role required a
-          different balance of detail, speed, and oversight.
-        </p>
+      <h2>Approach</h2>
+<p>
+  As VP of Marketing and Design, I led the end-to-end effort—defining experience
+  principles, information architecture, and visual direction while also working
+  hands-on as lead designer across key flows and templates.
+</p>
+<p>
+  Persona development helped clarify business customer needs and decision styles,
+  informing content structure, navigation, and tone. This ensured the experience
+  could speak clearly to multiple roles while maintaining a cohesive voice.
+</p>
 
-        <p>
-          From there, we restructured the information architecture and streamlined
-          workflows to support situational awareness first, then action—keeping
-          users oriented as they moved through tasks.
-        </p>
 
         <figure>
           <img src="../../assets/images/CommercialBanking/WoodforestCommercialPersonas.webp" alt="Commercial banking personas">
           <figcaption>
-            Personas clarified priorities for different commercial banking roles and responsibilities.
+            Personas helped align content priorities, tone, and navigation around real business customer goals.
           </figcaption>
         </figure>
 
         <h2>Design highlights</h2>
         <p>
-          The new experience emphasizes clarity at every level—from dashboard
-          scanning to transaction execution—helping users move faster with
-          confidence.
+          The visual system was designed to feel trustworthy and modern without becoming “techy.” The UI emphasizes
+          structured layouts, clear hierarchy, and predictable navigation—so users can scan quickly and move with confidence.
         </p>
 
         <div class="two-up">
           <figure>
-            <img src="../../assets/images/CommercialBanking/WoodforestCommericalReli2.webp" alt="Transaction flow">
+            <img src="../../assets/images/CommercialBanking/WoodforestCommericalReli2.webp" alt="Workflow / experience flow">
             <figcaption>
-              Streamlined transaction flows designed to reduce steps and errors.
+              Key flows and page structures designed to keep users oriented as they explore and take action.
             </figcaption>
           </figure>
 
           <figure>
-            <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Dashboard detail">
+            <img src="../../assets/images/CommercialBanking/WoodforestCommercialBankingUI.webp" alt="Commercial banking UI detail">
             <figcaption>
-              Layout decisions support quick scanning and operational oversight.
+              Editorial spacing and hierarchy choices support fast scanning and clearer decision-making.
             </figcaption>
           </figure>
         </div>
 
         <h2>Outcome</h2>
         <p>
-          The redesigned platform created a calmer, more efficient experience for
-          commercial customers—reducing friction, improving clarity, and providing
-          a strong foundation for future capabilities.
+          The result was a cohesive brand and website foundation for the new division—clear structure, consistent design,
+          and an experience built to scale as offerings and content evolved. The work established a strong first impression
+          and a system the team could grow without reinventing the basics.
         </p>
 
         <div class="divider"></div>
@@ -288,19 +326,32 @@
         </div>
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT COLUMN: SIDEBAR -->
       <aside class="article-side">
         <h3>Project snapshot</h3>
         <ul>
-          <li><strong>Focus:</strong> Commercial banking dashboard & workflows</li>
-          <li><strong>Work:</strong> UI design, personas, UX flows</li>
-          <li><strong>Users:</strong> Operators, approvers, leaders</li>
-          <li><strong>Constraints:</strong> Security & compliance</li>
+          <li><strong>Organization:</strong> Woodforest National Bank</li>
+          <li><strong>Initiative:</strong> New commercial banking division</li>
+          <li><strong>Work:</strong> Branding + website UX/UI from scratch</li>
+          <li><strong>Artifacts:</strong> IA, personas, UI system, page templates</li>
         </ul>
 
+        <h3 style="margin-top:18px;">Design goals</h3>
+    <ul>
+  <li><strong>Organization:</strong> Woodforest National Bank</li>
+  <li><strong>Initiative:</strong> New commercial banking division</li>
+  <li><strong>Role:</strong> VP of Marketing & Design (Lead Designer)</li>
+  <li><strong>Scope:</strong> Logo redesign, brand identity, website UX/UI</li>
+  <li><strong>Artifacts:</strong> Brand system, IA, personas, UI templates</li>
+</ul>
+
+<p class="small">
+  This work combined executive ownership with hands-on design execution—bridging
+  strategy, brand, and product experience.
+</p>
+
         <p>
-          This work focused on balancing speed and oversight—supporting high-volume
-          tasks while maintaining trust in critical financial actions.
+          Additional artifacts can be shared on request (flows, templates, and supporting strategy work).
         </p>
       </aside>
 
@@ -313,4 +364,5 @@
 </footer>
 </body>
 </html>
+
 
