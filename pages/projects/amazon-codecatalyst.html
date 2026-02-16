@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon CodeCatalyst | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 76ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 80ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    /* Images */
+    figure{
+      margin: 34px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .miniGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .miniGrid{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .side p{
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll (nice but subtle) */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Amazon CodeCatalyst</h1>
+
+      <p class="dek">
+        Exploring how generative AI support (Amazon Q) can be embedded into everyday developer workflows—
+        from creating issues to reviewing pull requests—while keeping the experience clear, trustworthy,
+        and easy to control.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">UX Design</span>
+        <span class="chip">AI Workflow Integration</span>
+        <span class="chip">Information Design</span>
+        <span class="chip">Enterprise Product</span>
+        <span class="chip">Developer Experience</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Context</h2>
+          <p class="reveal">
+            Developer tools live or die by flow. When AI is added into the mix, the bar gets higher:
+            people need speed, but also confidence in what the system is doing, where changes will land,
+            and how to stay in control.
+          </p>
+          <p class="reveal">
+            This project focuses on the AI-assisted workflow inside Amazon CodeCatalyst—especially the moments
+            where “helpful” can easily become “unclear” (issue creation, task planning, code generation, and PR review).
+          </p>
+
+          <div class="pull reveal">
+            The design goal: make AI assistance feel like a teammate—visible, scoped, and reviewable—rather than a black box.
+          </div>
+
+          <h2 class="reveal">Create an issue with AI support</h2>
+          <p class="reveal">
+            The “Create issue” flow is a natural entry point for AI: users already describe intent,
+            and the system can help structure a plan. The key is making the step-up from
+            “idea” to “actionable work” feel lightweight—without hiding important configuration.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/CodeCatalyst/frame-4739.jpg" alt="Create issue modal with issue title and description fields">
+            <figcaption>
+              Issue creation begins with a familiar form. The layout supports quick entry and leaves space for structured details.
+            </figcaption>
+          </figure>
+
+          <figure class="reveal">
+            <img src="../../assets/images/CodeCatalyst/frame-4740.jpg" alt="Create issue modal showing Amazon Q assignee and repository selection">
+            <figcaption>
+              Assigning to Amazon Q introduces a second layer: selecting a source repo and choosing guardrails for execution.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Activity feed as a “trust surface”</h2>
+          <p class="reveal">
+            Once AI is assigned, the product needs a clear place where progress is visible and reviewable.
+            The activity feed becomes the trust surface: it should show what’s complete, what’s next,
+            and where user approval is required—without overwhelming the page.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/CodeCatalyst/frame-4761.jpg" alt="Issue page with Amazon Q activity feed showing background and approach steps">
+            <figcaption>
+              A structured activity feed communicates progress and keeps the plan readable: background, approach, code, and PR creation.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Handling failure states without breaking flow</h2>
+          <p class="reveal">
+            When AI can’t continue, the experience should clearly communicate what happened and what to do next.
+            The goal isn’t to “hide” the failure—it’s to keep momentum by offering a sensible path forward.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/CodeCatalyst/issue-page.jpg" alt="Issue page with Amazon Q progress notification">
+              <figcaption>
+                Lightweight status messaging helps users understand that work is underway—without hijacking attention.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/CodeCatalyst/issue-page2.jpg" alt="Issue page showing Amazon Q blocked and error notification">
+              <figcaption>
+                When blocked, the UI should be explicit: what failed, what’s impacted, and the next best action (e.g., reassign or review).
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Pull request review support</h2>
+          <p class="reveal">
+            PR review is another high-leverage moment: comments pile up quickly, context fragments,
+            and reviewers lose time reconstructing what changed and why. A well-scoped summary can
+            accelerate review—especially if it avoids “making things up” or reinterpreting intent.
+          </p>
+
+          <div class="miniGrid">
+            <figure class="reveal">
+              <img src="../../assets/images/CodeCatalyst/pr-details-overview.jpg" alt="Pull request details page overview tab with summarize comments action">
+              <figcaption>
+                Entry point: PR overview with a visible “Summarize comments” action.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/CodeCatalyst/pr-details.jpg" alt="Pull request details page showing summary content">
+              <figcaption>
+                The summary is presented as guidance—supporting review without replacing human decision-making.
+              </figcaption>
+            </figure>
+          </div>
+
+          <figure class="reveal">
+            <img src="../../assets/images/CodeCatalyst/pr-details-changes.jpg" alt="Pull request changes tab showing diff and inline comments">
+            <figcaption>
+              The changes view anchors the work in reality: diff + comments. AI support should connect back to source of truth.
+            </figcaption>
+          </figure>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/CodeCatalyst/pr-details-new-comment.jpg" alt="PR page with new comment added and summary prompt">
+              <figcaption>
+                When new comments arrive, the UI prompts for an updated summary—keeping summaries current and clearly time-scoped.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/CodeCatalyst/replies-activity-oldest-first.jpg" alt="PR comments thread with replies and activity visible, sorted oldest first">
+              <figcaption>
+                Thread readability matters. Sorting, visibility of replies, and activity cues reduce review friction.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Controls, limits, and transparency</h2>
+          <p class="reveal">
+            AI features often come with usage limits, permissions, and identity context. These settings are part of the UX:
+            they should be discoverable, understandable, and reassuring—especially in enterprise environments.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/CodeCatalyst/user-settings.jpg" alt="User settings page showing generative AI feature usage and personal access tokens">
+            <figcaption>
+              Settings communicate identity, usage, and access. Clear limits help teams adopt AI responsibly and predictably.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            This body of work demonstrates a practical pattern for AI in developer tools:
+            embed assistance at the moments where intent becomes structured work (issues and PRs),
+            make progress visible through a readable activity feed, and preserve control through clear guardrails and settings.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Product:</strong> Amazon CodeCatalyst</li>
+            <li><strong>Focus:</strong> AI-assisted issues + PR review</li>
+            <li><strong>AI:</strong> Amazon Q integration</li>
+            <li><strong>Artifacts:</strong> Flows, UI patterns, states</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Design themes</h3>
+          <ul>
+            <li>Make AI work visible</li>
+            <li>Keep users in control</li>
+            <li>Design for failure states</li>
+            <li>Summaries must be time-scoped</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Editorial note:</strong> This case study is written from the lens of UX patterns:
+            trust surfaces, reviewability, and guardrails for enterprise adoption.
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
