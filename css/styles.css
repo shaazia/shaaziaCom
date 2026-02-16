@@ -642,3 +642,125 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 }
+/* Project Gallery with thumbnails + tags */
+
+#project-links { margin-top: 96px; }
+
+#project-links .sectionHead{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+#project-links .hint{
+  margin:0;
+  font-size:14px;
+  color:#777;
+}
+
+.projectGrid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* Card now has a thumbnail area */
+.projectCard{
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  border:1px solid var(--border, #e9e9e9);
+  border-radius: 18px;
+  background:#fff;
+  box-shadow: 0 10px 22px rgba(0,0,0,.04);
+  overflow:hidden;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.projectCard:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0,0,0,.08);
+  border-color:#dedede;
+}
+
+/* Thumbnail placeholder */
+.thumbPh{
+  height: 150px;
+  background:
+    radial-gradient(400px 180px at 20% 20%, rgba(0,0,0,.06), transparent 55%),
+    radial-gradient(400px 180px at 80% 40%, rgba(0,0,0,.05), transparent 55%),
+    linear-gradient(180deg, #f7f7f7, #fbfbfb);
+  border-bottom:1px solid var(--border, #e9e9e9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#8a8a8a;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.projectBody{
+  padding: 16px 16px 18px;
+}
+
+.projectTitleRow{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.projectTitle{
+  color:#111;
+  font-weight:650;
+  letter-spacing:-.01em;
+  font-size:16px;
+  line-height:1.25;
+}
+
+.chev{
+  color:#9a9a9a;
+  font-size:18px;
+  line-height:1;
+  margin-top: 2px;
+  transition: transform .22s ease, color .22s ease;
+}
+
+.projectCard:hover .chev{
+  transform: translateX(2px);
+  color:#111;
+}
+
+/* Tags */
+.tagRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top: 12px;
+}
+
+.tag{
+  display:inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border, #e9e9e9);
+  background: #fff;
+  color:#555;
+  font-size:12px;
+}
+
+/* Optional: scroll-in animation if you already use .reveal */
+.projectCard.reveal{ opacity:0; transform: translateY(10px); }
+.projectCard.reveal.is-visible{
+  opacity:1; transform: translateY(0);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .projectCard{ transition:none; }
+  .projectCard:hover{ transform:none; }
+  .chev{ transition:none; }
+}
