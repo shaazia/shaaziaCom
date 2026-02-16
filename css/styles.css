@@ -764,3 +764,11 @@ footer a:hover {
   .projectCard:hover{ transform:none; }
   .chev{ transition:none; }
 }
+.thumbImg{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+  border-bottom:1px solid var(--border, #e9e9e9);
+}
+
