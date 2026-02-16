@@ -161,10 +161,12 @@ nav {
     transition: var(--transition);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.card:hover,
+.step:hover{
+  transform: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 
 .card h3 {
     color: var(--primary-color);
