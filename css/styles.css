@@ -775,3 +775,27 @@ footer a:hover {
 }
 #project-links h2 { text-align: left; }
 
+/* Make cards & steps behave like links */
+.cardLink,
+.stepLink{
+  display:block;
+  text-decoration:none;
+  color: inherit;
+  position: relative;
+}
+
+/* Subtle CTA inside cards */
+.cardCta{
+  display:inline-block;
+  margin-top:12px;
+  font-size:0.9rem;
+  color: var(--primary-color);
+}
+
+/* Accessibility + clarity */
+.cardLink:focus-visible,
+.stepLink:focus-visible{
+  outline: 3px solid rgba(102,126,234,0.4);
+  outline-offset: 4px;
+}
+
