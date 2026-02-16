@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Video Live Events Help Hub | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 78ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 82ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    /* Images */
+    figure{
+      margin: 34px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .miniGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .miniGrid{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .side p{
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll (nice but subtle) */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Prime Video Live Events Help Hub</h1>
+
+      <p class="dek">
+        A concept redesign of the Prime Video Live Events Help Hub—built to help customers get access,
+        sign in, and resolve live streaming issues faster, while maintaining series branding (Thursday Night Football, NASCAR, and more).
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">UX Design</span>
+        <span class="chip">Content Strategy</span>
+        <span class="chip">Information Architecture</span>
+        <span class="chip">Help & Support UX</span>
+        <span class="chip">Live Streaming</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Context</h2>
+          <p class="reveal">
+            Live events are time-sensitive: customers often arrive minutes before a game or race begins,
+            and they need immediate help with <strong>access, sign-in, device compatibility</strong>, and
+            <strong>streaming performance</strong>. The Help Hub pages are branded per series, but the primary job-to-be-done
+            is consistent: “Help me start watching (or fix what’s broken) quickly.”
+          </p>
+
+          <div class="pull reveal">
+            The design goal: keep series branding, but make the experience feel unmistakably help-first—fast to scan,
+            easy to act on, and aligned to customer mental models.
+          </div>
+
+          <h2 class="reveal">UX issues surfaced</h2>
+          <p class="reveal">
+            A review of the existing page structure surfaced several friction points that made it harder for customers
+            to find the right action under pressure:
+          </p>
+          <p class="reveal">
+            <strong>Mental model mismatches</strong>, lack of content chunking, distracting visual elements, choice overload,
+            deceptive patterns, redundant links, and inconsistent content patterns across sections.
+          </p>
+
+          <h2 class="reveal">Help-first hierarchy</h2>
+          <p class="reveal">
+            The original experience leaned heavily into a promotional hero, which competed with the customer’s urgent goal.
+            The redesign reframes the top of page to establish purpose quickly and route customers into “How to watch” immediately.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/before-hero.jpg" alt="Before: Live Events Help Hub hero with large branded treatment">
+              <figcaption>
+                Before: Branding dominates the entry experience, competing with task completion.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/after-hero.jpg" alt="After: Help-first hero with simplified hierarchy and clearer entry into how to watch">
+              <figcaption>
+                After: A help-first hero that quickly clarifies intent and directs customers into the primary task flow.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Clear, predictable navigation</h2>
+          <p class="reveal">
+            Customers expect support pages to behave like support: clear sections, consistent labels, and fewer competing entry points.
+            The redesign standardizes navigation around a task-based IA that matches user intent.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/before-navigation.jpg" alt="Before: Navigation and quick links create competing paths">
+              <figcaption>
+                Before: Competing “quick links” and section entry points increase decision load.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/after-navigation.jpg" alt="After: Simplified help hub navigation aligned to mental model">
+              <figcaption>
+                After: Simplified navigation aligned to “How to watch / Where to watch / Issues / FAQs / Get help.”
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Scannable chunking for “How to watch”</h2>
+          <p class="reveal">
+            “How to watch” is the critical path. The redesign condenses the flow into a single scannable module with clear steps:
+            app download, sign-in/access, find the event, and take action (watch now / view schedule).
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/before-how-to-watch.jpg" alt="Before: How to watch section with dense content and less clear hierarchy">
+              <figcaption>
+                Before: Key steps are present, but not optimized for fast scanning.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/after-how-to-watch.jpg" alt="After: How to watch module with clearer chunking and task-first actions">
+              <figcaption>
+                After: A single, scannable module that makes the path to watching obvious and fast.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Reducing redundancy and choice overload</h2>
+          <p class="reveal">
+            The original page repeated links and pathways across sections, creating a “which one do I click?” problem.
+            The redesign shifts to progressive disclosure: show the most common actions first, push edge cases deeper,
+            and tighten CTAs so they read as support—not marketing.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/before-home.jpg" alt="Before: Full help hub page with dense sections and many repeated elements">
+              <figcaption>
+                Before: Dense page structure increases cognitive load and hides the fastest path to resolution.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/PrimeVideoLiveEvents/after-home.jpg" alt="After: Full help hub page with clearer sections and reduced repetition">
+              <figcaption>
+                After: Streamlined structure that surfaces common tasks first and reduces repeated links.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            This concept redesign establishes a scalable pattern for branded Live Events help pages:
+            help-first hierarchy, consistent IA, scannable chunking for the critical path, and progressive disclosure
+            for troubleshooting and FAQs—while keeping series identity intact.
+          </p>
+
+          <h2 class="reveal">How I’d measure success</h2>
+          <p class="reveal">
+            Increase engagement with “How to watch” actions, reduce pogo-sticking between sections,
+            lower contact rate for common access questions, and improve time-to-resolution for sign-in,
+            entitlement, and device compatibility issues.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Product:</strong> Prime Video Live Events Help Hub</li>
+            <li><strong>Context:</strong> Branded series pages (TNF, NASCAR, etc.)</li>
+            <li><strong>Users:</strong> Customers trying to watch live events</li>
+            <li><strong>Focus:</strong> Access, sign-in, streaming troubleshooting</li>
+            <li><strong>Artifacts:</strong> IA, page structure, content modules</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Design themes</h3>
+          <ul>
+            <li>Match customer mental models</li>
+            <li>Chunk content for scanning</li>
+            <li>Reduce choice overload</li>
+            <li>Remove redundancy</li>
+            <li>Make CTAs feel help-first</li>
+          </ul>
+
+          <div class="callout">
+            <strong>What this redesign improves:</strong> A faster “start watching” path, clearer navigation,
+            less decision fatigue, and a consistent support experience across branded live event series.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Key UX issues addressed:</strong> mental model mismatches, distracting visuals, deceptive patterns,
+            redundant links, and inconsistent content structure.
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
