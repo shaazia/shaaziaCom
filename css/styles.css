@@ -149,15 +149,12 @@ li{ margin-bottom: 0.6rem; }
    Hero (split-ready)
    ========================================== */
 
+/* --- Hero refinements: remove outline + reduce padding --- */
 .hero{
-  /* neutral editorial panel */
-  background: linear-gradient(180deg, rgba(11,12,15,0.02), rgba(11,12,15,0.00));
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius);
-  padding: 72px 48px;
-  text-align: left;
+  border: none !important;              /* removes the gray line */
+  background: transparent !important;   /* keep it clean */
+  padding: 44px 48px !important;        /* less top/bottom padding */
 }
-
 .hero h2{
   color: var(--text-muted);
   font-weight: 500;
