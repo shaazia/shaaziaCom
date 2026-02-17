@@ -995,16 +995,10 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 
 
 .workFrame{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 12px;
-
-  padding: 14px 16px;
   background: var(--work-frame-gray);
-
   transition: background .28s ease, color .28s ease;
 }
+
 
 .workTitle{
   font-weight: 600;
