@@ -796,3 +796,158 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 .featuredCard:hover img {
   transform: scale(1.04)
 }
+/* ===== Kanso-inspired Selected Work ===== */
+
+.workSection { margin-top: 2.2rem; }
+
+.workHead{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.workKicker{
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.workCount{
+  opacity: .55;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.workSub{
+  margin: 8px 0 0;
+  opacity: .75;
+  max-width: 56ch;
+}
+
+.workAll{
+  text-decoration:none;
+  color: inherit;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  white-space: nowrap;
+}
+
+.workAll:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,.18);
+  background: rgba(0,0,0,.03);
+}
+
+.workAllArrow{ transition: transform .2s ease; }
+.workAll:hover .workAllArrow{ transform: translateX(3px); }
+
+.workGrid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 980px){
+  .workGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  .workHead{ flex-direction: column; align-items:flex-start; }
+  .workGrid{ grid-template-columns: 1fr; }
+}
+
+.workCard{
+  position: relative;
+  display:block;
+  border-radius: 22px;
+  overflow:hidden;
+  text-decoration:none;
+  color: inherit;
+  transform: translateZ(0);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+/* Image sizing: bigger, more premium */
+.workMedia img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  display:block;
+  transform: scale(1.001);
+  transition: transform .6s ease;
+}
+
+/* Overlay (subtle at rest, richer on hover) */
+.workOverlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding: 16px;
+  background: linear-gradient(to top,
+    rgba(0,0,0,.62),
+    rgba(0,0,0,.20),
+    rgba(0,0,0,0)
+  );
+  transition: background .35s ease;
+}
+
+/* Year pill */
+.workYear{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .85rem;
+  color: rgba(255,255,255,.92);
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+/* Bottom text */
+.workTitle{
+  margin:0;
+  color:#fff;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.workDesc{
+  margin: 8px 0 0;
+  color: rgba(255,255,255,.86);
+  line-height: 1.45;
+  opacity: .92;
+  transform: translateY(6px);
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* Hover: lift + richer overlay + reveal */
+.workCard:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.18);
+}
+
+.workCard:hover .workMedia img{
+  transform: scale(1.05);
+}
+
+.workCard:hover .workOverlay{
+  background: linear-gradient(to top,
+    rgba(0,0,0,.74),
+    rgba(0,0,0,.32),
+    rgba(0,0,0,.08)
+  );
+}
+
+.workCard:hover .workDesc{
+  opacity: 1;
+  transform: translateY(0);
+}
