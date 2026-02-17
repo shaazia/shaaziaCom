@@ -879,136 +879,184 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 /* =========================================================
    Card styling (Kanso-like frame + hover)
    ========================================================= */
+/* =========================================================
+   SELECTED WORK (Kanso-inspired frame + hover)
+   Description + year live in the frame (caption bar)
+   ========================================================= */
 
-.workCard{
-  position: relative;
-  display:block;
-  border-radius: 22px;
-  overflow:hidden;
-  text-decoration:none;
-  color: inherit;
+.workSection { margin-top: 2.2rem; }
 
-  transform: translateZ(0);
-  transition: transform .28s ease, box-shadow .28s ease;
-
-  background: transparent;
-
-  /* OUTER FRAME (always visible) */
-  border: 1px solid rgba(0,0,0,.10);
-}
-
-/* INNER FRAME (subtle inset ring; gets brighter on hover) */
-.workCard::after{
-  content:"";
-  position:absolute;
-  inset: 10px;               /* distance of inner frame from edge */
-  border-radius: 16px;       /* slightly smaller than card radius */
-  border: 1px solid rgba(255,255,255,.14);
-  pointer-events:none;
-  opacity: .55;
-  transition: opacity .28s ease, border-color .28s ease;
-}
-
-/* Media (image) */
-.workMedia img{
-  width:100%;
-  height: 320px;             /* “premium” tall cards */
-  object-fit: cover;
-  display:block;
-  transform: scale(1.001);
-  transition: transform .6s ease;
-}
-
-/* Overlay gradient */
-.workOverlay{
-  position:absolute;
-  inset:0;
+.workHead{
   display:flex;
-  flex-direction:column;
+  align-items:flex-end;
   justify-content:space-between;
-  padding: 16px;
-
-  background: linear-gradient(to top,
-    rgba(0,0,0,.62),
-    rgba(0,0,0,.20),
-    rgba(0,0,0,0)
-  );
-  transition: background .35s ease;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
-/* Year pill */
-.workYear{
-  display:inline-flex;
-  align-items:center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: .85rem;
-  color: rgba(255,255,255,.92);
-  background: rgba(0,0,0,.35);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.14);
-}
-
-/* Text */
-.workTitle{
-  margin:0;
-  color:#fff;
-  font-size: 1.05rem;
+.workKicker{
+  font-size: .95rem;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
-.workDesc{
-  margin: 8px 0 0;
-  color: rgba(255,255,255,.86);
-  line-height: 1.45;
-  opacity: .92;
-  transform: translateY(6px);
-  transition: transform .25s ease, opacity .25s ease;
+.workCount{
+  opacity: .55;
+  font-weight: 600;
+  margin-left: 6px;
 }
 
-/* ---------- Hover states ---------- */
+.workSub{
+  margin: 8px 0 0;
+  opacity: .75;
+  max-width: 56ch;
+}
+
+.workAll{
+  text-decoration:none;
+  color: inherit;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  white-space: nowrap;
+}
+
+.workAll:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,.18);
+  background: rgba(0,0,0,.03);
+}
+
+.workAllArrow{ transition: transform .2s ease; }
+.workAll:hover .workAllArrow{ transform: translateX(3px); }
+
+.workGrid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 980px){
+  .workGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  .workHead{ flex-direction: column; align-items:flex-start; }
+  .workGrid{ grid-template-columns: 1fr; }
+}
+
+/* =======================
+   Card + frame styling
+   ======================= */
+
+.workCard{
+  display:block;
+  text-decoration:none;
+  color: inherit;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  /* Gray frame */
+  border: 2px solid rgba(0,0,0,.18);
+
+  background: #f2f2f2; /* subtle frame background like your example */
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.workMedia{
+  background: #fff;
+}
+
+.workMedia img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  display:block;
+
+  /* keeps image corners aligned with the card */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  transition: transform .6s ease;
+}
+
+/* The bottom “frame” area where title/desc/year live */
+.workFrame{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  /* this is the caption bar color in the default state */
+  background: #f2f2f2;
+
+  transition: background .28s ease, color .28s ease;
+}
+
+.workText{
+  min-width: 0;
+}
+
+.workTitle{
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.workDesc{
+  font-size: .9rem;
+  opacity: .75;
+  line-height: 1.35;
+
+  /* prevent crazy wrapping */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.workYear{
+  font-size: .9rem;
+  opacity: .9;
+  white-space: nowrap;
+}
+
+/* =======================
+   Hover state (black frame)
+   ======================= */
+
 .workCard:hover{
   transform: translateY(-6px);
-
-  /* main shadow */
   box-shadow: 0 18px 44px rgba(0,0,0,.18);
 
-  /* OUTER FRAME changes */
-  border-color: rgba(0,0,0,.22);
-}
-
-/* Inner frame brightens + changes color on hover */
-.workCard:hover::after{
-  opacity: 1;
-  border-color: rgba(255,255,255,.34);
+  /* frame border becomes black */
+  border-color: #111;
 }
 
 .workCard:hover .workMedia img{
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-.workCard:hover .workOverlay{
-  background: linear-gradient(to top,
-    rgba(0,0,0,.74),
-    rgba(0,0,0,.32),
-    rgba(0,0,0,.08)
-  );
+.workCard:hover .workFrame{
+  /* frame turns black like your hover example */
+  background: #111;
+  color: #fff;
 }
 
 .workCard:hover .workDesc{
-  opacity: 1;
-  transform: translateY(0);
+  opacity: .88; /* keeps it readable on black */
 }
 
-/* ---------- Optional: reduce motion for accessibility ---------- */
+/* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce){
-  .workCard,
-  .workMedia img,
-  .workOverlay,
-  .workDesc,
-  .workCard::after,
-  .workAll,
-  .workAllArrow{
+  .workCard, .workMedia img, .workFrame, .workAll, .workAllArrow{
     transition: none !important;
   }
 }
