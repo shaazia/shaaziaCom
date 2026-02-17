@@ -742,9 +742,10 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   overflow: hidden;
   text-decoration: none;
   color: white;
-  background: #000;
+  background: transparent; /* removes black edge */
   transition: transform .25s ease, box-shadow .25s ease;
 }
+
 
 .featuredCard img {
   width: 100%;
@@ -788,8 +789,9 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 /* Hover state */
 .featuredCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+  box-shadow: 0 10px 28px rgba(0,0,0,.15);
 }
+
 
 .featuredCard:hover img {
   transform: scale(1.04)
