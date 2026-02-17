@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer obsession</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 82ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 84ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    /* Images */
+    figure{
+      margin: 34px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .side p{
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Mobile Banking App</h1>
+
+      <p class="dek">
+        UX and workflow design for a mobile banking experience—streamlining high-frequency tasks (transfers, bill pay, account management)
+        with a clear information hierarchy, trust-first patterns, and reusable specs that scale across teams.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">Mobile UX</span>
+        <span class="chip">Workflow Redesign</span>
+        <span class="chip">Information Architecture</span>
+        <span class="chip">Financial UX</span>
+        <span class="chip">Design Specs</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Context</h2>
+          <p class="reveal">
+            Customers increasingly manage finances on mobile—often in short sessions and high-distraction environments.
+            That makes <strong>clarity, confidence, and speed</strong> essential. This work focused on improving how customers
+            navigate, understand, and complete core banking tasks without increasing perceived risk.
+          </p>
+
+          <div class="pull reveal">
+            The design goal: reduce steps and cognitive load while increasing transaction confidence—so customers can complete tasks
+            quickly, correctly, and without needing support.
+          </div>
+
+          <h2 class="reveal">The challenge</h2>
+          <p class="reveal">
+            The existing experience made simple tasks feel complex. Common workflows (transfers, bill pay, account inquiries)
+            required too many screens, unclear labels, and inconsistent information hierarchy—leading to abandoned attempts and
+            increased support contacts.
+          </p>
+
+          <h2 class="reveal">Approach</h2>
+          <p class="reveal">
+            I redesigned the mobile banking experience around <strong>task-based navigation</strong>, <strong>consistent UI patterns</strong>,
+            and <strong>transaction transparency</strong>. The work balanced usability with compliance and security expectations by making
+            key details easy to verify before committing.
+          </p>
+
+          <ul class="bullets reveal">
+            <li><strong>Task-based IA:</strong> prioritize what customers do most, not what the org structure suggests</li>
+            <li><strong>Clear hierarchy:</strong> “what matters now” vs. “details when needed”</li>
+            <li><strong>Trust signals:</strong> confirmations, review states, and predictable error recovery</li>
+            <li><strong>Spec-ready design:</strong> patterns documented to scale implementation across teams</li>
+          </ul>
+
+          <h2 class="reveal">Artifacts</h2>
+          <p class="reveal">
+            The deliverables included UI layouts, detailed workflow specs, and supporting strategy and research assets
+            used to align cross-functional partners and accelerate delivery.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/MobileBankingApp/ATMScreen2.webp" alt="Mobile banking app promotional visual showing the app on a phone">
+            <figcaption>
+              Mobile banking campaign visual used to communicate the value of “banking on the go” and reinforce adoption.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Design specs: mobile workflows</h2>
+          <p class="reveal">
+            Documented end-to-end flows and screen-level specifications to reduce implementation ambiguity, improve consistency,
+            and support iteration based on real customer behavior.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/MobileBankingApp/MobileBankingAppSpecs1.webp" alt="Mobile banking specifications showing multiple screens and annotated interactions">
+              <figcaption>
+                Screen and interaction specifications: reusable patterns and consistent navigation across key journeys.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/MobileBankingApp/MobileBankingAppSpecs2.webp" alt="Mobile banking specifications showing detailed flow states and content rules">
+              <figcaption>
+                Detailed flow states: content rules, error handling, and confirmation patterns that increase transaction confidence.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">UX strategy: where mobile fits in the ecosystem</h2>
+          <p class="reveal">
+            Banking isn’t a single channel experience. I mapped how customers move between self-service, branch touchpoints,
+            and assisted support to identify high-value moments where mobile can reduce friction and improve outcomes.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/MobileBankingApp/UXStrategyWoodforest1.webp" alt="UX strategy diagram showing customer lifecycle and touchpoints">
+            <figcaption>
+              Strategy map: a holistic view of customer needs across onboarding, servicing, and loyalty—used to prioritize mobile UX investments.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Personas: designing for real banking behaviors</h2>
+          <p class="reveal">
+            Personas grounded the work in real customer constraints—technology comfort levels, banking habits, and pain points—
+            ensuring the product served both confident mobile users and customers who need extra clarity and reassurance.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/MobileBankingApp/WoodforestPersona1.webp" alt="Persona: Carl Philips, a Sterling Checking Customer">
+              <figcaption>
+                Persona 1: a customer who values simplicity and needs straightforward, low-friction mobile banking workflows.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/MobileBankingApp/WoodforestPersona2.webp" alt="Persona: Sonya Garcia, a Second Chance Checking Customer">
+              <figcaption>
+                Persona 2: a customer balancing financial stress and time constraints—needs fast access to essentials and clear guidance.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Process flow: account opening complexity</h2>
+          <p class="reveal">
+            Account opening is a high-friction journey with many compliance and verification steps. I created process flows
+            to make complexity explicit, align stakeholders on decision points, and identify opportunities to reduce drop-off.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/MobileBankingApp/WoodforestProcessFlow.webp" alt="Account opening process flow showing steps, decisions, and verification stages">
+            <figcaption>
+              Process flow: mapped decision points and verification steps to support simplification and clearer customer guidance.
+            </figcaption>
+          </figure>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            This work produced a clearer, more scalable mobile banking foundation—streamlined workflows, stronger information hierarchy,
+            and reusable specifications that improved consistency and helped teams ship with less ambiguity.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Product:</strong> Mobile banking app</li>
+            <li><strong>Focus:</strong> Task completion + trust</li>
+            <li><strong>Users:</strong> Everyday banking customers</li>
+            <li><strong>Artifacts:</strong> Specs, flows, strategy, personas</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Design themes</h3>
+          <ul>
+            <li>Task-based navigation</li>
+            <li>Transaction transparency</li>
+            <li>Reduced cognitive load</li>
+            <li>Consistent patterns</li>
+            <li>Spec-ready delivery</li>
+          </ul>
+
+          <div class="callout">
+            <strong>What I led:</strong> end-to-end workflow redesign, information hierarchy, and systemized specs to enable
+            consistent implementation across teams.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Why it matters:</strong> In financial UX, speed isn’t enough—customers need clarity and confidence
+            at every commit point.
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
