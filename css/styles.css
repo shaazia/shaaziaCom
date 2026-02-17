@@ -634,3 +634,58 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   .nav-links{ gap: 1rem; }
   .steps{ grid-template-columns: 1fr; }
 }
+/* ==========================================
+   Logo Scroller (Kansō-style, subtle)
+   ========================================== */
+
+.logoScroller{
+  margin-top: 28px;
+  padding: 20px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.logoScrollerTrack{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoScrollerRow{
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: logoScroll 28s linear infinite;
+}
+
+.logoScrollerRow span{
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Pause on hover (feels premium) */
+.logoScroller:hover .logoScrollerRow{
+  animation-play-state: paused;
+}
+
+/* Keyframes */
+@keyframes logoScroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile tuning */
+@media (max-width: 768px){
+  .logoScrollerRow{
+    gap: 32px;
+  }
+}
