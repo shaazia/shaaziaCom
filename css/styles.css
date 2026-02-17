@@ -316,20 +316,29 @@ li{ margin-bottom: 0.6rem; }
 }
 .cardLinks{
   display: flex;
-  flex-direction: column;   /* stack vertically */
+  flex-direction: column;
   gap: 6px;
-  margin-top: 12px;
+  margin-top: 14px;
+}
+
+.cardLinksTitle{
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
 }
 
 .cardCta{
-  text-decoration: none;    /* remove underline */
+  text-decoration: none;
   font-weight: 500;
   color: var(--primary-color);
   width: fit-content;
 }
 
 .cardCta:hover{
-  opacity: 0.85;            /* subtle hover, no underline */
+  opacity: 0.85;
 }
 
 /* ==========================================
