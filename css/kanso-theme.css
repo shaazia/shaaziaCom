@@ -384,7 +384,7 @@ footer a:hover{ color: var(--text-color); }
   width:100%;
   height:auto;
   object-fit:cover;
-  filter: grayscale(100%) contrast(0.95);
+ 
 }
 
 @media (max-width: 900px){
