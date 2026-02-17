@@ -106,7 +106,7 @@ nav{
 
 /* Kansō rhythm */
 main.container > section{
-  padding: 92px 0;
+  padding: 57px 0;
 }
 
 section{ margin-top: 0; }
@@ -157,7 +157,7 @@ li{ margin-bottom: 0.6rem; }
 .hero{
   border: none !important;
   background: transparent !important;
-  padding: 44px 48px !important;
+
   text-align: left !important;
 }
 
