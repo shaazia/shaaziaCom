@@ -962,7 +962,7 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   overflow: hidden;
 
   /* Gray frame */
-  border: 5px solid rgba(0,0,0,.18);
+  border: 13px solid rgba(0,0,0,.18);
 
   background: #f2f2f2; /* subtle frame background like your example */
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
