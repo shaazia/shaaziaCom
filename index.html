@@ -5,8 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shaazia Stonehocker | Product Designer</title>
 
-<link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 
+  <!-- Minimal additions to support the new “snapshot” row + optional thumbnail images -->
+  <style>
+    .snapshotRow{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin:1.25rem 0 1rem;
+    }
+    .snapItem{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:14px;
+      padding:10px 12px;
+      min-width:180px;
+      flex:1 1 180px;
+      background: rgba(255,255,255,.6);
+    }
+    .snapLabel{ font-size:.8rem; opacity:.7; margin-bottom:2px; }
+    .snapValue{ font-size:.95rem; font-weight:600; }
+
+    /* Optional: if you swap thumbPh to real images later */
+    .thumb img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      display:block;
+      border-radius:12px;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,6 +41,7 @@
       <a href="/index.html" class="logo">Shaazia</a>
       <ul class="nav-links">
         <li><a href="/pages/portfolio.html">Portfolio</a></li>
+        <li><a href="/pages/approach.html">Approach</a></li>
         <li><a href="/index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -23,147 +50,161 @@
   <main class="container">
 
     <!-- ================= HERO ================= -->
-<section class="hero heroSplit">
-  <div class="heroText">
-    <h1>Product design leader</h1>
+    <section class="hero heroSplit">
+      <div class="heroText">
+        <h1>Product design leader</h1>
 
-    <h2 style="opacity:.95;">
- Working backward from real customer needs to create intuitive, trustworthy, and human experiences
-    </h2>
+        <h2 style="opacity:.95;">
+          Working backward from real customer needs to create intuitive, trustworthy, human experiences.
+        </h2>
 
-    <p>
-  I focus on designing seamless customer journeys across chat, voice, devices, and screens, with a particular emphasis on AI conversational experiences that feel reliable, explainable, and human. Whether I’m simplifying high-stakes workflows, designing multimodal support experiences, or defining interaction patterns for AI systems, my goal is always the same: to make complex products feel intuitive, supportive, and trustworthy for the people using them.
-    </p>
+        <p>
+          I design seamless customer journeys across chat, voice, devices, and screens—with a focus on AI conversational
+          experiences that feel reliable, explainable, and human. I simplify high-stakes workflows, design multimodal
+          support experiences, and define interaction patterns for AI systems so complex products feel intuitive and
+          supportive.
+        </p>
 
-    <p style="opacity:0.85; font-size:1.05rem; margin-top:-0.75rem;">
-      Experience across Amazon, AWS, Woodforest National Bank, and global brands including AT&amp;T, Google, Nike, and Infiniti.
-    </p>
+        <!-- QUICK SCAN / SNAPSHOT -->
+        <div class="snapshotRow" aria-label="Quick overview">
+          <div class="snapItem">
+            <div class="snapLabel">Focus</div>
+            <div class="snapValue">AI support + multimodal UX</div>
+          </div>
+          <div class="snapItem">
+            <div class="snapLabel">Strengths</div>
+            <div class="snapValue">0→1 vision, prototyping, systems</div>
+          </div>
+          <div class="snapItem">
+            <div class="snapLabel">Shipped</div>
+            <div class="snapValue">Chat, voice, device surfaces</div>
+          </div>
+        </div>
 
-    <div>
-      <a href="/pages/portfolio.html" class="btn">View portfolio</a>
-         <a href="/assets/Shaazia-Stonehocker-Resume.pdf" class="btn"  target="_blank" rel="noopener noreferrer">
-Download resume</a>
-      <a href="/index.html#contact" class="btn btn-secondary">Contact</a>
-    </div>
-  </div>
+        <p style="opacity:0.85; font-size:1.05rem; margin-top:0;">
+          Experience across Amazon, AWS, Woodforest National Bank, and global brands including AT&amp;T, Google, Nike, and Infiniti.
+        </p>
 
-  <div class="heroImage">
-    <img src="/assets/images/shaazia.jpg" alt="Shaazia Stonehocker portrait" />
-  </div>
-</section>
+        <div>
+          <a href="/pages/portfolio.html" class="btn">View portfolio</a>
+          <a href="/assets/Shaazia-Stonehocker-Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">
+            Download resume
+          </a>
+          <a href="/index.html#contact" class="btn btn-secondary">Contact</a>
+        </div>
+      </div>
 
-<!-- ================= LOGO SCROLLER ================= -->
-<section class="logoScroller">
-  <div class="logoScrollerTrack">
-    <!-- Repeat logos twice for seamless loop -->
-    <div class="logoScrollerRow">
-      <span>Amazon</span>
-      <span>AWS</span>
-      <span>Prime Video</span>
-      <span>Alexa</span>
-      <span>Google</span>
-      <span>AT&amp;T</span>
-      <span>Nike</span>
-      <span>Infiniti</span>
-    <span>HP</span>
-    <span>Khoros</span>
-        <span>PWC</span>
-             <span>Arthur Andersen</span>
+      <div class="heroImage">
+        <img src="/assets/images/shaazia.jpg" alt="Shaazia Stonehocker portrait" />
+      </div>
+    </section>
 
-      <!-- duplicate -->
-      <span>Amazon</span>
-      <span>AWS</span>
-      <span>Prime Video</span>
-      <span>Alexa</span>
-      <span>Google</span>
-      <span>AT&amp;T</span>
-      <span>Nike</span>
-      <span>Infiniti</span>
-    <span>HP</span>
-    <span>Khoros</span>
-        <span>PWC</span>
-             <span>Arthur Andersen</span>
-    </div>
-  </div>
-</section>
+    <!-- ================= LOGO SCROLLER ================= -->
+    <section class="logoScroller">
+      <div class="logoScrollerTrack">
+        <div class="logoScrollerRow">
+          <span>Amazon</span>
+          <span>AWS</span>
+          <span>Prime Video</span>
+          <span>Alexa</span>
+          <span>Google</span>
+          <span>AT&amp;T</span>
+          <span>Nike</span>
+          <span>Infiniti</span>
+          <span>HP</span>
+          <span>Khoros</span>
+          <span>PWC</span>
+          <span>Arthur Andersen</span>
+
+          <!-- duplicate for seamless loop -->
+          <span>Amazon</span>
+          <span>AWS</span>
+          <span>Prime Video</span>
+          <span>Alexa</span>
+          <span>Google</span>
+          <span>AT&amp;T</span>
+          <span>Nike</span>
+          <span>Infiniti</span>
+          <span>HP</span>
+          <span>Khoros</span>
+          <span>PWC</span>
+          <span>Arthur Andersen</span>
+        </div>
+      </div>
+    </section>
 
     <!-- ================= WHAT I WORK ON ================= -->
-<section>
-  <h2>My focus</h2>
-  <p class="section-subtitle" style="text-align:center;">
-   In a fast-paced, ambiguous environment, rapid iteration is essential. I rely on fast prototyping and <strong>"vibe coding" </strong>to test assumptions early, applying the Amazon mindset that most decisions are two-way doors—meant to be explored, learned from, and refined.
-  </p>
-
-  <div class="cards-grid">
-
-<div class="card">
-  <h3>AI conversational and multi-modal experiences</h3>
-
-  <p>
-    AI conversational experiences that feel less like automation and more like thoughtful, dependable guidance. Multimmodal experiences - streamlining the hand-off betewen devices, touch, voice, and video.
-  </p>
-
-  <div class="cardLinks">
-    <span class="cardLinksTitle">Work examples</span>
-    <a href="/pages/projects/amazon-customer-service.html" class="cardCta">Amazon Multimodal, AI chatbot →</a> 
-    <a href="/pages/projects/amazon-codecatalyst.html" class="cardCta">AWS Amazon Q AI chatbot →</a> 
-  </div>
-</div>
-
-
-
-
-    <a href="/pages/approach.html#what-i-work-on"
-       class="card cardLink">
-      <h3>End-to-end customer journeys</h3>
-      <p>
- End-to-end customer journeys that connect moments across time, channels, and systems into experiences that feel intentional and complete.
+    <section>
+      <h2>My focus</h2>
+      <p class="section-subtitle" style="text-align:center;">
+        In a fast-paced, ambiguous environment, rapid iteration is essential. I rely on fast prototyping and
+        <strong>"vibe coding"</strong> to test assumptions early, applying the Amazon mindset that most decisions are two-way
+        doors—meant to be explored, learned from, and refined.
       </p>
-      <span class="cardCta">Explore →</span>
-    </a>
 
-  </div>
-</section>
+      <div class="cards-grid">
 
+        <div class="card">
+          <h3>AI conversational and multimodal experiences</h3>
+          <p>
+            I design AI conversational experiences that feel less like automation and more like dependable guidance.
+            I also build multimodal patterns that streamline handoffs between touch, voice, and screen—so customers
+            can start in one place and finish confidently in another.
+          </p>
+
+          <div class="cardLinks">
+            <span class="cardLinksTitle">Work examples</span>
+            <a href="/pages/projects/amazon-customer-service.html" class="cardCta">Amazon Multimodal, AI chatbot →</a>
+            <a href="/pages/projects/amazon-codecatalyst.html" class="cardCta">AWS Amazon Q AI chatbot →</a>
+          </div>
+        </div>
+
+        <a href="/pages/approach.html#what-i-work-on" class="card cardLink">
+          <h3>End-to-end customer journeys</h3>
+          <p>
+            End-to-end customer journeys that connect moments across time, channels, and systems into experiences that feel
+            intentional and complete.
+          </p>
+          <span class="cardCta">Explore →</span>
+        </a>
+
+      </div>
+    </section>
 
     <!-- ================= HOW I APPROACH DESIGN ================= -->
-<section>
-  <h2>My super powers</h2>
-  <p class="section-subtitle" style="text-align:center;">
-    I’m most effective in ambiguous problem spaces—shaping direction early and staying hands-on.
-  </p>
+    <section>
+      <h2>My super powers</h2>
+      <p class="section-subtitle" style="text-align:center;">
+        I’m most effective in ambiguous problem spaces—shaping direction early and staying hands-on.
+      </p>
 
-  <div class="steps">
+      <div class="steps">
 
-    <a href="/pages/projects/customer-obsession.html"
-       class="step stepLink">
-      <strong>Customer obsession</strong>
-      Working backwards from the customer problem to align on the right solution.
-      <span class="cardCta">See approach →</span>
-    </a>
+        <a href="/pages/projects/customer-obsession.html" class="step stepLink">
+          <strong>Customer obsession</strong>
+          Working backwards from the customer problem to align on the right solution.
+          <span class="cardCta">See approach →</span>
+        </a>
 
-    <a href="/pages/approach.html#how-i-design"
-       class="step stepLink">
-      <strong>Invent and simplify</strong>
-     Think big and innovate, then simplify to land on the best customer experince.
-      <span class="cardCta">See approach →</span>
-    </a>
+        <a href="/pages/approach.html#how-i-design" class="step stepLink">
+          <strong>Invent and simplify</strong>
+          Think big and innovate, then simplify to land on the best customer experience.
+          <span class="cardCta">See approach →</span>
+        </a>
 
-    <a href="/pages/approach.html#how-i-design"
-       class="step stepLink">
-      <strong>Dive deep</strong>
-     The devil is in the details when it comes to good usable design.
-      <span class="cardCta">See approach →</span>
-    </a>
+        <a href="/pages/approach.html#how-i-design" class="step stepLink">
+          <strong>Dive deep</strong>
+          The devil is in the details when it comes to good usable design.
+          <span class="cardCta">See approach →</span>
+        </a>
 
-  </div>
-</section>
+      </div>
+    </section>
 
-
-    <!-- ================= SELECTED WORK (uses your Project Grid styles) ================= -->
+    <!-- ================= SELECTED WORK ================= -->
     <section id="project-links">
       <div class="sectionHead">
-        <h2 style="text-align:left; margin-bottom:0;">Select projects</h2>
+        <h2 style="text-align:left; margin-bottom:0;">Selected projects</h2>
         <a href="/pages/portfolio.html" style="text-decoration:none; color:var(--primary-color);">View all →</a>
       </div>
 
@@ -173,24 +214,28 @@ Download resume</a>
 
       <div class="projectGrid">
 
-      
-          </div>
-        </a>
         <!-- Card 1 -->
         <a class="projectCard reveal" href="/pages/projects/Pvliveeventshelpbub.html">
-          <div class="thumbPh">Amazon</div>
+          <div class="thumbPh">Prime Video</div>
+
+          <!-- Optional thumbnail (replace thumbPh above with this block when you have an image)
+          <div class="thumb">
+            <img src="/assets/images/thumbs/prime-video-help-hub.jpg" alt="Prime Video Live Events Help Hub thumbnail" />
+          </div>
+          -->
+
           <div class="projectBody">
             <div class="projectTitleRow">
               <div class="projectTitle">Prime Video Live Events Help Hub</div>
               <div class="chev">→</div>
             </div>
             <p style="margin-top:10px; color:#555; line-height:1.6;">
-             Help-first redesign that clarifies access, reduces choice overload, and guides customers to “start watching” faster
+              Help-first redesign that clarifies access, reduces choice overload, and guides customers to “start watching” faster.
             </p>
             <div class="tagRow">
-              <span class="tag">AI UX</span>
-              <span class="tag">Chat/Voice</span>
-              <span class="tag">Devices</span>
+              <span class="tag">Support UX</span>
+              <span class="tag">Information architecture</span>
+              <span class="tag">High-stakes flows</span>
             </div>
           </div>
         </a>
@@ -204,31 +249,31 @@ Download resume</a>
               <div class="chev">→</div>
             </div>
             <p style="margin-top:10px; color:#555; line-height:1.6;">
-              AI-driven support across chat, voice, and devices—focused on trust, clarity, and scalable interaction patterns.
+              AI-driven support across chat, voice, and devices—designed for trust, clarity, and scalable interaction patterns.
             </p>
             <div class="tagRow">
-              <span class="tag">AI UX</span>
-              <span class="tag">Chat/Voice</span>
-              <span class="tag">Devices</span>
+              <span class="tag">AI support</span>
+              <span class="tag">Chat + voice</span>
+              <span class="tag">Multimodal</span>
             </div>
           </div>
         </a>
 
-        <!-- Card 3 --> 
-        <a class="projectCard reveal" href="/pages/projects/mobile-banking-app.html">
-          <div class="thumbPh">Mobile</div>
+        <!-- Card 3 -->
+        <a class="projectCard reveal" href="/pages/projects/amazon-codecatalyst.html">
+          <div class="thumbPh">AWS</div>
           <div class="projectBody">
             <div class="projectTitleRow">
-              <div class="projectTitle">Mobile Banking App</div>
+              <div class="projectTitle">Amazon CodeCatalyst + Amazon Q</div>
               <div class="chev">→</div>
             </div>
             <p style="margin-top:10px; color:#555; line-height:1.6;">
-              Simplified high-frequency banking tasks with trust-first patterns and scalable specs used across teams.
+              Integrated AI assistance into developer workflows with transparent status, reviewable outputs, and human control.
             </p>
             <div class="tagRow">
-              <span class="tag">Mobile UX</span>
-              <span class="tag">Workflows</span>
-              <span class="tag">Finance</span>
+              <span class="tag">AI UX</span>
+              <span class="tag">Developer experience</span>
+              <span class="tag">Enterprise workflows</span>
             </div>
           </div>
         </a>
@@ -278,7 +323,7 @@ Download resume</a>
     <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
   </footer>
 
-  <!-- Optional: reveal-on-scroll (only if you already use it elsewhere; safe to include) -->
+  <!-- Reveal-on-scroll -->
   <script>
     (function () {
       const items = document.querySelectorAll(".reveal");
@@ -299,4 +344,3 @@ Download resume</a>
   </script>
 </body>
 </html>
-
