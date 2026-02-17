@@ -709,17 +709,6 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   background: #fff;
 }
 
-.featuredCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.12);
-}
-
-.featuredCard img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
 
 .featuredMeta {
   padding: 12px 14px;
@@ -734,4 +723,74 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 .featuredMeta span {
   font-size: .85rem;
   opacity: .75;
+}
+/* ===== FEATURED WORK OVERLAY ===== */
+
+.featuredWork {
+  margin-top: 2rem;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.featuredCard {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background: #000;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.featuredCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+/* Overlay */
+.featuredOverlay {
+  position: absolute;
+  inset: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.25),
+    rgba(0,0,0,0)
+  );
+  transition: background .35s ease;
+}
+
+/* Text */
+.featuredOverlay strong {
+  font-size: .95rem;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.featuredOverlay span {
+  font-size: .85rem;
+  opacity: .85;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* Hover state */
+.featuredCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+
+.featuredCard:hover img {
+  transform: scale(1.04)
 }

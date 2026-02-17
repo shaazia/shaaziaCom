@@ -24,10 +24,11 @@ header{
   background: rgba(255,255,255,0.72);
 }
 
-/* Hero: even calmer, more editorial */
+/* --- Hero refinements: remove outline + reduce padding --- */
 .hero{
-  background: linear-gradient(180deg, rgba(11,12,15,0.018), rgba(11,12,15,0.00));
-  border-color: var(--border);
+  border: none !important;              /* removes the gray line */
+  background: transparent !important;   /* keep it clean */
+  padding: 44px 48px !important;        /* less top/bottom padding */
 }
 
 /* Cards/steps: slightly less contrast, more “paper” */
