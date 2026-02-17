@@ -304,7 +304,7 @@ li{ margin-bottom: 0.6rem; }
 
 .cardCta{
   display:inline-block;
-  margin-top:12px;
+
   font-size: 0.95rem;
   color: var(--primary-color);
 }
