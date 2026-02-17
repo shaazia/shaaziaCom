@@ -314,6 +314,23 @@ li{ margin-bottom: 0.6rem; }
   outline: 3px solid rgba(102,126,234,0.35);
   outline-offset: 4px;
 }
+.cardLinks{
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.cardCta{
+  text-decoration: none;    /* remove underline */
+  font-weight: 500;
+  color: var(--primary-color);
+  width: fit-content;
+}
+
+.cardCta:hover{
+  opacity: 0.85;            /* subtle hover, no underline */
+}
 
 /* ==========================================
    Process Steps
