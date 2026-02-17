@@ -960,25 +960,23 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 
 /* Card base */
 .workCard{
-  border-radius: var(--work-frame-r);
+  border-radius: 22px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
 
-  /* Keep the “real” frame consistent (gray) */
-  border: var(--work-frame-w) solid var(--work-frame-gray);
+  border: 4px solid var(--work-frame-gray);
   background: var(--work-frame-gray);
 
-  /* This avoids border wobble during transforms */
   transform: translateZ(0);
   will-change: transform;
 
   transition: transform .28s ease, box-shadow .28s ease;
 }
+
 .workMedia{
-  padding: 10px;
+  padding: 10px; /* fixed — do NOT animate this */
   background: var(--work-frame-gray);
-  transition: background .28s ease;
 }
 
 .workMedia img{
@@ -988,8 +986,13 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   display:block;
 
   border-radius: 14px;
+
+  /* zoom setup */
+  transform: scale(1);
   transition: transform .6s ease;
+  will-change: transform;
 }
+
 
 .workFrame{
   display:flex;
@@ -1021,14 +1024,14 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   white-space: nowrap;
 }
 
-/* Hover: draw the black frame as an INSET ring (same thickness) */
+
+/* Hover: draw black frame as inset ring (no size change) */
 .workCard:hover{
   transform: translateY(-6px);
   box-shadow:
     0 18px 44px rgba(0,0,0,.18),
-    inset 0 0 0 var(--work-frame-w) #111;  /* <-- the black frame */
+    inset 0 0 0 4px #111;
 }
-
 
 .workCard:hover .workFrame{
   background: #111;
@@ -1036,8 +1039,9 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 }
 
 .workCard:hover .workMedia img{
-  transform: scale(1.03);
+  transform: scale(1.06); /* optical zoom only */
 }
+
 .workCard:hover .workMedia{
   background: #111; /* makes the border feel uniform */
 }
