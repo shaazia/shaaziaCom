@@ -1,9 +1,9 @@
 /* ==========================================
-   site.css (Merged)
+   site.css (Merged + cleaned)
    - Baseline refreshed + Kansō-esque polish
    - Left-aligned editorial layout
    - Purple accent halo behind portrait
-   - Keeps your existing class names
+   - Cleaned duplicates for Featured Work + Selected Work
    ========================================== */
 
 :root{
@@ -21,7 +21,7 @@
   --light-bg: #ffffff;
   --white: #ffffff;
 
-  /* Kansō polish (merged) */
+  /* Kansō polish */
   --border: rgba(11,12,15,0.09);
   --border-strong: rgba(11,12,15,0.14);
   --shadow-sm: 0 10px 30px rgba(11,12,15,0.06);
@@ -29,8 +29,13 @@
 
   /* Geometry + rhythm */
   --border-radius: 16px;
-  --container: 1100px; /* merged Kansō container */
+  --container: 1100px;
   --transition: 180ms cubic-bezier(.2,.7,.2,1);
+
+  /* Selected Work (Kanso-style frame) */
+  --work-frame-gray: #efefef;
+  --work-frame-w: 4px;
+  --work-frame-r: 22px;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -104,7 +109,6 @@ nav{
   padding: 0 2rem;
 }
 
-/* Kansō rhythm */
 main.container > section{
   padding: 57px 0;
 }
@@ -139,7 +143,7 @@ h2{
   color: var(--text-muted);
   margin-bottom: 0;
   max-width: 70ch;
-  text-align: left !important; /* overrides inline style="text-align:center" */
+  text-align: left !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -153,11 +157,9 @@ li{ margin-bottom: 0.6rem; }
    Hero (split-ready) + alignment
    ========================================== */
 
-/* Refined hero: no border line, tighter padding */
 .hero{
   border: none !important;
   background: transparent !important;
-
   text-align: left !important;
 }
 
@@ -174,7 +176,6 @@ li{ margin-bottom: 0.6rem; }
   margin-bottom: 18px;
 }
 
-/* Split layout */
 .hero.heroSplit{
   display:grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -185,7 +186,6 @@ li{ margin-bottom: 0.6rem; }
 .heroText{ min-width:0; }
 .heroImage{ min-width:0; display:flex; justify-content:flex-end; }
 
-/* Buttons wrapper in hero: align consistently */
 .hero > div{
   display:flex;
   gap: 12px;
@@ -194,18 +194,15 @@ li{ margin-bottom: 0.6rem; }
   flex-wrap: wrap;
 }
 
-/* Image */
 .heroImage img{
   width: 100%;
   max-width: 420px;
   height: auto;
-
   display:block;
   position: relative;
   z-index: 1;
 }
 
-/* Purple accent halo behind portrait */
 .heroImage{
   position: relative;
 }
@@ -293,7 +290,6 @@ li{ margin-bottom: 0.6rem; }
   border-color: var(--border-strong);
 }
 
-/* Make cards & steps behave like links */
 .cardLink,
 .stepLink{
   display:block;
@@ -304,7 +300,6 @@ li{ margin-bottom: 0.6rem; }
 
 .cardCta{
   display:inline-block;
-
   font-size: 0.95rem;
   color: var(--primary-color);
 }
@@ -314,6 +309,7 @@ li{ margin-bottom: 0.6rem; }
   outline: 3px solid rgba(102,126,234,0.35);
   outline-offset: 4px;
 }
+
 .cardLinks{
   display: flex;
   flex-direction: column;
@@ -337,9 +333,7 @@ li{ margin-bottom: 0.6rem; }
   width: fit-content;
 }
 
-.cardCta:hover{
-  opacity: 0.85;
-}
+.cardCta:hover{ opacity: 0.85; }
 
 /* ==========================================
    Process Steps
@@ -375,7 +369,299 @@ li{ margin-bottom: 0.6rem; }
 }
 
 /* ==========================================
-   Selected Work (Project Grid)
+   FEATURED WORK (overlay cards) — single clean block
+   ========================================== */
+
+.featuredWork { margin-top: 2rem; }
+
+.featuredGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.featuredCard{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.featuredCard img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.featuredOverlay{
+  position: absolute;
+  inset: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.25), rgba(0,0,0,0));
+  transition: background .35s ease;
+}
+
+.featuredOverlay strong{
+  font-size: .95rem;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.featuredOverlay span{
+  font-size: .85rem;
+  opacity: .85;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.featuredCard:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.15);
+}
+
+.featuredCard:hover img{ transform: scale(1.04); }
+
+.featuredCard:hover .featuredOverlay{
+  background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.40), rgba(0,0,0,.10));
+}
+
+.featuredCard:hover .featuredOverlay span{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   LOGO SCROLLER
+   ========================================== */
+
+.logoScroller{
+  margin-top: 28px;
+  padding: 20px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.logoScrollerTrack{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoScrollerRow{
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: logoScroll 28s linear infinite;
+}
+
+.logoScrollerRow span{
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.logoScroller:hover .logoScrollerRow{ animation-play-state: paused; }
+
+@keyframes logoScroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+@media (max-width: 768px){
+  .logoScrollerRow{ gap: 32px; }
+}
+
+/* ==========================================
+   SELECTED WORK (Kanso-inspired frame cards)
+   Requires markup:
+   .workGrid > a.workCard
+     .workMedia > .workMediaInner > img
+     .workFrame (title/desc + year)
+   ========================================== */
+
+.workSection { margin-top: 2.2rem; }
+
+.workHead{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.workKicker{
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.workCount{
+  opacity: .55;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.workSub{
+  margin: 8px 0 0;
+  opacity: .75;
+  max-width: 56ch;
+}
+
+.workAll{
+  text-decoration:none;
+  color: inherit;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  white-space: nowrap;
+}
+
+.workAll:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,.18);
+  background: rgba(0,0,0,.03);
+}
+
+.workAllArrow{ transition: transform .2s ease; }
+.workAll:hover .workAllArrow{ transform: translateX(3px); }
+
+/* 2-up grid */
+.workGrid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 620px){
+  .workHead{ flex-direction: column; align-items:flex-start; }
+  .workGrid{ grid-template-columns: 1fr; }
+}
+
+/* Card */
+.workCard{
+  display:block;
+  text-decoration:none;
+  color: inherit;
+
+  border-radius: var(--work-frame-r);
+  overflow: hidden;
+
+  /* ONE frame only (gray -> black on hover) */
+  border: var(--work-frame-w) solid var(--work-frame-gray);
+  background: var(--work-frame-gray);
+
+  transform: translateZ(0);
+  will-change: transform;
+
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.workMedia{
+  padding: 10px;
+  background: var(--work-frame-gray);
+}
+
+/* zoom mask */
+.workMediaInner{
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.workMediaInner img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform .6s ease;
+  will-change: transform;
+}
+
+/* caption */
+.workFrame{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 12px;
+
+  padding: 14px 16px;
+  background: var(--work-frame-gray);
+
+  transition: background .25s ease, color .25s ease;
+}
+
+.workTitle{
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.workDesc{
+  font-size: .9rem;
+  opacity: .75;
+  line-height: 1.35;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.workYear{
+  font-size: .9rem;
+  opacity: .9;
+  white-space: nowrap;
+}
+
+/* hover */
+.workCard:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.18);
+  border-color: #111; /* SAME border, new color */
+}
+
+.workCard:hover .workFrame{
+  background: #111;
+  color: #fff;
+}
+
+.workCard:hover .workMediaInner img{
+  transform: scale(1.06);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .workCard,
+  .workMediaInner img,
+  .workFrame,
+  .workAll,
+  .workAllArrow{
+    transition: none !important;
+  }
+}
+
+/* ==========================================
+   Selected Work (Project Grid) — your existing project cards
+   (unchanged)
    ========================================== */
 
 #project-links{ margin-top: 0; }
@@ -400,6 +686,7 @@ li{ margin-bottom: 0.6rem; }
   gap: 16px;
   margin-top: 18px;
 }
+
 .projectCard{
   display:flex;
   flex-direction:column;
@@ -503,11 +790,7 @@ li{ margin-bottom: 0.6rem; }
   .chev{ transition:none; }
 }
 
-/* ==========================================
-   Kansō Work Index v2 (rows on desktop)
-   Uses your existing markup + thumbs
-   ========================================== */
-
+/* Kansō Work Index rows on desktop (your existing behavior) */
 @media (min-width: 980px){
   .projectGrid{
     grid-template-columns: 1fr;
@@ -635,404 +918,66 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   .steps{ grid-template-columns: 1fr; }
 }
 /* ==========================================
-   Logo Scroller (Kansō-style, subtle)
+   FORCE FINAL Selected Work styles (put LAST)
    ========================================== */
-
-.logoScroller{
-  margin-top: 28px;
-  padding: 20px 0;
-  overflow: hidden;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.logoScrollerTrack{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.logoScrollerRow{
-  display: flex;
-  gap: 48px;
-  width: max-content;
-  animation: logoScroll 28s linear infinite;
-}
-
-.logoScrollerRow span{
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  white-space: nowrap;
-}
-
-/* Pause on hover (feels premium) */
-.logoScroller:hover .logoScrollerRow{
-  animation-play-state: paused;
-}
-
-/* Keyframes */
-@keyframes logoScroll{
-  from{
-    transform: translateX(0);
-  }
-  to{
-    transform: translateX(-50%);
-  }
-}
-
-/* Mobile tuning */
-@media (max-width: 768px){
-  .logoScrollerRow{
-    gap: 32px;
-  }
-}
-.featuredWork {
-  margin-top: 2rem;
-}
-
-.featuredGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.featuredCard {
-  text-decoration: none;
-  color: inherit;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,.08);
-  transition: transform .2s ease, box-shadow .2s ease;
-  background: #fff;
-}
-
-
-.featuredMeta {
-  padding: 12px 14px;
-}
-
-.featuredMeta strong {
-  display: block;
-  font-size: .95rem;
-  margin-bottom: 4px;
-}
-
-.featuredMeta span {
-  font-size: .85rem;
-  opacity: .75;
-}
-/* ===== FEATURED WORK OVERLAY ===== */
-
-.featuredWork {
-  margin-top: 2rem;
-}
-
-.featuredGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.featuredCard {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  background: transparent; /* removes black edge */
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-
-.featuredCard img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  transition: transform .4s ease;
-}
-
-/* Overlay */
-.featuredOverlay {
-  position: absolute;
-  inset: 0;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.75),
-    rgba(0,0,0,.25),
-    rgba(0,0,0,0)
-  );
-  transition: background .35s ease;
-}
-
-/* Text */
-.featuredOverlay strong {
-  font-size: .95rem;
-  line-height: 1.3;
-  margin-bottom: 4px;
-}
-
-.featuredOverlay span {
-  font-size: .85rem;
-  opacity: .85;
-  transform: translateY(6px);
-  transition: opacity .25s ease, transform .25s ease;
-}
-
-/* Hover state */
-.featuredCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.15);
-}
-
-
-.featuredCard:hover img {
-  transform: scale(1.04)
-}
-/* ===== Kanso-inspired Selected Work ===== */
-
-/* =========================================================
-   KANSO-INSPIRED "SELECTED WORK" SECTION (COMPLETE CSS)
-   Targets:
-   .workSection, .workHead, .workKicker, .workCount, .workSub,
-   .workAll, .workAllArrow, .workGrid,
-   .workCard, .workMedia img, .workOverlay,
-   .workYear, .workTitle, .workDesc
-   ========================================================= */
-
-/* ---------- Section container ---------- */
-.workSection { margin-top: 2.2rem; }
-
-/* ---------- Header row (title + view all link) ---------- */
-.workHead{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.workKicker{
-  font-size: .95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.workCount{
-  opacity: .55;
-  font-weight: 600;
-  margin-left: 6px;
-}
-
-.workSub{
-  margin: 8px 0 0;
-  opacity: .75;
-  max-width: 56ch;
-}
-
-/* ---------- "View all projects" link pill ---------- */
-.workAll{
-  text-decoration:none;
-  color: inherit;
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.10);
-  transition: transform .2s ease, border-color .2s ease, background .2s ease;
-  white-space: nowrap;
-}
-
-.workAll:hover{
-  transform: translateY(-2px);
-  border-color: rgba(0,0,0,.18);
-  background: rgba(0,0,0,.03);
-}
-
-.workAllArrow{ transition: transform .2s ease; }
-.workAll:hover .workAllArrow{ transform: translateX(3px); }
-
-/* ---------- Grid layout ---------- */
-.workGrid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-@media (max-width: 980px){
-  .workGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 620px){
-  .workHead{ flex-direction: column; align-items:flex-start; }
-  .workGrid{ grid-template-columns: 1fr; }
-}
-
-/* =========================================================
-   Card styling (Kanso-like frame + hover)
-   ========================================================= */
-/* =========================================================
-   SELECTED WORK (Kanso-inspired frame + hover)
-   Description + year live in the frame (caption bar)
-   ========================================================= */
-/* =========================================================
-   SELECTED WORK (Kanso-inspired frame + hover)
-   Description + year live in the frame (caption bar)
-   Image does NOT change size on hover (only zooms inside)
-   ========================================================= */
 
 :root{
   --work-frame-gray: #efefef;
-  --work-frame-w: 4px;      /* frame thickness */
-  --work-frame-r: 22px;     /* outer radius */
+  --work-frame-w: 4px;
+  --work-frame-r: 22px;
 }
 
-/* ---------- Section container ---------- */
-.workSection { margin-top: 2.2rem; }
-
-/* ---------- Header row (title + view all link) ---------- */
-.workHead{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.workKicker{
-  font-size: .95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.workCount{
-  opacity: .55;
-  font-weight: 600;
-  margin-left: 6px;
-}
-
-.workSub{
-  margin: 8px 0 0;
-  opacity: .75;
-  max-width: 56ch;
-}
-
-/* ---------- "View all projects" link pill ---------- */
-.workAll{
-  text-decoration:none;
-  color: inherit;
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.10);
-  transition: transform .2s ease, border-color .2s ease, background .2s ease;
-  white-space: nowrap;
-}
-
-.workAll:hover{
-  transform: translateY(-2px);
-  border-color: rgba(0,0,0,.18);
-  background: rgba(0,0,0,.03);
-}
-
-.workAllArrow{ transition: transform .2s ease; }
-.workAll:hover .workAllArrow{ transform: translateX(3px); }
-
-/* ---------- Grid layout (2-up) ---------- */
 .workGrid{
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
 
-/* Keep 2-up until mobile */
 @media (max-width: 620px){
-  .workHead{ flex-direction: column; align-items:flex-start; }
   .workGrid{ grid-template-columns: 1fr; }
 }
 
-/* =======================
-   Card + frame styling
-   ======================= */
-/* =========================================================
-   SELECTED WORK — FINAL KANSO-STYLE CARD
-   ========================================================= */
-
-:root{
-  --work-frame-gray: #efefef;
-  --work-frame-w: 4px;      /* frame thickness */
-  --work-frame-r: 22px;     /* outer radius */
-}
-
-/* ---------- Card container ---------- */
+/* Card: ONE border only (gray -> black) */
 .workCard{
-  position: relative;
-  display: block;
-  text-decoration: none;
+  display:block;
+  text-decoration:none;
   color: inherit;
 
   border-radius: var(--work-frame-r);
-  overflow: hidden;
+  overflow:hidden;
 
-  /* Base (gray) frame */
   border: var(--work-frame-w) solid var(--work-frame-gray);
   background: var(--work-frame-gray);
 
   transform: translateZ(0);
   will-change: transform;
 
-  transition: transform .28s ease, box-shadow .28s ease;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 
-/* ---------- Hover frame (black, SAME thickness) ---------- */
-/* Use outline so it always reads the same weight */
-.workCard::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--work-frame-r);
-  pointer-events: none;
-
-  outline: 0 solid transparent;
-  outline-offset: 0;
-
-  transition: outline-color .2s ease;
+.workCard:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.18);
+  border-color: #111; /* black frame on hover */
 }
 
-.workCard:hover::before{
-  outline: var(--work-frame-w) solid #111;
-  outline-offset: 0; /* try 1px if you want a tiny separation */
-}
-
-/* ---------- Image frame ---------- */
+/* Image frame + clip mask */
 .workMedia{
-  padding: 10px; /* fixed — never animates */
+  padding: 10px;
   background: var(--work-frame-gray);
 }
 
-/* Clipping mask for zoom */
 .workMediaInner{
   border-radius: 14px;
-  overflow: hidden;
+  overflow:hidden;
   background: #fff;
 }
 
-/* Image zooms INSIDE the mask only */
 .workMediaInner img{
-  width: 100%;
-  height: 320px;
+  width:100%;
+  height:320px;
   object-fit: cover;
-  display: block;
+  display:block;
 
   transform: scale(1);
   transform-origin: center;
@@ -1041,14 +986,14 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 }
 
 .workCard:hover .workMediaInner img{
-  transform: scale(1.06);
+  transform: scale(1.06); /* zoom only */
 }
 
-/* ---------- Caption / frame bar ---------- */
+/* Caption bar */
 .workFrame{
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
   gap: 12px;
 
   padding: 14px 16px;
@@ -1056,6 +1001,8 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 
   transition: background .25s ease, color .25s ease;
 }
+
+.workText{ min-width: 0; }
 
 .workTitle{
   font-weight: 600;
@@ -1080,22 +1027,16 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   white-space: nowrap;
 }
 
-/* ---------- Hover behavior ---------- */
-.workCard:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 18px 44px rgba(0,0,0,.18);
-}
-
 .workCard:hover .workFrame{
-  background: #111;
-  color: #fff;
+  background:#111;
+  color:#fff;
 }
 
-/* ---------- Accessibility ---------- */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .workCard,
   .workMediaInner img,
   .workFrame{
-    transition: none !important;
+    transition:none !important;
   }
 }
