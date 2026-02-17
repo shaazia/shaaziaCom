@@ -373,3 +373,25 @@ footer a:hover{ color: var(--text-color); }
 @media (max-width: 899px){
   /* Keep your existing card grid behavior on smaller screens */
 }
+.heroSplit{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.heroImage img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  filter: grayscale(100%) contrast(0.95);
+}
+
+@media (max-width: 900px){
+  .heroSplit{
+    grid-template-columns: 1fr;
+  }
+  .heroImage{
+    order: -1; /* image above text on mobile */
+  }
+}
