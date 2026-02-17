@@ -984,7 +984,7 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
 
 /* Image area (fixed padding, never changes on hover) */
 .workMedia{
-  padding: 10px;
+  padding: 10px;                 /* the gray frame around the image */
   background: var(--work-frame-gray);
 }
 
@@ -1070,4 +1070,24 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   .workAllArrow{
     transition: none !important;
   }
+}
+.workMediaInner{
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;              /* prevents gray bleed under transparent PNGs */
+}
+/* Image now zooms inside a fixed mask */
+.workMediaInner img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform .6s ease;
+  will-change: transform;
+}
+.workCard:hover .workMediaInner img{
+  transform: scale(1.06);
 }
