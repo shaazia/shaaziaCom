@@ -400,7 +400,6 @@ li{ margin-bottom: 0.6rem; }
   gap: 16px;
   margin-top: 18px;
 }
-
 .projectCard{
   display:flex;
   flex-direction:column;
@@ -410,6 +409,7 @@ li{ margin-bottom: 0.6rem; }
   background: rgba(11,12,15,0.018);
   box-shadow: none;
   overflow:hidden;
+  margin-top: 10px;
   transition: transform var(--transition), background var(--transition), border-color var(--transition);
 }
 
