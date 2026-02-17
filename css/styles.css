@@ -1097,10 +1097,15 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   position: absolute;
   inset: 0;
   border-radius: var(--work-frame-r);
-  border: var(--work-frame-w) solid transparent;
   pointer-events: none;
-  transition: border-color .25s ease;
+
+  /* draw nothing by default */
+  outline: 0 solid transparent;
+  outline-offset: 0;
+
+  transition: outline-color .2s ease;
 }
 .workCard:hover::before{
-  border-color: #111;
+  outline: var(--work-frame-w) solid #111;
+  outline-offset: 1px; /* tiny lift outside the gray frame */
 }
