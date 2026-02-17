@@ -689,3 +689,49 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
     gap: 32px;
   }
 }
+.featuredWork {
+  margin-top: 2rem;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.featuredCard {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+  background: #fff;
+}
+
+.featuredCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.featuredCard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.featuredMeta {
+  padding: 12px 14px;
+}
+
+.featuredMeta strong {
+  display: block;
+  font-size: .95rem;
+  margin-bottom: 4px;
+}
+
+.featuredMeta span {
+  font-size: .85rem;
+  opacity: .75;
+}
