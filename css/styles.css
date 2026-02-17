@@ -951,3 +951,85 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   opacity: 1;
   transform: translateY(0);
 }
+/* ===== Kanso-style frame + hover ring ===== */
+
+.workCard{
+  position: relative;
+  display:block;
+  border-radius: 22px;
+  overflow:hidden;
+  text-decoration:none;
+  color: inherit;
+  transform: translateZ(0);
+  transition: transform .28s ease, box-shadow .28s ease;
+  background: transparent;
+
+  /* frame */
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+/* subtle inner ring (looks like Framer/Kanso) */
+.workCard::after{
+  content:"";
+  position:absolute;
+  inset: 10px;               /* distance of inner frame */
+  border-radius: 16px;       /* slightly smaller than card radius */
+  border: 1px solid rgba(255,255,255,.14);
+  pointer-events:none;
+  opacity: .55;
+  transition: opacity .28s ease, border-color .28s ease;
+}
+
+/* keep your image sizing */
+.workMedia img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  display:block;
+  transform: scale(1.001);
+  transition: transform .6s ease;
+}
+
+/* overlay stays same (or keep your existing one) */
+.workOverlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding: 16px;
+  background: linear-gradient(to top,
+    rgba(0,0,0,.62),
+    rgba(0,0,0,.20),
+    rgba(0,0,0,0)
+  );
+  transition: background .35s ease;
+}
+
+/* Hover: lift + zoom + frame color change */
+.workCard:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.18);
+
+  /* outer frame changes */
+  border-color: rgba(0,0,0,.22);
+}
+
+.workCard:hover::after{
+  opacity: 1;
+
+  /* inner frame changes color (this is the “Kanso frame” moment) */
+  border-color: rgba(255,255,255,.34);
+}
+
+.workCard:hover .workMedia img{
+  transform: scale(1.05);
+}
+
+.workCard:hover .workOverlay{
+  background: linear-gradient(to top,
+    rgba(0,0,0,.74),
+    rgba(0,0,0,.32),
+    rgba(0,0,0,.08)
+  );
+}
