@@ -299,3 +299,77 @@ footer a:hover{ color: var(--text-color); }
   .container{ padding: 0 1rem; }
 }
 
+/* =========================================================
+   KANSO WORK INDEX (CSS-only)
+   Turns .projectCard into editorial rows on desktop
+   ========================================================= */
+
+@media (min-width: 900px){
+  /* Make the grid a single column list */
+  .projectGrid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Row layout */
+  .projectCard{
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 124px;
+  }
+
+  /* Thumbnail becomes a left rail */
+  .thumbPh,
+  .thumbImg{
+    width: 180px;
+    height: auto;
+    min-height: 124px;
+    border-bottom: none;
+    border-right: 1px solid var(--kanso-border);
+    flex: 0 0 180px;
+  }
+
+  /* Tighten body + align title row */
+  .projectBody{
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .projectTitleRow{
+    align-items: center;
+  }
+
+  .projectTitle{
+    font-size: 16px;
+  }
+
+  /* Clamp description so rows stay neat */
+  .projectBody p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 8px !important;
+  }
+
+  /* Keep tags on one line when possible */
+  .tagRow{
+    margin-top: 10px;
+    overflow: hidden;
+  }
+
+  /* Make arrow more “index-like” */
+  .chev{
+    font-size: 20px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 899px){
+  /* Keep your existing card grid behavior on smaller screens */
+}
