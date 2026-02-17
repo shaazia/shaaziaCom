@@ -1,862 +1,261 @@
-/* ==========================================
-    Main Stylesheet
-/* ========================================== */
+/* =========================================
+   Kanso-style Theme Layer (Overrides)
+   Load AFTER /css/styles.css
+   Keeps your class names intact
+   ========================================= */
 
-:root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --text-color: #333;
-    --light-bg: #f8f9fa;
-    --white: #ffffff;
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
-}
-
-/* ==========================================
-   Header & Navigation
-   ========================================== */
-
-header {
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-/* ==========================================
-   Main Container
-   ========================================== */
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* ==========================================
-   Hero Section
-   ========================================== */
-
-.hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
-    padding: 6rem 2rem;
-    text-align: center;
-    border-radius: var(--border-radius);
-    margin-bottom: 3rem;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-/* ==========================================
-   Buttons
-   ========================================== */
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    margin: 10px;
-    background: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1rem;
-}
-
-.btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--white);
-}
-
-.btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
-}
-
-/* ==========================================
-   Cards
-   ========================================== */
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-}
-
-.card:hover,
-.step:hover{
-  transform: none;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-
-.card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-/* ==========================================
-   Logo Scroller
-   ========================================== */
-
-.logo-scroller {
-    background: linear-gradient(to right, var(--white) 0%, var(--white) 10%, transparent 20%, transparent 80%, var(--white) 90%, var(--white) 100%);
-    padding: 4rem 0;
-    margin: 4rem 0;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-    overflow: hidden;
-    position: relative;
-}
-
-.logo-scroller::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(to right, var(--white), transparent);
-    z-index: 10;
-}
-
-.logo-scroller::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(to left, var(--white), transparent);
-    z-index: 10;
-}
-
-.scroller-container {
-    display: flex;
-    gap: 4rem;
-    animation: scrollOnce 15s ease-in-out forwards;
-    width: fit-content;
-    padding: 0 4rem;
-}
-
-.logo-item {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 160px;
-    height: 70px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.logo-item:hover {
-    filter: grayscale(20%);
-    transform: scale(1.05);
-}
-
-.logo-item svg {
-    max-width: 130px;
-    height: auto;
-}
-
-@keyframes scrollOnce {
-    0% {
-        transform: translateX(0);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    95% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-50%);
-        opacity: 0;
-    }
-}
-
-/* ==========================================
-   Sections & Typography
-   ========================================== */
-
-section {
-    margin-top: 3rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.8rem;
-}
-
-/* ==========================================
-   Process Steps
-   ========================================== */
-
-.steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.step {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-}
-
-.step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.step strong {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-/* ==========================================
-   Footer
-/* ==========================================
-   Project Collage & Links
-.article-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.article-block {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
-    background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 1.2rem;
-}
-
-.article-row {
-    display: none;
-}
-.article-row img {
-    width: 180px;
-    max-width: 100%;
-    max-height: 140px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-.article-text {
-    flex: 1;
-    min-width: 120px;
-}
-.article-text h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.7rem;
-    color: var(--primary-color);
-}
-.article-text p {
-    font-size: 1rem;
-    color: #444;
-}
-
-/* ==========================================
-   Project Overview (Problem & Solution)
-   ========================================== */
-
-.project-overview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-    border-radius: 8px;
-}
-
-.project-overview h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.project-overview p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.problem, .solution {
-    padding: 1rem 0;
-}
+/* ---------- Theme tokens ---------- */
+:root{
+  /* typography */
+  --kanso-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --kanso-text: #0b0c0f;
+  --kanso-muted: rgba(11,12,15,0.68);
 
-@media (max-width: 768px) {
-    .project-overview {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-}
+  /* surfaces */
+  --kanso-bg: #ffffff;
+  --kanso-panel: rgba(11,12,15,0.02);
+  --kanso-panel-2: rgba(11,12,15,0.035);
 
-/* ==========================================
-   Project Gallery 3-Column Layout
-   ========================================== */
+  /* borders + radius */
+  --kanso-border: rgba(11,12,15,0.10);
+  --kanso-border-strong: rgba(11,12,15,0.16);
+  --kanso-radius: 18px;
 
-.project-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
-}
+  /* spacing */
+  --kanso-container: 1120px;
+  --kanso-section-pad: 84px;
 
-.gallery-item {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* motion */
+  --kanso-ease: cubic-bezier(.2,.7,.2,1);
+  --kanso-fast: 160ms;
+  --kanso-med: 220ms;
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* ---------- Global polish ---------- */
+html { scroll-behavior: smooth; }
+body{
+  background: var(--kanso-bg);
+  color: var(--kanso-text);
+  font-family: var(--kanso-font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
+a{ text-underline-offset: 3px; }
 
-.gallery-item h3 {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    padding: 1rem 1rem 0.5rem 1rem;
-    margin: 0;
+/* container: make it feel like a template */
+.container{
+  max-width: var(--kanso-container);
 }
 
-.gallery-item p {
-    font-size: 0.9rem;
-    color: #666;
-    padding: 0 1rem 1rem 1rem;
-    margin: 0;
-    line-height: 1.4;
+/* sections: more whitespace like Kanso */
+main.container > section{
+  padding: var(--kanso-section-pad) 0;
 }
 
-@media (max-width: 1024px) {
-    .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+/* ---------- Headings + type scale ---------- */
+h1{
+  font-size: clamp(2.4rem, 4.2vw, 3.5rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
 }
 
-@media (max-width: 768px) {
-    .project-gallery {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .gallery-item img {
-        height: 150px;
-    }
+h2{
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 900px) {
-    .article-gallery {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .article-block {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .article-block img {
-        width: 100%;
-        max-width: 100%;
-        max-height: 180px;
-    }
+p{
+  line-height: 1.75;
 }
-.mobile-collage {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 120px);
-    gap: 1rem;
-    grid-auto-flow: dense;
-}
 
-.mobile-collage .collage-large {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.mobile-collage .collage-tall {
-    grid-column: 3 / span 1;
-    grid-row: 1 / span 3;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.mobile-collage .collage-wide {
-    grid-column: 4 / span 1;
-    grid-row: 1 / span 2;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.mobile-collage .collage-small {
-    grid-column: auto;
-    grid-row: auto;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.mobile-collage .collage-medium {
-    grid-column: 2 / span 1;
-    grid-row: 3 / span 1;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-  
-.collage-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
-    justify-items: center;
-    align-items: center;
+.section-subtitle,
+.hint{
+  color: var(--kanso-muted);
 }
 
-.collage-grid img {
-    width: 100%;
-    max-width: 180px;
-    aspect-ratio: 4/3;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    object-fit: cover;
-    transition: transform 0.2s;
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
+/* Optional: tighten hero rhythm */
+.hero{
+  padding-top: calc(var(--kanso-section-pad) + 10px);
+  padding-bottom: calc(var(--kanso-section-pad) - 10px);
 }
-
-.collage-grid img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.hero p{
+  color: var(--kanso-muted);
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.project-links-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-    justify-items: center;
-    align-items: stretch;
-    grid-auto-rows: 1fr;
-    padding: 0.5rem;
+/* ---------- Navigation: cleaner, template-like ---------- */
+header nav{
+  border-bottom: 1px solid var(--kanso-border);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
 }
 
-.project-links-list li {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    padding: 1.5rem;
-    text-align: center;
-    transition: box-shadow 0.2s;
+.logo{
+  letter-spacing: -0.02em;
 }
 
-.project-links-list li:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+/* nav links: understated */
+.nav-links a{
+  color: rgba(11,12,15,0.78);
 }
-
-.project-links-list a {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
+.nav-links a:hover{
+  color: var(--kanso-text);
 }
 
-.project-links-list a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
+/* ---------- Cards + Steps: remove “app UI” feel, go editorial ---------- */
+.card,
+.step,
+.projectCard{
+  background: var(--kanso-panel);
+  border: 1px solid var(--kanso-border);
+  border-radius: var(--kanso-radius);
+  box-shadow: none !important; /* in case existing CSS adds shadows */
 }
-/* ========================================== */
 
-footer {
-    background: var(--text-color);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+.card h3,
+.step strong,
+.projectTitle{
+  letter-spacing: -0.01em;
 }
 
-footer a {
-    color: var(--primary-color);
-    text-decoration: none;
+/* Body copy on cards */
+.card p,
+.step p,
+.projectBody p{
+  color: var(--kanso-muted);
 }
 
-footer a:hover {
-    text-decoration: underline;
+/* Hover: subtle lift + border emphasis */
+.cardLink,
+.stepLink,
+.projectCard{
+  transition:
+    transform var(--kanso-med) var(--kanso-ease),
+    background var(--kanso-med) var(--kanso-ease),
+    border-color var(--kanso-med) var(--kanso-ease);
 }
 
-/* ==========================================
-@media (max-width: 900px) {
-    .collage-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 0.7rem;
-    }
-    .collage-grid img {
-        max-width: 120px;
-    }
+.cardLink:hover,
+.stepLink:hover,
+.projectCard:hover{
+  transform: translateY(-2px);
+  background: var(--kanso-panel-2);
+  border-color: var(--kanso-border-strong);
 }
-/* ========================================== */
-
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
 
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
+/* Make “→” CTA feel consistent */
+.cardCta,
+.chev{
+  color: rgba(11,12,15,0.75);
 }
-/* Project Gallery with thumbnails + tags */
-
-#project-links { margin-top: 96px; }
 
-#project-links .sectionHead{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:16px;
-  margin-bottom:18px;
+/* ---------- Grids: more template spacing ---------- */
+.cards-grid{
+  gap: 18px;
 }
 
-#project-links .hint{
-  margin-top:10px;
-  font-size:14px;
-  color:#777;
+.steps{
+  gap: 14px;
 }
 
 .projectGrid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
-/* Card now has a thumbnail area */
-.projectCard{
-  display:flex;
-  flex-direction:column;
-  text-decoration:none;
-  border:1px solid var(--border, #e9e9e9);
-  border-radius: 18px;
-  background:#fff;
-  box-shadow: 0 10px 22px rgba(0,0,0,.04);
-  overflow:hidden;
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-
-.projectCard:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 16px 34px rgba(0,0,0,.08);
-  border-color:#dedede;
-}
-
-/* Thumbnail placeholder */
-.thumbPh{
-  height: 150px;
-  background:
-    radial-gradient(400px 180px at 20% 20%, rgba(0,0,0,.06), transparent 55%),
-    radial-gradient(400px 180px at 80% 40%, rgba(0,0,0,.05), transparent 55%),
-    linear-gradient(180deg, #f7f7f7, #fbfbfb);
-  border-bottom:1px solid var(--border, #e9e9e9);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#8a8a8a;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+/* If your cards/steps have tight padding already, this keeps it airy */
+.card,
+.step{
+  padding: 18px 18px;
 }
 
 .projectBody{
-  padding: 16px 16px 18px;
+  padding: 18px 18px;
 }
 
-.projectTitleRow{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.projectTitle{
-  color:#111;
-  font-weight:650;
-  letter-spacing:-.01em;
-  font-size:16px;
-  line-height:1.25;
-}
-
-.chev{
-  color:#9a9a9a;
-  font-size:18px;
-  line-height:1;
-  margin-top: 2px;
-  transition: transform .22s ease, color .22s ease;
-}
-
-.projectCard:hover .chev{
-  transform: translateX(2px);
-  color:#111;
-}
-
-/* Tags */
+/* ---------- Tags: pill-style, minimal ---------- */
 .tagRow{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top: 12px;
+  gap: 8px;
 }
 
 .tag{
-  display:inline-block;
-  padding: 6px 10px;
+  border: 1px solid var(--kanso-border);
+  background: rgba(255,255,255,0.35);
   border-radius: 999px;
-  border: 1px solid var(--border, #e9e9e9);
-  background: #fff;
-  color:#555;
-  font-size:12px;
+  padding: 6px 10px;
+  color: rgba(11,12,15,0.70);
 }
 
-/* Optional: scroll-in animation if you already use .reveal */
-.projectCard.reveal{ opacity:0; transform: translateY(10px); }
-.projectCard.reveal.is-visible{
-  opacity:1; transform: translateY(0);
-  transition: opacity .55s ease, transform .55s ease;
+/* ---------- Buttons: modern, Framer-ish ---------- */
+.btn{
+  border-radius: 999px;
+  border: 1px solid var(--kanso-border-strong);
+  background: var(--kanso-text);
+  color: #fff;
+  transition:
+    transform var(--kanso-fast) var(--kanso-ease),
+    filter var(--kanso-fast) var(--kanso-ease);
 }
 
-@media (prefers-reduced-motion: reduce){
-  .projectCard{ transition:none; }
-  .projectCard:hover{ transform:none; }
-  .chev{ transition:none; }
-}
-.thumbImg{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  display:block;
-  border-bottom:1px solid var(--border, #e9e9e9);
-}
-#project-links h2 { text-align: left; }
-
-/* Make cards & steps behave like links */
-.cardLink,
-.stepLink{
-  display:block;
-  text-decoration:none;
-  color: inherit;
-  position: relative;
+.btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
 }
 
-/* Subtle CTA inside cards */
-.cardCta{
-  display:inline-block;
-  margin-top:12px;
-  font-size:0.9rem;
-  color: var(--primary-color);
+/* secondary button */
+.btn.btn-secondary{
+  background: transparent;
+  color: var(--kanso-text);
+  border: 1px solid var(--kanso-border);
 }
 
-/* Accessibility + clarity */
-.cardLink:focus-visible,
-.stepLink:focus-visible{
-  outline: 3px solid rgba(102,126,234,0.4);
-  outline-offset: 4px;
+.btn.btn-secondary:hover{
+  border-color: var(--kanso-border-strong);
+  background: var(--kanso-panel-2);
 }
 
-/* --- Approach page enhancements (non-breaking) --- */
-
-.miniLoop{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 26px 0 22px;
+/* ---------- Thumbnails: soften placeholders ---------- */
+.thumbPh{
+  background: rgba(11,12,15,0.04);
+  border-bottom: 1px solid var(--kanso-border);
 }
 
-.miniLoopItem{
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 14px;
-  padding: 12px 14px;
-  background: rgba(0,0,0,0.02);
+/* ---------- Reveal animation: soften, less “slidey” ---------- */
+.reveal{
+  transform: translateY(10px);
+  opacity: 0;
+  transition:
+    transform 520ms var(--kanso-ease),
+    opacity 520ms var(--kanso-ease);
 }
 
-.miniLoopItem strong{
-  display:block;
-  margin-bottom: 4px;
+.reveal.is-visible{
+  transform: translateY(0);
+  opacity: 1;
 }
 
-.miniLoopItem span{
-  display:block;
-  color:#555;
-  line-height:1.4;
-  font-size: 0.95rem;
+/* ---------- Footer ---------- */
+footer{
+  border-top: 1px solid var(--kanso-border);
+  color: var(--kanso-muted);
 }
 
-/* Two-column layout that collapses cleanly */
-.approachTwoCol{
-  display:grid;
-  grid-template-columns: 1.6fr 0.9fr;
-  gap: 22px;
-  margin-top: 18px;
-  align-items: start;
-}
-
-/* Sidebar list styling to match your clean vibe */
-.approachList{
-  margin: 12px 0 0;
-  padding-left: 18px;
-  color:#555;
-  line-height:1.65;
-}
-
-/* Sticky sidebar (optional; feels premium but subtle) */
-@media (min-width: 960px){
-  .approachSidebar{
-    position: sticky;
-    top: 90px; /* adjust based on your header height */
+/* ---------- Responsive tuning ---------- */
+@media (max-width: 760px){
+  main.container > section{
+    padding: 64px 0;
   }
-}
 
-@media (max-width: 960px){
-  .miniLoop{ grid-template-columns: repeat(2, 1fr); }
-  .approachTwoCol{ grid-template-columns: 1fr; }
-}
+  h1{
+    letter-spacing: -0.02em;
+  }
 
-@media (max-width: 560px){
-  .miniLoop{ grid-template-columns: 1fr; }
+  .card,
+  .step{
+    padding: 16px 16px;
+  }
 }
