@@ -959,15 +959,15 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   border-color: rgba(37,99,235,.25);
 }
 
-/* Two-column layout */
-.grid{
+/* Case study ONLY: 2-col layout */
+.caseWrap .grid{
   display:grid;
   grid-template-columns: 2.2fr 1fr;
   gap: 40px;
   align-items:start;
 }
 @media (max-width: 940px){
-  .grid{ grid-template-columns: 1fr; gap: 28px; }
+  .caseWrap .grid{ grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* Main column */
