@@ -263,21 +263,6 @@
       line-height: 1.7;
     }
 
-    /* Top callout (above the fold) */
-    .topCallout{
-      max-width: 92ch;
-      margin: 14px 0 18px;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #fff;
-      box-shadow: var(--shadow);
-      color:#333;
-      font-size: 14px;
-      line-height: 1.75;
-    }
-    .topCallout strong{ color: var(--ink); }
-
     .confidential{
       border: 1px solid #f0f0f0;
       background: #fff;
@@ -411,15 +396,11 @@
   <main id="content">
     <article class="caseWrap">
       <p class="kicker">Case Study</p>
-      <h1 class="title">Developer Experience &amp; AI-Assisted Workflows (AWS)</h1>
+      <h1 class="title">AWS — Developer Experience &amp; AI-Assisted Workflows</h1>
 
       <p class="dek">
         Helping developers understand complex systems through clear, AI-assisted interaction patterns.
       </p>
-
-      <div class="topCallout reveal">
-        <strong>What I owned:</strong> System-level interaction design and AI-assisted UX patterns for developer workflows—defining reusable models for state, trust, and failure handling in tight partnership with engineering.
-      </div>
 
       <div class="metaRow" aria-label="Project tags">
         <span class="chip">Developer Experience</span>
@@ -438,43 +419,65 @@
         <!-- MAIN COLUMN -->
         <div class="main">
 
-          <h2 class="reveal">Problem</h2>
+          <h2 class="reveal">Context</h2>
           <p class="reveal">
-            Developers using large-scale cloud systems struggled to interpret system state, errors, and next steps—especially as AI assistance was introduced.
-            The challenge was adding intelligence without overwhelming or interrupting developer flow.
-          </p>
-
-          <h2 class="reveal">What I did</h2>
-          <p class="reveal">
-            I designed AI-assisted workflows and system-level UX patterns that translate complex technical behavior into understandable, actionable guidance.
-            I worked in ambiguous problem spaces alongside product and engineering to define both UX and product direction, focusing on interaction models
-            that could scale across teams.
-          </p>
-
-          <h2 class="reveal">Outcome</h2>
-          <p class="reveal">
-            The designs improved usability across key workflows and helped establish consistent patterns for AI-assisted guidance. This work informed broader
-            platform UX decisions and supported faster iteration without sacrificing clarity, trust, or accountability.
+            As AI assistance entered everyday developer workflows, teams needed interaction patterns that kept developers in control—especially in
+            enterprise environments where trust, permissions, and review gates matter. The challenge was to embed AI where developers already work
+            without adding noise or weakening accountability.
           </p>
 
           <div class="pull reveal">
             AI is only useful when its work is visible, reviewable, and easy to unblock.
           </div>
 
+          <h2 class="reveal">Overview (STAR)</h2>
+
+          <h2 class="reveal">Situation</h2>
+          <p class="reveal">
+            Developers using large-scale cloud systems struggled to interpret system state, errors, and next steps. As AI was introduced, the UX needed a
+            way to show progress, decisions, and constraints—without overwhelming users with raw AI internals.
+          </p>
+
+          <h2 class="reveal">Task</h2>
+          <p class="reveal">
+            Design AI-assisted workflows and reusable state models for CodeCatalyst—so developers could assign work to Amazon Q, understand progress,
+            handle failure states, and incorporate AI support in PR review while keeping the diff and discussion as the source of truth.
+          </p>
+
+          <h2 class="reveal">Action</h2>
+          <p class="reveal">
+            I designed system-level interaction patterns that translated complex behavior into understandable guidance. I defined “trust surfaces”
+            (where progress and intent are reviewable), designed first-class blocked/error states with next best actions, and embedded AI into issues and PRs
+            with clear labeling, time-scoped summaries, and reversible decisions.
+          </p>
+
+          <h2 class="reveal">Result</h2>
+          <p class="reveal">
+            The work established consistent patterns for AI-assisted guidance in developer tools: progress that’s visible, decisions that are reviewable,
+            and failure handling that preserves momentum. These patterns informed broader platform UX decisions and supported faster iteration without
+            sacrificing clarity.
+          </p>
+
+          <h2 class="reveal">My role</h2>
+          <ul class="bullets reveal">
+            <li>Staff-level IC designer within AWS Next Gen Developer Experience</li>
+            <li><strong>Owned:</strong> system-level interaction design and AI-assisted UX patterns across key CodeCatalyst workflows</li>
+            <li><strong>Partnered with:</strong> product, engineering, research, and applied science to iterate quickly</li>
+            <li><strong>Delivered:</strong> flows, UI patterns, state models, prototypes, and interaction specs</li>
+          </ul>
+
           <h2 class="reveal">Workstreams</h2>
 
-          <!-- Initiative 1 -->
+          <!-- Workstream 1 -->
           <h3 class="reveal">1) Assigning issues and epics to Amazon Q</h3>
           <p class="reveal">
-            Issue creation is a natural entry point: developers already describe intent, but translating that intent into structured,
-            executable work takes time. The opportunity was to allow teams to assign issues (and epics) to Amazon Q to generate plans and code—
-            without overwhelming users with internal detail.
+            Issue creation is a natural entry point: developers already describe intent, but translating that intent into structured, executable work takes time.
+            We enabled teams to assign issues (and epics) to Amazon Q to generate plans and code—without overwhelming users with internal execution detail.
           </p>
 
           <p class="reveal">
-            A key tension emerged early: showing too much internal AI data reduced validation—developers were less likely to review output when the interface
-            looked “too complete” or overly technical. Showing too little felt opaque. We designed a middle layer: clear status, human-readable progress,
-            and explicit decision points.
+            A key tension: showing too much internal AI data reduced validation (people reviewed less when it felt “too complete”); showing too little felt opaque.
+            We designed a middle layer with clear status, human-readable progress, and explicit decision points.
           </p>
 
           <figure class="reveal">
@@ -530,17 +533,18 @@
             A teammate isn’t useful if you can’t tell what they’re doing—or how to unblock them.
           </div>
 
+          <!-- Workstream 2 -->
           <h3 class="reveal">2) Amazon Q in the pull request workflow</h3>
           <p class="reveal">
-            Pull requests are already information-dense. The challenge was to add AI in a way that reduces review effort without adding noise
-            or weakening accountability. We focused Q on repetitive, cognitively heavy tasks—summarizing comment threads, drafting PR descriptions,
-            and proposing updates based on reviewer feedback—while keeping the diff and discussion as the source of truth.
+            Pull requests are already information-dense. The goal was to reduce review effort without adding noise or weakening accountability.
+            We focused Q on repetitive, cognitively heavy tasks—summarizing comment threads, drafting PR descriptions, and proposing updates based on feedback—
+            while keeping the diff and discussion as the source of truth.
           </p>
 
           <ul class="bullets reveal">
             <li><strong>Reduce orientation cost:</strong> summarize long threads and surface key decisions</li>
-            <li><strong>Maintain accountability:</strong> keep AI suggestions clearly labeled and easy to verify</li>
-            <li><strong>Make freshness visible:</strong> summaries indicate when they were generated and prompt updates when new comments arrive</li>
+            <li><strong>Maintain accountability:</strong> clearly label AI suggestions and keep verification easy</li>
+            <li><strong>Make freshness visible:</strong> summaries show when they were generated and prompt updates after new comments</li>
             <li><strong>Keep reversibility:</strong> AI-proposed changes are reviewable and easy to accept/reject</li>
           </ul>
 
@@ -587,6 +591,7 @@
             In PRs, the goal isn’t “AI review”—it’s faster orientation while preserving human accountability.
           </div>
 
+          <!-- Workstream 3 -->
           <h3 class="reveal">3) Subscription controls, limits, and transparency</h3>
           <p class="reveal">
             AI features in enterprise tools come with limits, permissions, and identity context. These constraints are part of the UX:
@@ -601,17 +606,27 @@
             <figcaption>Settings communicate identity, usage, and access. Clear limits help teams adopt AI responsibly and predictably.</figcaption>
           </figure>
 
-          <h2 class="reveal">Results &amp; impact</h2>
+          <h2 class="reveal">Design principles across the work</h2>
+          <ul class="bullets reveal">
+            <li><strong>Make AI work visible:</strong> progress and intent should be reviewable without hunting</li>
+            <li><strong>Keep developers in control:</strong> explicit decision points and reversible actions</li>
+            <li><strong>Design for failure states:</strong> blocked paths have clear cause + next best action</li>
+            <li><strong>Time-scope AI guidance:</strong> show when summaries were generated and prompt updates</li>
+            <li><strong>Preserve the source of truth:</strong> keep the diff/discussion as the anchor for PRs</li>
+            <li><strong>Build adoption safety:</strong> make identity, limits, and permissions understandable</li>
+          </ul>
+
+          <h2 class="reveal">Outcomes (high level)</h2>
           <p class="reveal">
-            Integrating Amazon Q into CodeCatalyst made AI a visible, reviewable part of the developer workflow—embedded where developers already work
+            Integrating Amazon Q into CodeCatalyst made AI a visible, reviewable part of the workflow—embedded where developers already work
             (issues, execution planning, and PR review) instead of feeling like a separate tool.
           </p>
           <ul class="bullets reveal">
-            <li><strong>Reduced ambiguity during execution:</strong> centralized intent, status, and decision points via the activity feed.</li>
-            <li><strong>Designed for reliability:</strong> blocked states clarified cause and provided next best actions to preserve momentum.</li>
-            <li><strong>Lowered review overhead:</strong> PR summaries improved orientation while keeping the diff and discussion as the anchor.</li>
-            <li><strong>Enabled safer adoption:</strong> settings made identity, limits, and usage understandable for teams.</li>
-            <li><strong>Platform impact:</strong> reusable interaction + state models for AI in developer tools—automation with human accountability.</li>
+            <li><strong>Reduced ambiguity during execution:</strong> the activity feed centralized status, intent, and decision points</li>
+            <li><strong>Preserved momentum:</strong> blocked states provided clear causes and next best actions</li>
+            <li><strong>Lowered review overhead:</strong> summaries improved orientation while keeping the diff as the anchor</li>
+            <li><strong>Improved adoption safety:</strong> settings made limits and access predictable for teams</li>
+            <li><strong>Scalable patterns:</strong> reusable interaction + state models for AI in developer tools</li>
           </ul>
 
           <div class="confidential reveal">
@@ -629,7 +644,7 @@
           </div>
         </div>
 
-        <!-- SIDEBAR (updated to match Amazon CS format) -->
+        <!-- SIDEBAR (matches Amazon CS format) -->
         <aside class="side reveal">
           <h3>Project goal</h3>
           <p>
@@ -644,6 +659,27 @@
             <strong>What I did:</strong> I designed AI-assisted interaction models for issues, activity feeds, and PR review—focusing on state visibility, failure recovery, and decision points that keep developers in control.
           </div>
 
+          <div class="callout" style="margin-top:12px;">
+            <strong>Private review:</strong> Screens, flows, and deeper detail available in live conversations when appropriate.
+          </div>
+
+          <h3 style="margin-top:18px;">Project snapshot</h3>
+          <ul>
+            <li><strong>Product:</strong> Amazon CodeCatalyst</li>
+            <li><strong>AI:</strong> Amazon Q integration</li>
+            <li><strong>Focus:</strong> Issues, planning, PR review</li>
+            <li><strong>Users:</strong> Developers + reviewers</li>
+            <li><strong>Artifacts:</strong> Flows, UI patterns, states</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">What I owned</h3>
+          <ul>
+            <li>System interaction models for AI-assisted workflows</li>
+            <li>State design (progress, blocked, error, recovery)</li>
+            <li>Trust surfaces (activity feed + review gates)</li>
+            <li>PR assistance patterns (summaries, freshness cues)</li>
+            <li>Settings patterns (identity, limits, permissions)</li>
+          </ul>
         </aside>
 
       </div>
@@ -729,6 +765,7 @@
         }
       }
 
+      // Open on image link click
       document.addEventListener("click", (e) => {
         const link = e.target.closest("a.lb-link");
         if (!link) return;
@@ -746,12 +783,14 @@
         });
       });
 
+      // Close via any element with data-close (backdrop or button)
       overlay.addEventListener("click", (e) => {
         if (e.target && e.target.hasAttribute("data-close")) {
           closeLightbox();
         }
       });
 
+      // Esc closes
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && overlay.classList.contains("is-open")) {
           closeLightbox();
