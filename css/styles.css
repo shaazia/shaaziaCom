@@ -1176,3 +1176,220 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
     transition: none !important;
   }
 }
+/* --- Base / container --- */
+.container{
+  width:min(1100px, 92vw);
+  margin:0 auto;
+  padding:clamp(24px, 4vw, 56px) 0;
+}
+
+.case{
+  --text:#111;
+  --muted:#5b5b5b;
+  --border:rgba(0,0,0,.12);
+  --bg:rgba(0,0,0,.03);
+  color:var(--text);
+  line-height:1.55;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.case h1{ font-size:clamp(32px, 4vw, 52px); line-height:1.1; margin:10px 0 14px; }
+.case h2{ font-size:clamp(22px, 2.2vw, 28px); margin:0 0 10px; }
+.case h3{ font-size:18px; margin:0 0 8px; }
+.case p{ margin:0 0 14px; }
+.muted{ color:var(--muted); }
+
+.eyebrow{
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:12px;
+  color:var(--muted);
+  margin:0;
+}
+
+.lede{
+  font-size:clamp(16px, 1.3vw, 18px);
+  color:var(--muted);
+  max-width:68ch;
+}
+
+/* --- Hero --- */
+.case-hero{ padding-bottom:18px; border-bottom:1px solid var(--border); margin-bottom:22px; }
+
+.chips{
+  display:flex; flex-wrap:wrap; gap:8px;
+  list-style:none; padding:0; margin:18px 0 0;
+}
+.chips li{
+  border:1px solid var(--border);
+  background:var(--bg);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* --- Sticky nav (desktop) --- */
+.case-nav{
+  display:none;
+  gap:14px;
+  margin:14px 0 0;
+}
+.case-nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+}
+.case-nav a:hover{ text-decoration:underline; }
+
+/* --- Main layout --- */
+.case-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+.case-body .block{
+  padding:26px 0;
+  border-bottom:1px solid var(--border);
+}
+
+/* Two-column row within a block */
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:14px;
+}
+
+.bullets{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+}
+.bullets li{ margin:0 0 8px; }
+
+/* --- Pull quotes --- */
+.pull{
+  margin:18px 0;
+  padding:14px 18px;
+  border-left:3px solid var(--border);
+  background:var(--bg);
+  border-radius:14px;
+}
+.pull blockquote{
+  margin:0;
+  font-size:18px;
+  line-height:1.35;
+}
+.pull-hero blockquote{ font-size:20px; }
+.pull-small blockquote{ font-size:16px; }
+.pull-impact{ margin-top:22px; }
+
+/* --- Media --- */
+.media{
+  margin:18px 0 0;
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+}
+.media img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.media figcaption{
+  padding:10px 12px;
+  font-size:13px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  background:rgba(0,0,0,.015);
+}
+.media-wide{}
+
+/* --- Card grid --- */
+.cards{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+.card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:16px 16px 12px;
+  background:#fff;
+}
+.card p{ color:var(--muted); }
+
+/* --- Impact grid --- */
+.impact{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:12px;
+}
+.impact-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:14px;
+  background:var(--bg);
+}
+.impact-card p{ color:var(--muted); margin:0; }
+
+/* --- Sidebar --- */
+.case-aside{ display:none; }
+.aside-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:16px;
+  background:#fff;
+  margin-bottom:14px;
+}
+.meta{
+  list-style:none;
+  padding:0;
+  margin:10px 0 0;
+  display:grid;
+  gap:10px;
+}
+.meta li{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:14px;
+}
+.meta li span:first-child{ color:var(--muted); }
+.thumb{
+  width:100%;
+  height:auto;
+  margin-top:10px;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+
+/* --- Desktop enhancements --- */
+@media (min-width: 980px){
+  .case-grid{
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap:40px;
+  }
+  .case-aside{ display:block; position:sticky; top:20px; }
+  .case-nav{
+    display:flex;
+    position:sticky;
+    top:0;
+    padding:12px 0;
+    background:linear-gradient(#fff 70%, rgba(255,255,255,0));
+    z-index:10;
+  }
+  .cards{ grid-template-columns: 1fr 1fr; }
+  .impact{ grid-template-columns: 1fr 1fr; }
+  .two-col{ grid-template-columns: 220px 1fr; align-items:start; }
+  /* Make key pull quotes “break” slightly wider */
+  .pull-hero, .pull-impact{
+    max-width: 82ch;
+  }
+}
+
