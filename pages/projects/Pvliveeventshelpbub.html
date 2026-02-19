@@ -139,16 +139,6 @@
       .twoUp{ grid-template-columns: 1fr; }
     }
 
-    .miniGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 18px 0 6px;
-    }
-    @media (max-width: 760px){
-      .miniGrid{ grid-template-columns: 1fr; }
-    }
-
     .divider{
       margin: 64px 0 0;
       border-top: 1px solid #eee;
@@ -187,13 +177,6 @@
       line-height: 1.6;
     }
 
-    .side p{
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0 0 12px;
-    }
-
     .callout{
       margin-top: 16px;
       padding: 14px;
@@ -223,12 +206,21 @@
     }
     .navBottom a:hover{ background:#f7f7f7; }
 
-    /* Optional: reveal-on-scroll (nice but subtle) */
+    /* Optional: reveal-on-scroll */
     .reveal{ opacity:0; transform: translateY(10px); }
     .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
     @media (prefers-reduced-motion: reduce){
       .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
     }
+
+    /* Small scan-proof note */
+    .scanNote{
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+    .scanNote strong{ color: var(--ink); }
   </style>
 </head>
 
@@ -251,7 +243,10 @@
 
       <p class="dek">
         A concept redesign of the Prime Video Live Events Help Hub—built to help customers get access,
-        sign in, and resolve live streaming issues faster, while maintaining series branding (Thursday Night Football, NASCAR, and more). <br/><a href="http://amazon.com/salp/nba-help">Live site</a>
+        sign in, and troubleshoot live streaming issues faster while maintaining series branding
+        (Thursday Night Football, NASCAR, and more).
+        <br/>
+        <a href="http://amazon.com/salp/nba-help">Live site</a>
       </p>
 
       <div class="metaRow">
@@ -267,130 +262,159 @@
         <!-- MAIN COLUMN -->
         <div class="main">
 
-          <h2 class="reveal">Context</h2>
+          <!-- SITUATION -->
+          <h2 class="reveal">Situation</h2>
           <p class="reveal">
-            Live events are time-sensitive: customers often arrive minutes before a game or race begins,
-            and they need immediate help with <strong>access, sign-in, device compatibility</strong>, and
-            <strong>streaming performance</strong>. The Help Hub pages are branded per series, but the primary job-to-be-done
-            is consistent: “Help me start watching (or fix what’s broken) quickly.”
+            Live events are time-sensitive: customers often arrive minutes before kickoff and need immediate help with
+            <strong>access, sign-in, device compatibility</strong>, and <strong>streaming performance</strong>.
+            During Thursday Night Football in particular, these moments drove high support contact volume.
+          </p>
+          <p class="reveal">
+            The existing Help Hub page supported branded series experiences, but it wasn’t optimized for the live-event job-to-be-done:
+            “Help me start watching (or fix what’s broken) right now.”
           </p>
 
           <div class="pull reveal">
-            The design goal: keep series branding, but make the experience feel unmistakably help-first—fast to scan,
-            easy to act on, and aligned to customer mental models.
+            Live-event support has a different bar: customers aren’t browsing—they’re trying to watch right now.
           </div>
 
-          <h2 class="reveal">UX issues surfaced</h2>
+          <!-- TASK -->
+          <h2 class="reveal">Task</h2>
           <p class="reveal">
-            A review of the existing page structure surfaced several friction points that made it harder for customers
-            to find the right action under pressure:
-          </p>
-          <p class="reveal">
-            <strong>Mental model mismatches</strong>, lack of content chunking, distracting visual elements, choice overload,
-            deceptive patterns, redundant links, and inconsistent content patterns across sections.
+            Redesign the Live Events Help Hub to reduce decision load and route customers to resolution faster—while
+            preserving series branding and introducing Amazon Customer Service support cues alongside Prime Video.
           </p>
 
-          <h2 class="reveal">Help-first hierarchy</h2>
+          <p class="reveal" style="margin-top:12px;">
+            <strong>Primary UX problems to solve:</strong> choice overload, mental model mismatches, redundancy,
+            and an information hierarchy that didn’t match urgency.
+          </p>
+
+          <!-- ACTION -->
+          <h2 class="reveal">Action</h2>
           <p class="reveal">
-            The original experience leaned heavily into a promotional hero, which competed with the customer’s urgent goal.
-            The redesign reframes the top of page to establish purpose quickly and route customers into “How to watch” immediately.
+            I evaluated the existing page structure and redesigned it around a help-first hierarchy and task-based information architecture.
+            The approach focused on four improvements: (1) faster orientation, (2) predictable navigation, (3) scannable “How to watch” steps,
+            and (4) progressive disclosure to reduce redundancy and choice overload.
+          </p>
+
+          <p class="reveal scanNote">
+            Screens labeled <strong>Before (existing)</strong> reflect the original experience. Screens labeled <strong>After (my redesign)</strong>
+            show the concept redesign work I created.
+          </p>
+
+          <!-- ACTION 1 -->
+          <h2 class="reveal">Action 1: Help-first hierarchy</h2>
+          <p class="reveal">
+            The original experience leaned heavily into a promotional hero, competing with the customer’s urgent goal.
+            I reframed the top of the page to establish purpose immediately and route customers into “How to watch” as the primary path.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/before-hero.jpg" alt="Before: Live Events Help Hub hero with large branded treatment">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_before_hero_cropped.jpg"
+                   alt="Before (existing): Live Events Help Hub hero dominated by branded treatment">
               <figcaption>
-                Before: Branding dominates the entry experience, competing with task completion.
+                <strong>Before (existing):</strong> Branding dominates the entry experience, competing with task completion.
               </figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/after-hero.jpg" alt="After: Help-first hero with simplified hierarchy and clearer entry into how to watch">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_after_hero_cropped.jpg"
+                   alt="After (my redesign): Help-first hero with clearer hierarchy and entry into how to watch">
               <figcaption>
-                After: A help-first hero that quickly clarifies intent and directs customers into the primary task flow.
+                <strong>After (my redesign):</strong> A help-first hero that clarifies intent and directs customers into the primary task flow.
               </figcaption>
             </figure>
           </div>
 
-          <h2 class="reveal">Clear, predictable navigation</h2>
+          <!-- ACTION 2 -->
+          <h2 class="reveal">Action 2: Clear, predictable navigation</h2>
           <p class="reveal">
             Customers expect support pages to behave like support: clear sections, consistent labels, and fewer competing entry points.
-            The redesign standardizes navigation around a task-based IA that matches user intent.
+            The redesign standardizes navigation around a task-based IA aligned to user intent (How to watch / Where to watch / Issues / FAQs / Get help).
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/before-navigation.jpg" alt="Before: Navigation and quick links create competing paths">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_before_nav_cropped.jpg"
+                   alt="Before (existing): Navigation and quick links create competing paths">
               <figcaption>
-                Before: Competing “quick links” and section entry points increase decision load.
+                <strong>Before (existing):</strong> Competing “quick links” and section entry points increase decision load.
               </figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/after-navigation.jpg" alt="After: Simplified help hub navigation aligned to mental model">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_after_nav_cropped.jpg"
+                   alt="After (my redesign): Simplified help hub navigation aligned to mental model">
               <figcaption>
-                After: Simplified navigation aligned to “How to watch / Where to watch / Issues / FAQs / Get help.”
+                <strong>After (my redesign):</strong> Simplified navigation aligned to “How to watch / Where to watch / Issues / FAQs / Get help.”
               </figcaption>
             </figure>
           </div>
 
-          <h2 class="reveal">Scannable chunking for “How to watch”</h2>
+          <!-- ACTION 3 -->
+          <h2 class="reveal">Action 3: Scannable chunking for “How to watch”</h2>
           <p class="reveal">
-            “How to watch” is the critical path. The redesign condenses the flow into a single scannable module with clear steps:
-            app download, sign-in/access, find the event, and take action (watch now / view schedule).
+            “How to watch” is the critical path. I condensed the steps into a single scannable module:
+            get the app (if needed), sign in / confirm access, find the event, and take action (Watch now / View schedule).
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/before-how-to-watch.jpg" alt="Before: How to watch section with dense content and less clear hierarchy">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_before_how_cropped.jpg"
+                   alt="Before (existing): How to watch section with dense content and less clear hierarchy">
               <figcaption>
-                Before: Key steps are present, but not optimized for fast scanning.
+                <strong>Before (existing):</strong> Key steps are present, but not optimized for fast scanning under pressure.
               </figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/after-how-to-watch.jpg" alt="After: How to watch module with clearer chunking and task-first actions">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_after_how_cropped.jpg"
+                   alt="After (my redesign): How to watch module with clearer chunking and task-first actions">
               <figcaption>
-                After: A single, scannable module that makes the path to watching obvious and fast.
+                <strong>After (my redesign):</strong> A single, scannable module that makes the path to watching obvious and fast.
               </figcaption>
             </figure>
           </div>
 
-          <h2 class="reveal">Reducing redundancy and choice overload</h2>
+          <!-- ACTION 4 -->
+          <h2 class="reveal">Action 4: Reduce redundancy and choice overload</h2>
           <p class="reveal">
-            The original page repeated links and pathways across sections, creating a “which one do I click?” problem.
-            The redesign shifts to progressive disclosure: show the most common actions first, push edge cases deeper,
+            The original page repeated links and pathways across sections, creating a “which one do I click?” moment.
+            I shifted the design toward progressive disclosure: surface the most common actions first, push edge cases deeper,
             and tighten CTAs so they read as support—not marketing.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/before-home.jpg" alt="Before: Full help hub page with dense sections and many repeated elements">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_before_home_cropped.jpg"
+                   alt="Before (existing): Full help hub page dense with repeated elements">
               <figcaption>
-                Before: Dense page structure increases cognitive load and hides the fastest path to resolution.
+                <strong>Before (existing):</strong> Dense structure increases cognitive load and can hide the fastest path to resolution.
               </figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/PrimeVideoLiveEvents/after-home.jpg" alt="After: Full help hub page with clearer sections and reduced repetition">
+              <img src="../../assets/images/PrimeVideoLiveEvents/pv_after_home_cropped.jpg"
+                   alt="After (my redesign): Streamlined structure with clearer sections and reduced repetition">
               <figcaption>
-                After: Streamlined structure that surfaces common tasks first and reduces repeated links.
+                <strong>After (my redesign):</strong> Streamlined structure surfaces common tasks first and reduces repeated links.
               </figcaption>
             </figure>
           </div>
 
-          <h2 class="reveal">Outcome</h2>
+          <!-- RESULT -->
+          <h2 class="reveal">Result</h2>
           <p class="reveal">
             This concept redesign establishes a scalable pattern for branded Live Events help pages:
-            help-first hierarchy, consistent IA, scannable chunking for the critical path, and progressive disclosure
-            for troubleshooting and FAQs—while keeping series identity intact.
+            help-first hierarchy, consistent task-based IA, scannable chunking for the critical path, and progressive disclosure
+            for troubleshooting and FAQs—while keeping series identity intact and adding clear support cues.
           </p>
 
-          <h2 class="reveal">How I’d measure success</h2>
           <p class="reveal">
-            Increase engagement with “How to watch” actions, reduce pogo-sticking between sections,
-            lower contact rate for common access questions, and improve time-to-resolution for sign-in,
-            entitlement, and device compatibility issues.
+            <strong>Note:</strong> Detailed performance outcomes can’t be shared due to confidentiality. The page is currently live,
+            which is why the “Before” screens can be shown; the “After” screens represent the redesign concept work.
           </p>
 
           <div class="divider"></div>
@@ -418,17 +442,16 @@
             <li>Chunk content for scanning</li>
             <li>Reduce choice overload</li>
             <li>Remove redundancy</li>
-            <li>Make CTAs feel help-first</li>
+            <li>Keep branding, signal support</li>
           </ul>
 
           <div class="callout">
-            <strong>What this redesign improves:</strong> A faster “start watching” path, clearer navigation,
+            <strong>What this redesign improves:</strong> a faster “start watching” path, clearer navigation,
             less decision fatigue, and a consistent support experience across branded live event series.
           </div>
 
           <div class="callout" style="margin-top:12px;">
-            <strong>Key UX issues addressed:</strong> mental model mismatches, distracting visuals, deceptive patterns,
-            redundant links, and inconsistent content structure.
+            <strong>Constraints:</strong> Results and metrics are confidential; screenshots of the existing page are shareable because the page is live.
           </div>
         </aside>
 
