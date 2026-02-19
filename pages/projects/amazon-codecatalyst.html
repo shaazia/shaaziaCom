@@ -280,6 +280,91 @@
     @media (prefers-reduced-motion: reduce){
       .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
     }
+    /* ---------- Lightbox (no library) ---------- */
+.lb-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.82);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+}
+.lb-overlay.is-open{ display:flex; }
+
+.lb-dialog{
+  max-width: min(1100px, 96vw);
+  max-height: 90vh;
+  width: 100%;
+  outline: none;
+}
+
+.lb-figure{
+  margin: 0;
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+
+.lb-img{
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  display: block;
+  object-fit: contain;
+  background: #111;
+}
+
+.lb-caption{
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.86);
+  border-top: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+}
+
+.lb-close{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 10000;
+}
+.lb-close:hover{ background: rgba(0,0,0,.65); }
+
+.lb-hint{
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: rgba(255,255,255,.7);
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.14);
+  padding: 8px 10px;
+  border-radius: 999px;
+  z-index: 10000;
+}
+
+/* Make figures feel clickable */
+figure a.lb-link{
+  display:block;
+  cursor: zoom-in;
+}
+figure a.lb-link:focus-visible{
+  outline: 3px solid #111;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
   </style>
 </head>
 
@@ -392,7 +477,9 @@
           </p>
 
           <figure class="reveal">
-            <img src="../../assets/images/CodeCatalyst/frame-4739.jpg" alt="Create issue modal with issue title and description fields">
+          <a class="lb-link" href="../../assets/images/CodeCatalyst/frame-4739.jpg">
+  <img src="../../assets/images/CodeCatalyst/frame-4739.jpg" alt="Create issue modal with issue title and description fields">
+</a>
             <figcaption>Issue creation starts with a familiar form—keeping cognitive load low while capturing intent.</figcaption>
           </figure>
 
