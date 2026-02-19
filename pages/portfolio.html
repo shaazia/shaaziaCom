@@ -219,3 +219,358 @@
     .cardMeta{
       font-size: 13px;
       color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cardDesc{
+      font-size: 14px;
+      line-height: 1.75;
+      color:#333;
+      margin: 0;
+    }
+
+    .tagRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 2px;
+    }
+    .tag{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 7px 9px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size: 12px;
+      color:#111;
+      border: 1px solid var(--border);
+      background:#fff;
+      border-radius: 999px;
+      padding: 7px 10px;
+    }
+
+    /* Featured area */
+    .featuredGrid .card{
+      grid-column: span 6;
+    }
+    @media (max-width: 980px){
+      .featuredGrid .card{ grid-column: span 12; }
+    }
+
+    /* Contact */
+    .contact{
+      margin-top: 46px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .contact h2{
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+    .contact p{
+      margin: 0 0 14px;
+      color:#333;
+      line-height: 1.8;
+      max-width: 92ch;
+      font-size: 15px;
+    }
+
+    /* Reveal-on-scroll */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./portfolio.html" aria-current="page">Portfolio</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="wrap">
+
+      <!-- HERO -->
+      <section class="reveal" aria-labelledby="page-title">
+        <p class="kicker">Portfolio</p>
+        <h1 id="page-title">Selected work from Amazon and enterprise teams.</h1>
+        <p class="lede">
+          Projects focused on complex workflows, trust-critical experiences, and systems designed to scale—spanning AI support,
+          developer platforms, mobile banking, brand systems, and field operations.
+        </p>
+
+        <div class="metaRow" aria-label="Design specialties">
+          <span class="chip">Amazon-scale experiences</span>
+          <span class="chip">Complex workflows</span>
+          <span class="chip">Trust + clarity</span>
+          <span class="chip">Mobile + enterprise</span>
+          <span class="chip">Systems + specs</span>
+        </div>
+
+        <div class="ctaRow" role="group" aria-label="Primary actions">
+          <a class="btn btnPrimary" href="../index.html#contact">Start a conversation</a>
+          <a class="btn" href="../assets/Shaazia-Stonehocker-Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+          <a class="btn" href="mailto:shaazia.stonehocker@gmail.com">Email me</a>
+        </div>
+
+        <p class="sectionNote" style="margin-top:14px;">
+          Each case study includes context, my role, and artifacts (flows, specs, prototypes, and system thinking). Some details may be summarized.
+        </p>
+      </section>
+
+      <!-- FEATURED WORK (Amazon-first to match homepage) -->
+      <section class="reveal" aria-labelledby="featured-work">
+        <h2 class="sectionTitle" id="featured-work">Featured work</h2>
+        <p class="sectionNote">
+          Recent Amazon work focused on AI-powered support, developer workflows, and high-traffic customer experiences.
+        </p>
+
+        <div class="grid featuredGrid" aria-label="Featured projects">
+
+          <!-- Amazon Customer Service -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/amazon-customer-service.jpg"
+                   alt="Amazon customer service experience showing AI-powered chat and support workflows" />
+            </div>
+            <div class="cardBody">
+              <div class="badge" aria-label="Featured">★ Featured</div>
+              <h3 class="cardTitle">
+                <a href="./projects/amazon-customer-service.html">Amazon Customer Service — AI Support Experiences</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Product Designer</p>
+              <p class="cardDesc">
+                Led UX for AI-driven support across chat and voice, designing workflows that help customers resolve high-stress issues with clarity and trust.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Conversational UX</span>
+                <span class="tag">AI Support</span>
+                <span class="tag">Enterprise Scale</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Amazon CodeCatalyst -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/amazon-codecatalyst.jpg"
+                   alt="Amazon CodeCatalyst interface showing developer workflows" />
+            </div>
+            <div class="cardBody">
+              <div class="badge" aria-label="Featured">★ Featured</div>
+              <h3 class="cardTitle">
+                <a href="./projects/amazon-codecatalyst.html">Amazon CodeCatalyst — Developer Platform</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
+              <p class="cardDesc">
+                Designed workflow patterns for a developer platform integrating Amazon Q—balancing power, clarity, and usability for technical users.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Developer UX</span>
+                <span class="tag">AI Integration</span>
+                <span class="tag">Workflow Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Prime Video Help Hub -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/prime-live-events-help.jpg"
+                   alt="Prime Video Help Hub interface showing support categories and guided flows" />
+            </div>
+            <div class="cardBody">
+              <div class="badge" aria-label="Featured">★ Featured</div>
+              <h3 class="cardTitle">
+                <a href="./projects/prime-video-live-events.html">Prime Video Help Hub — Support UX</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Senior UX Designer</p>
+              <p class="cardDesc">
+                Redesigned the Prime Video Help Hub to improve issue discovery, guide resolution, and reduce unnecessary escalation.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Support UX</span>
+                <span class="tag">Information Architecture</span>
+                <span class="tag">High-Traffic Product</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- MORE WORK -->
+      <section class="reveal" aria-labelledby="more-work">
+        <h2 class="sectionTitle" id="more-work">More work</h2>
+        <p class="sectionNote">
+          Additional projects across mobile banking, brand systems, and enterprise/field operations—plus explorations and community work.
+        </p>
+
+        <div class="grid" aria-label="Additional projects">
+
+          <!-- Mobile Banking -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/mobile-banking-app.jpg"
+                   alt="Mobile banking campaign visual promoting app usage" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./projects/mobile-banking-app.html">Mobile Banking App (iOS + Android)</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
+              <p class="cardDesc">
+                Led a native iOS + Android redesign across core banking journeys and delivered detailed specs, flows, and prototypes.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Mobile UX</span>
+                <span class="tag">Financial UX</span>
+                <span class="tag">Specs + Flows</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Branch Expansion -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/wnbbranding.jpg"
+                   alt="Woodforest marketing creative showing brand messaging" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./projects/branch-expansion-branding.html">Branch Expansion & Branding</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> VP, Marketing &amp; UX · Lead Designer</p>
+              <p class="cardDesc">
+                Built a scalable brand and marketing system for expansion across in-branch, print, digital touchpoints, and guidelines.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Brand System</span>
+                <span class="tag">Campaigns</span>
+                <span class="tag">Guidelines</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Halliburton -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/halliburtonthumb.jpg"
+                   alt="Field operations app screen showing operational metrics and charts" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./projects/haliburton.html">Halliburton Field Ops App</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
+              <p class="cardDesc">
+                Designed offline-first workflows and dashboards for field teams operating under time pressure and low connectivity.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Workflow Design</span>
+                <span class="tag">Dashboards</span>
+                <span class="tag">Offline-first</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Aggregate placeholder: ALL other project pages -->
+          <article class="card" aria-label="Additional projects and explorations">
+            <div class="thumb">
+              <img src="../assets/images/thumbs/communities.jpg"
+                   alt="Collage preview representing additional projects and community design work" />
+            </div>
+
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="../index.html#contact">Additional Projects & Explorations</a>
+              </h3>
+
+              <p class="cardDesc">
+                More work from the projects folder, including community experiences and additional case studies.
+                Examples: <strong>Community Design</strong>, <strong>Prime Video Live Events Help Hub</strong>, and other exploratory concepts.
+                Details available upon request.
+              </p>
+
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Community UX</span>
+                <span class="tag">Exploratory</span>
+                <span class="tag">Concept Work</span>
+                <span class="tag">NDA-friendly</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CONTACT CTA -->
+      <section class="contact reveal" aria-label="Contact call to action">
+        <h2>Want to work together?</h2>
+        <p>
+          If you’re hiring for Product Design leadership—or need a designer who can go from strategy to specs to shipped work—let’s talk.
+        </p>
+        <div class="ctaRow" role="group" aria-label="Contact actions">
+          <a class="btn btnPrimary" href="../index.html#contact">Start a conversation</a>
+          <a class="btn" href="../assets/Shaazia-Stonehocker-Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+          <a class="btn" href="mailto:shaazia.stonehocker@gmail.com">Email me</a>
+        </div>
+        <p style="margin-top:12px; color: var(--muted); font-size: 13px; line-height: 1.7;">
+          Update the resume link above with your real URL before publishing.
+        </p>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!items.length) return;
+
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
