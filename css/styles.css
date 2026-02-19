@@ -1368,3 +1368,11 @@ figure a.lb-link:focus-visible{
   line-height: 1.7;
   margin: 0 0 12px;
 }
+/* Remove colored bullet/dot markers next to headings on case study pages */
+.caseWrap h2::before,
+.caseWrap h3::before,
+.caseWrap .main h2::before,
+.caseWrap .main h3::before{
+  content: none !important;
+  display: none !important;
+}
