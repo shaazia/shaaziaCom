@@ -958,6 +958,13 @@ footer a:hover{ text-decoration: underline; color: var(--text-strong); }
   background: var(--tint);
   border-color: rgba(37,99,235,.25);
 }
+/* General grid utility (portfolio, sections) */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
 
 /* Case study ONLY: 2-col layout */
 .caseWrap .grid{
