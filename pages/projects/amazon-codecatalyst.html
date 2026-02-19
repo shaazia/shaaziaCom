@@ -234,6 +234,13 @@
       margin: 0 0 12px;
     }
 
+    .side p{
+      font-size: 14px;
+      line-height: 1.75;
+      color:#333;
+      margin: 0 0 14px;
+    }
+
     .side ul{
       padding-left: 18px;
       margin: 0 0 18px;
@@ -246,7 +253,7 @@
     }
 
     .callout{
-      margin-top: 16px;
+      margin-top: 12px;
       padding: 14px;
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -410,7 +417,6 @@
         Helping developers understand complex systems through clear, AI-assisted interaction patterns.
       </p>
 
-      <!-- NEW: fast Staff-level summary above the fold -->
       <div class="topCallout reveal">
         <strong>What I owned:</strong> System-level interaction design and AI-assisted UX patterns for developer workflows—defining reusable models for state, trust, and failure handling in tight partnership with engineering.
       </div>
@@ -455,9 +461,9 @@
             AI is only useful when its work is visible, reviewable, and easy to unblock.
           </div>
 
-          <!-- Initiative 1 -->
           <h2 class="reveal">Workstreams</h2>
 
+          <!-- Initiative 1 -->
           <h3 class="reveal">1) Assigning issues and epics to Amazon Q</h3>
           <p class="reveal">
             Issue creation is a natural entry point: developers already describe intent, but translating that intent into structured,
@@ -485,7 +491,6 @@
             <figcaption>Assigning to Amazon Q introduces guardrails: repository context and scoped execution boundaries.</figcaption>
           </figure>
 
-          <!-- Trust surface -->
           <h3 class="reveal">Trust surface: the activity feed</h3>
           <p class="reveal">
             Once Amazon Q is assigned work, developers need one place where progress is visible and reviewable without constant monitoring.
@@ -499,7 +504,6 @@
             <figcaption>The activity feed shows how Amazon Q interprets the request, what it plans to do, and where work pauses for review or approval.</figcaption>
           </figure>
 
-          <!-- Failure states -->
           <h3 class="reveal">Designing for failure without breaking momentum</h3>
           <p class="reveal">
             AI-assisted workflows must treat failure states as first-class. When Amazon Q can’t proceed—missing context, permission limits,
@@ -526,7 +530,6 @@
             A teammate isn’t useful if you can’t tell what they’re doing—or how to unblock them.
           </div>
 
-          <!-- Initiative 2 -->
           <h3 class="reveal">2) Amazon Q in the pull request workflow</h3>
           <p class="reveal">
             Pull requests are already information-dense. The challenge was to add AI in a way that reduces review effort without adding noise
@@ -584,7 +587,6 @@
             In PRs, the goal isn’t “AI review”—it’s faster orientation while preserving human accountability.
           </div>
 
-          <!-- Initiative 3 -->
           <h3 class="reveal">3) Subscription controls, limits, and transparency</h3>
           <p class="reveal">
             AI features in enterprise tools come with limits, permissions, and identity context. These constraints are part of the UX:
@@ -605,7 +607,7 @@
             (issues, execution planning, and PR review) instead of feeling like a separate tool.
           </p>
           <ul class="bullets reveal">
-            <li><strong>Reduced ambiguity during execution:</strong> the activity feed centralized intent, status, and decision points.</li>
+            <li><strong>Reduced ambiguity during execution:</strong> centralized intent, status, and decision points via the activity feed.</li>
             <li><strong>Designed for reliability:</strong> blocked states clarified cause and provided next best actions to preserve momentum.</li>
             <li><strong>Lowered review overhead:</strong> PR summaries improved orientation while keeping the diff and discussion as the anchor.</li>
             <li><strong>Enabled safer adoption:</strong> settings made identity, limits, and usage understandable for teams.</li>
@@ -627,9 +629,26 @@
           </div>
         </div>
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR (updated to match Amazon CS format) -->
         <aside class="side reveal">
-          <h3>Project snapshot</h3>
+          <h3>Project goal</h3>
+          <p>
+            Embed AI into developer workflows in a way that feels clear, reviewable, and safe—helping teams move faster without sacrificing trust or accountability.
+          </p>
+
+          <div class="callout">
+            <strong>My role:</strong> Staff-level IC designer within AWS Next Gen Developer Experience. I led interaction design across key CodeCatalyst workflows and helped shape scalable patterns for AI-assisted experiences.
+          </div>
+
+          <div class="callout">
+            <strong>What I did:</strong> I designed AI-assisted interaction models for issues, activity feeds, and PR review—focusing on state visibility, failure recovery, and decision points that keep developers in control.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Private review:</strong> Screens, flows, and deeper detail available in live conversations when appropriate.
+          </div>
+
+          <h3 style="margin-top:18px;">Project snapshot</h3>
           <ul>
             <li><strong>Product:</strong> Amazon CodeCatalyst</li>
             <li><strong>AI:</strong> Amazon Q integration</li>
@@ -646,15 +665,6 @@
             <li>Time-scope AI summaries</li>
             <li>Preserve source of truth</li>
           </ul>
-
-          <div class="callout">
-            <strong>What this unlocked:</strong> A scalable model for AI in developer tools—where progress is visible, decisions are reviewable,
-            and responsibility remains clearly human.
-          </div>
-
-          <div class="callout" style="margin-top:12px;">
-            <strong>UX principle:</strong> AI should speed up work, not add risk. Guardrails, attribution, and clear review gates keep teams confident.
-          </div>
         </aside>
 
       </div>
@@ -740,7 +750,6 @@
         }
       }
 
-      // Open on image link click
       document.addEventListener("click", (e) => {
         const link = e.target.closest("a.lb-link");
         if (!link) return;
@@ -758,14 +767,12 @@
         });
       });
 
-      // Close via any element with data-close (backdrop or button)
       overlay.addEventListener("click", (e) => {
         if (e.target && e.target.hasAttribute("data-close")) {
           closeLightbox();
         }
       });
 
-      // Esc closes
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && overlay.classList.contains("is-open")) {
           closeLightbox();
