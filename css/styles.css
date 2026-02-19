@@ -1269,3 +1269,95 @@ figure a.lb-link:focus-visible{
   padding: 8px 12px;
   border-radius: 999px;
 }
+/* ==========================================
+   Portfolio page helpers
+   ========================================== */
+
+.wrap{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 64px 2rem 96px;
+}
+
+.lede{
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 78ch;
+  margin: 12px 0 18px;
+}
+
+.sectionTitle{
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  margin: 26px 0 8px;
+}
+
+.sectionNote{
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 80ch;
+  margin: 0 0 18px;
+}
+
+.ctaRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* Portfolio cards (keep compatible with your existing .card base) */
+.thumb{
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,12,15,0.01);
+}
+.thumb img{
+  width:100%;
+  height: 190px;
+  object-fit: cover;
+  display:block;
+}
+
+.cardBody{
+  padding: 16px 16px 18px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--tint);
+  border: 1px solid rgba(37,99,235,.18);
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.cardTitle{
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+.cardTitle a{
+  color: var(--text-strong);
+  text-decoration: none;
+}
+.cardTitle a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.cardMeta{
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+.cardDesc{
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
