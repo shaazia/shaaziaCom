@@ -220,6 +220,21 @@
       line-height: 1.7;
     }
 
+    /* Top callout (above the fold) */
+    .topCallout{
+      max-width: 92ch;
+      margin: 14px 0 22px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      color:#333;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .topCallout strong{ color: var(--ink); }
+
     /* Bottom nav */
     .navBottom{
       display:flex;
@@ -271,6 +286,11 @@
         improving self-service success, and scaling trusted interaction patterns.
       </p>
 
+      <!-- NEW: fast Staff-level summary above the fold -->
+      <div class="topCallout reveal">
+        <strong>What I owned:</strong> Staff-level ownership of conversational and interaction design across AI chat, voice, multimodal device UX, and proactive notifications—defining scalable patterns for ambiguity, recovery, and human handoff.
+      </div>
+
       <div class="metaRow" aria-label="Project tags">
         <span class="chip">AI Support</span>
         <span class="chip">Conversation Design</span>
@@ -284,13 +304,13 @@
 
         <!-- MAIN COLUMN -->
         <div class="main">
-             <h2 class="reveal">Problem</h2>
+          <h2 class="reveal">Problem</h2>
           <p class="reveal">
             Customers typically contact support during moments of confusion, urgency, or frustration—investigating unfamiliar charges,
             managing subscriptions, resolving device issues, or navigating delivery disruptions. These are high cognitive-load scenarios where
             unclear paths drive escalation.
           </p>
-          
+
           <figure class="reveal">
             <img
               src="../../assets/images/AmazonCustomerService/SubscriptionNotification.png"
@@ -313,23 +333,25 @@
             <li><strong>Partnered with:</strong> product, engineering, research, applied science, and policy/compliance stakeholders.</li>
           </ul>
 
-          <h2 class="reveal">What I Did</h2>
-        <p class="reveal">
-          I designed conversational UX patterns focused on human–AI collaboration. I mapped user intent, system state, and failure modes, then prototyped flows that balanced automation with transparency, recovery, and human handoff. I partnered closely with product, engineering, and applied science to iterate quickly based on real usage.</p>
-
-      <h2 class="reveal">Outcome</h2>
+          <h2 class="reveal">What I did</h2>
           <p class="reveal">
-          The work improved clarity and task success in AI-assisted support while increasing user confidence. The resulting patterns became reusable foundations for handling ambiguity, escalation, and recovery across AI support experiences.
+            I designed conversational UX patterns focused on human–AI collaboration. I mapped user intent, system state, and failure modes, then prototyped flows that balanced automation with transparency, recovery, and human handoff. I worked in tight partnership with product, engineering, and applied science to iterate quickly based on real usage.
+          </p>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            The work improved clarity and task success in AI-assisted support while increasing user confidence. The resulting patterns became reusable foundations for handling ambiguity, escalation, and recovery across AI support experiences.
           </p>
 
           <div class="pull reveal">
             High-effort moments drive unnecessary contact when reassurance and next steps aren’t clear.
           </div>
 
-          <h2 class="reveal">Approach</h2>
+          <h2 class="reveal">Design strategy</h2>
           <p class="reveal">
-            I designed AI-led experiences that translate system complexity into clear next steps. Across programs, the work centered on:
-            (1) making the system’s understanding visible, (2) offering safe, reversible actions, and (3) using proactive signals to prevent avoidable contact.
+            I defined and designed AI-led experiences that translate system complexity into clear, confidence-building next steps.
+            Across programs, the work centered on making the system’s understanding visible, offering safe and reversible actions,
+            and using proactive signals to prevent avoidable contact before frustration escalated.
           </p>
           <ul class="bullets reveal">
             <li><strong>Action-forward guidance:</strong> clear “next best actions” rather than vague explanations.</li>
@@ -342,8 +364,8 @@
 
           <h3 class="reveal">1) AI customer service chatbots</h3>
           <p class="reveal">
-            Designed AI chatbot experiences for high-frequency needs like <strong>subscription management</strong> and <strong>unknown charges</strong>.
-            The focus was reducing friction, building confidence, and translating account signals into understandable options.
+            Defined and designed AI chatbot experiences for high-frequency needs like <strong>subscription management</strong> and <strong>unknown charges</strong>.
+            The primary design focus was reducing friction, building confidence, and translating account signals into understandable options.
           </p>
           <ul class="bullets reveal">
             <li><strong>Subscriptions:</strong> cancel, update, or modify subscriptions across multiple Amazon services.</li>
@@ -417,11 +439,11 @@
             stronger trust signals in automated support, and reusable interaction models across chat, voice, notifications, and device surfaces.
           </p>
           <ul class="bullets reveal">
-            <li><strong>Reduced customer effort:</strong> clearer paths to resolution during high-stress support moments.</li>
-            <li><strong>Improved self-service:</strong> higher completion via guidance, state design, and recovery patterns.</li>
-            <li><strong>Prevented avoidable contacts:</strong> proactive detection + low-effort fixes for common issues.</li>
-            <li><strong>Improved continuity:</strong> fewer repeated steps when customers switch channels or devices.</li>
-            <li><strong>Reusable patterns:</strong> scalable interaction models adopted across programs.</li>
+            <li><strong>Lowered customer effort:</strong> clearer, action-oriented resolution paths during high-stress support moments.</li>
+            <li><strong>Increased self-service success:</strong> higher completion through explainability, state design, and recovery patterns.</li>
+            <li><strong>Reduced avoidable contact:</strong> proactive detection and low-effort fixes for common issues.</li>
+            <li><strong>Improved continuity:</strong> preserved context across chat, voice, and device handoffs.</li>
+            <li><strong>Platform impact:</strong> reusable conversational patterns adopted across multiple customer service programs.</li>
           </ul>
 
           <div class="confidential reveal">
@@ -442,14 +464,17 @@
         <!-- SIDEBAR -->
         <aside class="side reveal">
           <h3>Project goal</h3>
-     <p>Make automated support feel clear, trustworthy, and action-oriented—especially in high-stakes moments like order and delivery confusion, subscription changes, and device troubleshooting.
-</p>
+          <p>
+            Make automated support feel clear, trustworthy, and action-oriented—especially in high-stakes moments like order and delivery confusion, subscription changes, and device troubleshooting.
+          </p>
+
           <div class="callout">
             <strong>My role:</strong> I served as a staff-level IC designer leading interaction and conversation design across multiple high-volume customer service programs. My focus was building scalable patterns that preserve trust while improving automation.
-     </div>     <div class="callout">
-            <strong>What I did:</strong> I designed conversational UX patterns focused on human–AI collaboration. I mapped user intent, system state, and failure modes, then prototyped flows that balanced automation with transparency, recovery, and human handoff. I partnered closely with product, engineering, and applied science to iterate quickly based on real usage.
-</div>
-          
+          </div>
+
+          <div class="callout">
+            <strong>What I did:</strong> I designed conversational UX patterns focused on human–AI collaboration. I mapped user intent, system state, and failure modes, then prototyped flows that balanced automation with transparency, recovery, and human handoff. I worked in tight partnership with product, engineering, and applied science to iterate quickly based on real usage.
+          </div>
 
           <div class="callout" style="margin-top:12px;">
             <strong>Private review:</strong> Screens, flows, and deeper detail available in live conversations when appropriate.
