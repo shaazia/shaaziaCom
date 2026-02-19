@@ -1,269 +1,554 @@
-<main class="case container">
-  <!-- HERO -->
-  <header class="case-hero">
-    <p class="eyebrow">Amazon Customer Service</p>
-    <h1>Designing Proactive, AI-Driven Support at Scale</h1>
-      <link rel="stylesheet" href="../../css/styles.css" />
-    <p class="lede">
-      I led the design of conversational and proactive support experiences across chat, voice, and multimodal surfaces—
-      helping customers resolve issues faster and often before they needed to contact support.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Customer Service | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
 
-    <figure class="pull pull-hero">
-      <blockquote>
-        “Shifting customer service from reactive problem-solving to proactive issue prevention across chat, voice, and multimodal experiences.”
-      </blockquote>
-    </figure>
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
 
-    <!-- Optional: KPI/Scope chips (no numbers needed) -->
-    <ul class="chips" aria-label="Scope">
-      <li>Conversational AI</li>
-      <li>Proactive Support</li>
-      <li>Multimodal UX</li>
-      <li>Cross-device continuity</li>
-    </ul>
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 80ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 82ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .confidential{
+      border: 1px solid #f0f0f0;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      margin: 22px 0 0;
+      box-shadow: var(--shadow);
+    }
+    .confidential strong{ color: var(--ink); }
+    .confidential p{ margin: 0; color: #333; }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll (nice but subtle) */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- OPTIONAL: STICKY SIDE NAV (desktop) -->
-  <nav class="case-nav" aria-label="Case study sections">
-    <a href="#problem">Problem</a>
-    <a href="#role">Role</a>
-    <a href="#work">What I Designed</a>
-    <a href="#impact">Impact</a>
-    <a href="#reflection">Why it matters</a>
-  </nav>
+  <main>
+    <article class="caseWrap">
+      <p class="kicker">work overview</p>
+      <h1 class="title">Amazon Customer Service</h1>
 
-  <!-- CONTENT GRID -->
-  <section class="case-grid">
-    <!-- LEFT: MAIN STORY -->
-    <article class="case-body">
-      <!-- PROBLEM -->
-      <section id="problem" class="block">
-        <h2>The Problem</h2>
-        <p>
-          Customers often reach support at moments of confusion, urgency, or frustration—subscription changes, unknown
-          charges, device issues, and delivery disruptions. These are high cognitive-load moments that can quickly
-          escalate to human support when clarity or confidence is missing.
-        </p>
+      <p class="dek">
+        A collection of confidential initiatives designing AI-driven customer support across chat, voice, and devices—
+        focused on reducing customer effort, increasing automation, and scaling trusted interaction patterns.
+      </p>
 
-        <figure class="pull">
-          <blockquote>“High-effort moments drive unnecessary contact when clarity and reassurance are missing.”</blockquote>
-        </figure>
+      <div class="metaRow">
+        <span class="chip">AI Chatbots</span>
+        <span class="chip">Voice UX</span>
+        <span class="chip">Multimodal and touch</span>
+        <span class="chip">Future Vision</span>
+        <span class="chip">Devices & Entertainment</span>
+            <span class="chip">Retail</span>
+      </div>
 
-        <!-- IMAGE SLOT: "Support journey" diagram -->
-        <figure class="media">
-          <img src="/images/amazon-cs/journey.png" alt="Support journey showing key moments of confusion and escalation" />
-          <figcaption>Where customers get stuck: confusion → anxiety → escalation.</figcaption>
-        </figure>
-      </section>
+      <div class="grid">
 
-      <!-- ROLE -->
-      <section id="role" class="block">
-        <h2>My Role</h2>
-        <div class="two-col">
-          <div>
-            <h3>Lead Designer</h3>
-            <p class="muted">Conversational &amp; Proactive Support Experiences</p>
-          </div>
-          <ul class="bullets">
-            <li>Designed AI-driven support across chat, voice, and multimodal surfaces</li>
-            <li>Partnered with product, engineering, applied science, and operations</li>
-            <li>Focused on high-volume, high-impact issues where confusion drives contact</li>
+        <!-- MAIN COLUMN -->
+     <!-- MAIN COLUMN -->
+<div class="main">
+
+  <!-- Context -->
+  <h2 class="reveal">Context</h2>
+  <p class="reveal">
+    This page represents multiple Amazon Customer Service programs that are not yet public. The work spans conversational AI design,
+    proactive support experiences, and cross-device continuity across chat, voice, and device surfaces. The shared goal: help customers
+    resolve issues quickly and confidently—often before they need to contact support.
+  </p>
+
+  <div class="pull reveal">
+    The design goal: make automated support feel clear, trustworthy, and action-oriented—especially in high-stakes moments like billing confusion,
+    subscription changes, and device troubleshooting.
+  </div>
+
+  <!-- HERO IMAGE PLACEHOLDER (optional, but recommended for visual rhythm) -->
+  <figure class="reveal" style="margin: 22px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-hero.jpg"
+      alt="Placeholder: overview visual of customer service surfaces and AI support"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff; box-shadow: var(--shadow);"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Image placeholder: Overview visual (e.g., surfaces + customer moments). Replace with a safe, non-confidential diagram or abstract graphic.
+    </figcaption>
+  </figure>
+
+  <!-- STAR OVERVIEW -->
+  <h2 class="reveal">Overview (STAR)</h2>
+
+  <h2 class="reveal" style="margin-top: 18px;">Situation</h2>
+  <p class="reveal">
+    Customers often reach support during moments of confusion, urgency, or frustration—managing subscriptions, investigating unfamiliar charges,
+    resolving device issues, or navigating delivery disruptions. These are high cognitive-load scenarios where unclear paths can lead to escalation.
+  </p>
+
+  <div class="pull reveal">
+    High-effort moments drive unnecessary contact when reassurance and next steps aren’t clear.
+  </div>
+
+  <!-- IMAGE PLACEHOLDER: Journey / escalation loop -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-journey.png"
+      alt="Placeholder: support journey showing confusion to escalation and where proactive design intervenes"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Diagram placeholder: Support journey / escalation loop (confusion → anxiety → contact), showing proactive interception points.
+    </figcaption>
+  </figure>
+
+  <h2 class="reveal" style="margin-top: 28px;">Task</h2>
+  <p class="reveal">
+    Design AI-driven customer support experiences that reduce customer effort, improve successful self-service, and maintain trust—across chat, voice,
+    multimodal surfaces, and notifications—while supporting cross-device continuity.
+  </p>
+
+  <h2 class="reveal" style="margin-top: 28px;">Action</h2>
+  <p class="reveal">
+    I led interaction and conversation design across multiple high-volume customer service programs, focusing on scalable patterns, clear state design,
+    and action-forward guidance. Work included subscription management, billing/unknown charge resolution, proactive troubleshooting, service continuity,
+    and proactive notifications across Amazon experiences.
+  </p>
+
+  <h2 class="reveal" style="margin-top: 28px;">Result</h2>
+  <p class="reveal">
+    These initiatives contributed to a shift from reactive support toward proactive resolution—helping customers resolve issues faster, reducing avoidable
+    escalation, and creating reusable interaction models across chat, voice, and device UI surfaces.
+  </p>
+
+  <!-- My role -->
+  <h2 class="reveal">My role</h2>
+  <ul class="bullets reveal">
+    <li>Staff-level IC design across chat, voice, multimodal, and device surfaces</li>
+    <li>Interaction design, conversation design, and content strategy</li>
+    <li>State modeling, error recovery, and confidence-building patterns</li>
+    <li>Prototyping + future-vision storytelling to align stakeholders in ambiguous spaces</li>
+    <li>Partnership with product, engineering, research, and applied science</li>
+  </ul>
+
+  <!-- IMAGE PLACEHOLDER: System map / handoff -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-system-map.png"
+      alt="Placeholder: cross-device system map showing chat, voice, notifications, and device handoffs"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Diagram placeholder: System map showing surfaces (chat/voice/multimodal/notifications) and cross-device continuity.
+    </figcaption>
+  </figure>
+
+  <!-- Project areas -->
+  <h2 class="reveal">Project areas</h2>
+
+  <!-- 1 -->
+  <h2 class="reveal">1) AI customer service chatbots</h2>
+  <p class="reveal">
+    Designed AI-driven chatbot experiences for high-frequency customer needs including <strong>subscription management</strong> and
+    <strong>unknown charges</strong>. The focus was reducing friction, building trust, and translating complex account signals into clear “next best actions.”
+  </p>
+  <ul class="bullets reveal">
+    <li><strong>Subscription management:</strong> cancel, update, or modify subscriptions across Prime Video, Amazon Music, Kids+, and Kindle Unlimited</li>
+    <li><strong>Unknown charges:</strong> guided investigation flows, clear explanations, reassurance, and escalation options</li>
+    <li><strong>Key UX themes:</strong> explainability, error recovery, confidence-building language, reduced handoffs</li>
+  </ul>
+
+  <!-- IMAGE PLACEHOLDER: chatbot flow -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-chatbot-flow.png"
+      alt="Placeholder: conversation architecture for subscription management and unknown charges"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Image placeholder: Conversation architecture (intent → confirmation → outcome) + unknown charge decision paths.
+    </figcaption>
+  </figure>
+
+  <div class="pull reveal">
+    Transparency reduces anxiety—and anxiety drives contact.
+  </div>
+
+  <!-- 2 -->
+  <h2 class="reveal">2) Proactive, multimodal self-service</h2>
+  <p class="reveal">
+    Designed next-generation customer service interfaces that proactively surface and resolve common issues <em>before</em> customers contact support.
+    These experiences helped customers quickly identify causes (connectivity, software updates, cache/performance) and resolve them with one click.
+  </p>
+  <ul class="bullets reveal">
+    <li>Proactive detection and guided troubleshooting to reduce “search and guess” behavior</li>
+    <li>Action-forward UI that makes diagnosis and resolution feel predictable</li>
+    <li>Designed to prevent avoidable contact and reduce time-to-resolution</li>
+  </ul>
+
+  <!-- IMAGE PLACEHOLDER: proactive panel -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-proactive-panel.png"
+      alt="Placeholder: proactive troubleshooting panel with one-click fixes"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Image placeholder: Proactive support panel (diagnosis → recommendation → one-click fix).
+    </figcaption>
+  </figure>
+
+  <div class="pull reveal">
+    The best support interaction is the one customers never need to start.
+  </div>
+
+  <!-- 3 -->
+  <h2 class="reveal">3) Service continuity &amp; proactive notifications</h2>
+  <p class="reveal">
+    Designed proactive experiences that protect uninterrupted service and reduce uncertainty-driven contact—such as alerts for expiring payment methods,
+    delivery disruptions (including weather-related delays), and account issues that customers can resolve immediately.
+  </p>
+  <ul class="bullets reveal">
+    <li><strong>Payment readiness:</strong> proactive alerts for expiring credit cards to avoid interruptions</li>
+    <li><strong>Delivery notifications:</strong> expectation-setting messaging and clear next steps</li>
+    <li><strong>Design focus:</strong> early signal, calm tone, immediate action paths</li>
+  </ul>
+
+  <!-- IMAGE PLACEHOLDER: notifications -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-notifications.png"
+      alt="Placeholder: proactive notifications for payment readiness and delivery delays"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Image placeholder: Notification patterns (early warning → reassurance → clear CTA).
+    </figcaption>
+  </figure>
+
+  <!-- 4 -->
+  <h2 class="reveal">4) Cross-device conversational continuity (Echo / Alexa+ and beyond)</h2>
+  <p class="reveal">
+    Designed experiences that allow customers to seamlessly continue support conversations across devices—such as Echo family products (Alexa+),
+    the Amazon app, and desktop—preserving context, intent, and progress so customers don’t have to repeat themselves.
+  </p>
+  <ul class="bullets reveal">
+    <li>Conversation state design to support handoffs and resumable flows</li>
+    <li>Repair strategies for ambiguity and partial input in voice contexts</li>
+    <li>Multimodal handoffs when a task benefits from visuals or deeper account detail</li>
+  </ul>
+
+  <!-- IMAGE PLACEHOLDER: handoff -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-handoff.png"
+      alt="Placeholder: cross-device handoff diagram for a customer support conversation"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Diagram placeholder: Cross-device continuity model (state + context + next best action).
+    </figcaption>
+  </figure>
+
+  <!-- Principles -->
+  <h2 class="reveal">Design principles across the work</h2>
+  <ul class="bullets reveal">
+    <li><strong>Reduce cognitive load:</strong> translate system complexity into human language</li>
+    <li><strong>Design for ambiguity:</strong> clear recovery paths and safe defaults</li>
+    <li><strong>Make AI intent visible:</strong> what the system is doing and why</li>
+    <li><strong>Encourage automation without eroding trust:</strong> transparency + control</li>
+    <li><strong>Scale patterns:</strong> reusable interaction models across chat, voice, and device UIs</li>
+  </ul>
+
+  <!-- Outcomes -->
+  <h2 class="reveal">Outcomes (high level)</h2>
+  <p class="reveal">
+    Detailed metrics and artifacts are confidential, but these initiatives contributed to clearer AI-led resolution paths, stronger trust signals in automated support,
+    and scalable patterns for conversational and device-based customer service experiences.
+  </p>
+
+  <ul class="bullets reveal">
+    <li><strong>Reduced customer effort:</strong> clearer paths to resolution during high-stress support moments</li>
+    <li><strong>Increased self-service success:</strong> improved completion paths across AI-driven channels</li>
+    <li><strong>Prevented avoidable contacts:</strong> proactive detection + one-click fixes for common device issues</li>
+    <li><strong>Improved continuity:</strong> fewer repeated steps when customers switch devices or channels</li>
+    <li><strong>Reusable patterns:</strong> consistent interaction models across chat, voice, and device surfaces</li>
+  </ul>
+
+  <div class="pull reveal">
+    Proactive design scales better than reactive support.
+  </div>
+
+  <!-- IMAGE PLACEHOLDER: outcomes model -->
+  <figure class="reveal" style="margin: 18px 0 6px;">
+    <img
+      src="../../images/placeholders/amazon-cs-outcomes.png"
+      alt="Placeholder: outcome model showing clarity + prevention + continuity leading to faster resolution and fewer escalations"
+      style="width:100%; height:auto; border:1px solid var(--border); border-radius: var(--radius); background:#fff;"
+    />
+    <figcaption style="margin-top:10px; color: var(--muted); font-size: 13px; line-height:1.6;">
+      Diagram placeholder: Outcome model (clarity + prevention + continuity → faster resolution and fewer escalations).
+    </figcaption>
+  </figure>
+
+  <div class="confidential reveal">
+    <p>
+      <strong>Confidentiality note:</strong> Visual designs, detailed flows, and specs for these projects are not public.
+      This page describes the scope, approach, and design themes without sharing confidential artifacts.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="navBottom">
+    <a href="../portfolio.html">← Back to Portfolio</a>
+    <a href="../../index.html#contact">Start a conversation →</a>
+  </div>
+</div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Org:</strong> Amazon Customer Service (confidential)</li>
+            <li><strong>Surfaces:</strong> Chat, Voice, Devices</li>
+            <li><strong>Domains:</strong> Billing, subscriptions, device help, entertainment support</li>
+            <li><strong>Focus:</strong> AI automation + trust + clarity</li>
+            <li><strong>Artifacts:</strong> Concepts, flows, IA, patterns (confidential)</li>
           </ul>
-        </div>
 
-        <!-- IMAGE SLOT: small “system map” -->
-        <figure class="media media-wide">
-          <img src="/images/amazon-cs/system-map.png" alt="System map showing channels and handoffs across devices" />
-          <figcaption>How conversations continue across devices and channels.</figcaption>
-        </figure>
-      </section>
+          <h3 style="margin-top:18px;">What I owned</h3>
+          <ul>
+            <li>Interaction patterns &amp; state design</li>
+            <li>Content structure and guidance</li>
+            <li>Prototyping &amp; future-vision storytelling</li>
+            <li>Cross-functional alignment</li>
+          </ul>
 
-      <!-- WORK -->
-      <section id="work" class="block">
-        <h2>What I Designed</h2>
-        <p class="muted">
-          Key experiences designed across Prime Video, Amazon Music, Kids+, and Kindle Unlimited.
-        </p>
-
-        <!-- CARD GRID -->
-        <div class="cards">
-          <section class="card">
-            <h3>Subscription Management Conversations</h3>
-            <p>
-              Chatbot experiences enabling customers to cancel, update, or modify subscriptions with clear consequences,
-              transparent language, and reduced emotional friction.
-            </p>
-
-            <figure class="pull pull-small">
-              <blockquote>“Even routine actions like cancellations are emotional moments—designing for trust matters.”</blockquote>
-            </figure>
-
-            <!-- IMAGE SLOT: conversation snippet -->
-            <figure class="media">
-              <img src="/images/amazon-cs/subscriptions-flow.png" alt="Conversation flow for managing a subscription" />
-              <figcaption>Conversation architecture: intent → confirmation → outcome.</figcaption>
-            </figure>
-          </section>
-
-          <section class="card">
-            <h3>Billing &amp; Unknown Charge Resolution</h3>
-            <p>
-              Conversational flows that guide customers through unfamiliar charges—context, explanation, and next steps—
-              designed to reduce anxiety and escalation.
-            </p>
-
-            <figure class="pull pull-small">
-              <blockquote>“Transparency reduces anxiety—and anxiety drives contact.”</blockquote>
-            </figure>
-
-            <!-- IMAGE SLOT: decision tree -->
-            <figure class="media">
-              <img src="/images/amazon-cs/unknown-charge-tree.png" alt="Decision tree for unknown charge resolution" />
-              <figcaption>Fast disambiguation paths to the right resolution.</figcaption>
-            </figure>
-          </section>
-
-          <section class="card">
-            <h3>Proactive, Multimodal Self-Service</h3>
-            <p>
-              Next-gen interfaces that proactively detect common issues (connectivity, outdated software, cache/performance)
-              and offer one-click resolution—before customers contact support.
-            </p>
-
-            <figure class="pull pull-small">
-              <blockquote>“The best support interaction is the one customers never need to start.”</blockquote>
-            </figure>
-
-            <!-- IMAGE SLOT: proactive panel UI -->
-            <figure class="media">
-              <img src="/images/amazon-cs/proactive-panel.png" alt="Proactive troubleshooting panel with one-click fixes" />
-              <figcaption>Proactive diagnosis → recommended fix → one-click resolve.</figcaption>
-            </figure>
-          </section>
-
-          <section class="card">
-            <h3>Service Continuity &amp; Payment Readiness</h3>
-            <p>
-              Proactive alerts for expiring cards or payment issues to prevent interrupted service and failed purchases.
-            </p>
-
-            <!-- IMAGE SLOT: notification pattern -->
-            <figure class="media">
-              <img src="/images/amazon-cs/payment-alerts.png" alt="Proactive payment alerts and action CTAs" />
-              <figcaption>Clear, timely alerts with action-forward CTAs.</figcaption>
-            </figure>
-          </section>
-
-          <section class="card">
-            <h3>Cross-Device Conversational Continuity</h3>
-            <p>
-              Designed conversations that persist across Echo devices (Alexa+), mobile, and desktop—preserving intent,
-              context, and progress.
-            </p>
-
-            <figure class="pull pull-small">
-              <blockquote>“Customers don’t think in channels. Conversations shouldn’t either.”</blockquote>
-            </figure>
-
-            <!-- IMAGE SLOT: cross-device handoff diagram -->
-            <figure class="media">
-              <img src="/images/amazon-cs/handoff.png" alt="Diagram of conversation handoff between devices" />
-              <figcaption>Handoff model: state, context, and next best action.</figcaption>
-            </figure>
-          </section>
-
-          <section class="card">
-            <h3>Proactive Delivery Notifications</h3>
-            <p>
-              Early notifications for weather-related delays and delivery risks to set expectations and reduce uncertainty-driven contact.
-            </p>
-
-            <!-- IMAGE SLOT: notification timeline -->
-            <figure class="media">
-              <img src="/images/amazon-cs/delivery-notifs.png" alt="Delivery delay notification examples and timeline" />
-              <figcaption>Set expectations early; reduce “where is my order?” spikes.</figcaption>
-            </figure>
-          </section>
-        </div>
-      </section>
-
-      <!-- IMPACT -->
-      <section id="impact" class="block">
-        <h2>Impact &amp; Outcomes</h2>
-
-        <div class="impact">
-          <div class="impact-card">
-            <h3>Reduced Customer Effort</h3>
-            <p>Designed clear, action-forward flows that help customers resolve issues faster with less confusion.</p>
+          <div class="callout">
+            <strong>Why it matters:</strong> Customer service is often high-stress. These designs aimed to make automated support
+            feel predictable and trustworthy—helping customers resolve issues faster and reducing unnecessary contacts.
           </div>
-          <div class="impact-card">
-            <h3>Increased Self-Service Success</h3>
-            <p>Improved completion paths across AI-driven channels—minimizing unnecessary escalation.</p>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Confidential artifacts:</strong> Screens, flows, and metrics available for review in private conversations when appropriate.
           </div>
-          <div class="impact-card">
-            <h3>Prevented Avoidable Contacts</h3>
-            <p>Proactive detection and one-click fixes helped customers resolve issues before reaching support.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Built Trust Across Devices</h3>
-            <p>Cross-device continuity ensured customers didn’t lose context, progress, or confidence.</p>
-          </div>
-        </div>
+        </aside>
 
-        <figure class="pull pull-impact">
-          <blockquote>“Proactive design scales better than reactive support.”</blockquote>
-        </figure>
-
-        <!-- IMAGE SLOT: before/after funnel or “contact drivers” chart (no numbers needed) -->
-        <figure class="media media-wide">
-          <img src="/images/amazon-cs/outcomes.png" alt="Illustration of outcomes: fewer contacts, faster resolution, higher confidence" />
-          <figcaption>Outcome model: clarity + prevention + continuity → fewer escalations and faster resolution.</figcaption>
-        </figure>
-      </section>
-
-      <!-- REFLECTION -->
-      <section id="reflection" class="block">
-        <h2>Why This Work Matters</h2>
-        <p>
-          This program shows how conversational AI and proactive design can create support experiences that are calmer,
-          clearer, and more scalable—while still feeling human.
-        </p>
-
-        <figure class="pull">
-          <blockquote>“Good customer service resolves problems. Great customer service prevents them.”</blockquote>
-        </figure>
-      </section>
+      </div>
     </article>
+  </main>
 
-    <!-- RIGHT: SIDEBAR (desktop) -->
-    <aside class="case-aside" aria-label="At a glance">
-      <section class="aside-card">
-        <h3>At a glance</h3>
-        <ul class="meta">
-          <li><span>Focus</span><span>Conversational AI + Proactive Support</span></li>
-          <li><span>Surfaces</span><span>Chat, Voice, Multimodal, Notifications</span></li>
-          <li><span>Devices</span><span>Echo (Alexa+), Mobile, Desktop</span></li>
-          <li><span>Domains</span><span>Subscriptions, Billing, Devices, Delivery</span></li>
-        </ul>
-      </section>
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
 
-      <section class="aside-card">
-        <h3>Design principles</h3>
-        <ul class="bullets">
-          <li>Reduce cognitive load in stressed moments</li>
-          <li>Make outcomes explicit and reversible when possible</li>
-          <li>Diagnose fast; recommend the next best action</li>
-          <li>Preserve context across channels</li>
-        </ul>
-      </section>
-
-      <!-- IMAGE SLOT: small “pattern library” tile -->
-      <section class="aside-card">
-        <h3>Patterns</h3>
-        <p class="muted">Confirmation, explanation, and next-step CTAs.</p>
-        <img class="thumb" src="/images/amazon-cs/patterns.png" alt="UI patterns for support conversations" />
-      </section>
-    </aside>
-  </section>
-</main>
+  <!-- Optional: reveal-on-scroll -->
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
