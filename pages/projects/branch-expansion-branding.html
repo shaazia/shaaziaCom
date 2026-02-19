@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Woodforest National Bank - Branch Expansion & Branding | Portfolio</title>
+  <title>Branch Expansion & Branding | Portfolio</title>
   <link rel="stylesheet" href="../../css/styles.css" />
 
   <style>
-    /* ---------- Editorial Case Study (page-local styles) ---------- */
-
     :root{
       --ink:#111;
       --muted:#666;
@@ -17,6 +15,18 @@
       --shadow: 0 14px 34px rgba(0,0,0,.06);
       --radius: 18px;
     }
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius: 12px;
+      z-index:999;
+    }
+    .skip-link:focus{ left:10px; }
 
     .caseWrap{
       max-width: 1120px;
@@ -50,7 +60,7 @@
       font-size: 18px;
       line-height: 1.75;
       color: #333;
-      max-width: 78ch;
+      max-width: 86ch;
       margin: 0 0 22px;
     }
 
@@ -70,7 +80,6 @@
       background: #fff;
     }
 
-    /* Two-column layout */
     .grid{
       display:grid;
       grid-template-columns: 2.2fr 1fr;
@@ -81,10 +90,16 @@
       .grid{ grid-template-columns: 1fr; gap: 28px; }
     }
 
-    /* Main column */
     .main h2{
       font-size: 22px;
       margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main h3{
+      font-size: 18px;
+      margin: 26px 0 10px;
       letter-spacing: -0.01em;
       color: var(--ink);
     }
@@ -94,7 +109,7 @@
       line-height: 1.9;
       color: #333;
       margin: 0 0 16px;
-      max-width: 82ch;
+      max-width: 86ch;
     }
 
     .pull{
@@ -106,7 +121,16 @@
       color: var(--ink);
     }
 
-    /* Images */
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
     figure{
       margin: 34px 0;
       border-radius: var(--radius);
@@ -139,12 +163,21 @@
       .twoUp{ grid-template-columns: 1fr; }
     }
 
+    .threeUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 960px){
+      .threeUp{ grid-template-columns: 1fr; }
+    }
+
     .divider{
       margin: 64px 0 0;
       border-top: 1px solid #eee;
     }
 
-    /* Sidebar */
     .side{
       position: sticky;
       top: 24px;
@@ -188,7 +221,6 @@
       line-height: 1.7;
     }
 
-    /* Bottom nav */
     .navBottom{
       display:flex;
       justify-content:space-between;
@@ -206,7 +238,6 @@
     }
     .navBottom a:hover{ background:#f7f7f7; }
 
-    /* Optional: reveal-on-scroll (nice but subtle) */
     .reveal{ opacity:0; transform: translateY(10px); }
     .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
     @media (prefers-reduced-motion: reduce){
@@ -216,6 +247,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header>
     <nav>
       <a href="../../index.html" class="logo">Shaazia</a>
@@ -227,24 +260,23 @@
     </nav>
   </header>
 
-  <main>
+  <main id="content">
     <article class="caseWrap">
       <p class="kicker">Case Study</p>
-      <h1 class="title">Branch Expansion & Branding</h1>
+      <h1 class="title">Branch Expansion &amp; Branding</h1>
 
-<!-- Replace the existing .dek paragraph with this stronger one -->
-<p class="dek">
-  I pioneered UX at Woodforest National Bank, leading the creation of a scalable brand and in-branch experience system
-  deployed across 750+ branches in 17 states as Walmart’s largest banking partner.
-</p>
-
+      <p class="dek">
+        As Woodforest expanded into new markets, I led brand and marketing work that helped new branches feel immediately familiar and trustworthy.
+        The program included brand guidelines, in-branch and out-of-home signage, and a scalable marketing system across print, digital, and environmental touchpoints.
+      </p>
 
       <div class="metaRow">
+        <span class="chip">Lead Designer</span>
+        <span class="chip">VP, Marketing &amp; UX</span>
         <span class="chip">Brand Systems</span>
-        <span class="chip">Marketing Design</span>
+        <span class="chip">Environmental + In-Branch</span>
+        <span class="chip">Campaign Design</span>
         <span class="chip">Guidelines</span>
-        <span class="chip">In-Branch</span>
-        <span class="chip">Campaign Creative</span>
       </div>
 
       <div class="grid">
@@ -254,131 +286,173 @@
 
           <h2 class="reveal">Context</h2>
           <p class="reveal">
-            As Woodforest National Bank expanded into new markets, teams needed a cohesive way to show up consistently—
-            across in-branch, point of sale, and marketing touchpoints—while still allowing for local nuance.
+            Branch expansion is a brand moment. Customers in new markets decide quickly whether a bank feels credible, consistent, and easy to work with.
+            This work focused on building a cohesive identity and rollout system so new locations could launch with a clear, unified experience—inside the branch and across marketing channels.
           </p>
 
           <div class="pull reveal">
-            The design goal: create a brand toolkit that scales—so every new branch launch feels familiar, trustworthy,
-            and easy to recognize.
+            Goal: make new branches feel “established on day one” by pairing a consistent brand system with practical, scalable marketing execution.
           </div>
+
+          <h2 class="reveal">My role</h2>
+          <p class="reveal">
+            I served as the <strong>Lead Designer</strong> and <strong>VP of Marketing &amp; UX</strong>, owning end-to-end design direction and execution.
+            I defined the creative system, produced key deliverables (guidelines + campaign assets), and partnered with stakeholders to scale the rollout across branches and channels.
+          </p>
 
           <h2 class="reveal">The challenge</h2>
           <p class="reveal">
-            Branch expansion creates a classic consistency problem: multiple channels, multiple teams, and high visibility
-            in physical environments. Without clear guidelines, branches risked uneven messaging, fragmented visuals,
-            and slow execution during launches.
+            Expanding into new markets required both speed and consistency. Without clear standards and reusable assets, branch launches risked
+            inconsistent signage, uneven messaging, and fragmented customer perception—especially across physical and digital touchpoints.
           </p>
+
+          <h3 class="reveal">Design constraints</h3>
+          <ul class="bullets reveal">
+            <li><strong>Scale:</strong> assets needed to work across many branches and formats without constant redesign</li>
+            <li><strong>Consistency:</strong> unify in-branch, web, print, and partner-facing materials into one system</li>
+            <li><strong>Clarity:</strong> quick-scan messaging and hierarchy for busy retail environments</li>
+            <li><strong>Governance:</strong> guidelines had to be easy for teams to follow and approve</li>
+          </ul>
 
           <h2 class="reveal">Approach</h2>
           <p class="reveal">
-            I developed a practical brand system and a set of reusable marketing assets designed for real-world rollout.
-            The work emphasized clarity, repeatability, and flexibility—ensuring teams could deploy materials quickly
-            while maintaining a cohesive identity.
+            I built a brand system designed for rollout: clear rules, reusable components, and templates that could be applied across channels.
+            The strategy prioritized brand recognition, message consistency, and practical constraints like production, placement, and readability.
           </p>
 
-          <h2 class="reveal">Brand identity foundations</h2>
+          <ul class="bullets reveal">
+            <li><strong>Brand framework:</strong> defined visual hierarchy, typography, color usage, and photographic style</li>
+            <li><strong>Guidelines:</strong> documented standards for logo usage, signage applications, and approvals</li>
+            <li><strong>Campaign system:</strong> created adaptable layouts for new market and feature messaging</li>
+            <li><strong>In-branch experience:</strong> applied brand consistently where customers make decisions—inside the store</li>
+          </ul>
+
+          <h2 class="reveal">Brand guidelines and system foundations</h2>
           <p class="reveal">
-            Established core visual building blocks—color, typography, and usage rules—so designers and marketers could
-            confidently produce consistent work across print and digital.
-          </p>
-
-          <figure class="reveal">
-            <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest.webp" alt="Primary color palette and brand identity foundations">
-            <figcaption>
-              Foundation: defined a primary palette and supporting neutrals with guidance for print and digital use.
-            </figcaption>
-          </figure>
-
-          <figure class="reveal">
-            <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest2.webp" alt="Light and dark theme guidance for brand color usage">
-            <figcaption>
-              System: created light/dark theme guidance to support flexibility while maintaining consistent contrast and readability.
-            </figcaption>
-          </figure>
-
-          <h2 class="reveal">Campaign creative</h2>
-          <p class="reveal">
-            Designed campaign assets that communicate value quickly, using a clear hierarchy and recognizable brand cues.
-            The emphasis was on “at-a-glance” comprehension—especially in high-traffic, physical retail environments.
+            I developed foundational guideline content (palette, themes, usage rules) so teams could execute consistently—without slowing down launches.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/BranchExpansionandBranding/CashinAtCheckoutMarketing2.webp" alt="Cash in at checkout marketing creative">
-              <figcaption>
-                Campaign concept: simple message framing + product cueing for fast comprehension.
-              </figcaption>
+              <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest.webp" alt="Brand guideline spread showing primary color palette and color themes" />
+              <figcaption>Color palette + themes designed to support consistent execution across print and digital.</figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/BranchExpansionandBranding/CashinatCheckout1.webp" alt="Long-form marketing layout showing steps and details">
-              <figcaption>
-                Extended format: step-by-step explanation and details for longer dwell-time placements.
-              </figcaption>
+              <img src="../../assets/images/BranchExpansionandBranding/BrandingWoodforest2.webp" alt="Brand guideline spread showing light and dark theme usage" />
+              <figcaption>Light/dark theme guidance to preserve contrast and readability across surfaces.</figcaption>
             </figure>
           </div>
 
-          <h2 class="reveal">In-branch and point-of-sale</h2>
+          <figure class="reveal">
+            <img src="../../assets/images/BranchExpansionandBranding/VisualDesignWoodforest1.webp" alt="Brand guideline spread showing photographic style and logo usage" />
+            <figcaption>Photography and logo guidance used to align tone, representation, and brand consistency.</figcaption>
+          </figure>
+
+          <h2 class="reveal">In-branch and environmental marketing</h2>
           <p class="reveal">
-            Created in-branch signage and promotional materials designed for physical constraints—distance readability,
-            concise messaging, and consistent placement of identity elements.
+            Branches are retail environments—messaging must be scannable, readable at distance, and consistent across multiple placements.
+            I designed a set of in-branch and environmental executions that supported expansion while reinforcing brand recognition.
+          </p>
+
+          <div class="threeUp">
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing.webp" alt="In-branch poster promoting Woodforest with bold headline and web address" />
+              <figcaption>Quick-scan headline and high-contrast layout for branch environments.</figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing2.webp" alt="In-branch advertising creative promoting ATM deposits" />
+              <figcaption>Feature education designed for fast comprehension in high-traffic areas.</figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing3.webp" alt="In-branch poster highlighting self service branch capabilities" />
+              <figcaption>Clear feature stack to set expectations and reduce confusion.</figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Campaign and partner-facing materials</h2>
+          <p class="reveal">
+            For services that depended on partner awareness and customer education, I created campaign assets with clear steps and reassurance.
+            The goal was to reduce uncertainty by making “how it works” immediately obvious.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing.webp" alt="In-branch marketing signage example">
-              <figcaption>
-                In-branch: bold headline + brand anchor for instant recognition.
-              </figcaption>
+              <img src="../../assets/images/BranchExpansionandBranding/CashinAtCheckoutMarketing2.webp" alt="Marketing creative explaining cash in at checkout with step-by-step instructions" />
+              <figcaption>Campaign creative: simplified message + steps to reduce friction and increase confidence.</figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing2.webp" alt="In-branch marketing signage example showing ATM message">
-              <figcaption>
-                Point-of-need messaging: designed for quick, situational understanding.
-              </figcaption>
+              <img src="../../assets/images/BranchExpansionandBranding/CashinatCheckout1.webp" alt="Tall in-branch or partner poster showing cash in at checkout steps and details" />
+              <figcaption>Multi-section layout designed for retail placement and quick “how-to” scanning.</figcaption>
             </figure>
           </div>
 
           <figure class="reveal">
-            <img src="../../assets/images/BranchExpansionandBranding/InBranchMarketing3.webp" alt="Promotional in-branch material for self-service branch features">
-            <figcaption>
-              Promotional materials: feature-forward messaging to reduce confusion and increase adoption of self-service options.
-            </figcaption>
+            <img src="../../assets/images/BranchExpansionandBranding/WoodforestMarketing.webp" alt="Marketing poster highlighting Woodforest Second Chance Checking messaging" />
+            <figcaption>Consistent visual system applied to product messaging and customer reassurance.</figcaption>
           </figure>
 
-          <h2 class="reveal">Visual style guidance</h2>
+          <h2 class="reveal">New artifacts</h2>
           <p class="reveal">
-            Documented photographic and layout guidance to keep creative cohesive across teams and agencies—helping the
-            brand feel consistent, human, and recognizable.
+            Additional examples of branch expansion work across digital presence, print marketing, and brand governance.
+            (Add these files to <code>/assets/images/BranchExpansionandBranding/</code> and match the filenames below.)
           </p>
 
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/NEW-WebsiteHero-CreditScore.webp"
+                   alt="Website hero promoting credit score feature with Woodforest navigation and call-to-action" />
+              <figcaption>Website hero: feature storytelling with strong hierarchy and clear call-to-action.</figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/NEW-Print-SmallBusiness.webp"
+                   alt="Print brochure cover reading 'Your Business is Our Business' with Woodforest branding" />
+              <figcaption>Print collateral: cohesive brand message across small business offerings.</figcaption>
+            </figure>
+          </div>
+
           <figure class="reveal">
-            <img src="../../assets/images/BranchExpansionandBranding/VisualDesignWoodforest1.webp" alt="Photographic style guidance and logo usage example">
-            <figcaption>
-              Style guide: photographic direction and identity usage guidance to support consistent execution.
-            </figcaption>
+            <img src="../../assets/images/BranchExpansionandBranding/NEW-Branch-Rendering.webp"
+                 alt="Architectural rendering of a Woodforest National Bank building with signage" />
+            <figcaption>Branch expansion: environmental presence and brand visibility on new locations.</figcaption>
           </figure>
 
-          <h2 class="reveal">Launch-ready assets</h2>
-          <p class="reveal">
-            Built a set of reusable templates and assets that made branch launches easier to execute—helping teams move fast
-            without reinventing the visual language each time.
-          </p>
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/NEW-BrandGuidelines-Logo.webp"
+                   alt="Brand guideline slide explaining Woodforest logo components and usage" />
+              <figcaption>Governance: logo usage guidance to protect brand integrity across executions.</figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/BranchExpansionandBranding/NEW-BrandGuidelines-Signage.webp"
+                   alt="Brand guideline slide showing signage guidance and examples" />
+              <figcaption>Signage standards: rules and examples to keep non-branch applications consistent.</figcaption>
+            </figure>
+          </div>
 
           <figure class="reveal">
-            <img src="../../assets/images/BranchExpansionandBranding/WoodforestMarketing.webp" alt="Marketing asset example for Woodforest product promotion">
-            <figcaption>
-              Example asset: consistent typography, composition, and brand color usage applied to product messaging.
-            </figcaption>
+            <img src="../../assets/images/BranchExpansionandBranding/NEW-Customer-Collage.webp"
+                 alt="Campaign collage featuring diverse customers and message 'Our customers are why we are here'" />
+            <figcaption>Brand messaging: human-centered creative aligned to customer trust and community presence.</figcaption>
           </figure>
 
           <h2 class="reveal">Outcome</h2>
           <p class="reveal">
-            This work established a scalable brand foundation for branch expansion—creating guidelines and assets that improved
-            consistency, reduced rework, and supported faster rollout across channels.
+            This program delivered a scalable brand and marketing foundation for new-market expansion—clear guidelines, reusable templates,
+            and multi-channel assets that kept the customer experience cohesive from “first impression” to in-branch interaction.
           </p>
+
+          <h2 class="reveal">What I’d improve next</h2>
+          <ul class="bullets reveal">
+            <li><strong>Template library:</strong> expand modular templates for faster rollout by regional teams</li>
+            <li><strong>Governance:</strong> add a lightweight approval workflow and “do/don’t” quick reference sheets</li>
+            <li><strong>Measurement:</strong> align branch launch assets with trackable KPIs (foot traffic proxies, QR/URL tracking, campaign lift)</li>
+          </ul>
 
           <div class="divider"></div>
 
@@ -392,28 +466,26 @@
         <aside class="side reveal">
           <h3>Project snapshot</h3>
           <ul>
-            <li><strong>Client:</strong> Woodforest National Bank</li>
-            <li><strong>Scope:</strong> Branch expansion branding</li>
-            <li><strong>Channels:</strong> In-branch, POS, print, digital</li>
-            <li><strong>Artifacts:</strong> Guidelines + creative assets</li>
+            <li><strong>Company:</strong> Woodforest National Bank</li>
+            <li><strong>Work:</strong> Branch expansion + branding</li>
+            <li><strong>Channels:</strong> In-branch, print, digital, guidelines</li>
+            <li><strong>Deliverables:</strong> Brand system + campaigns</li>
           </ul>
 
-          <h3 style="margin-top:18px;">Design themes</h3>
+          <h3 style="margin-top:18px;">My role</h3>
           <ul>
-            <li>Consistency that scales</li>
-            <li>Fast comprehension</li>
-            <li>Templates for reuse</li>
-            <li>Physical-world readability</li>
+            <li>Lead Designer</li>
+            <li>VP, Marketing &amp; UX</li>
+            <li>Brand system + governance</li>
+            <li>Campaign + in-branch execution</li>
           </ul>
 
           <div class="callout">
-            <strong>What I delivered:</strong> Brand foundations (palette/themes), visual style guidance,
-            campaign creative, and in-branch + point-of-sale materials built for repeatable rollout.
+            <strong>What I led:</strong> brand direction, reusable templates, and cross-channel execution—ensuring new branches launched with a consistent experience.
           </div>
 
           <div class="callout" style="margin-top:12px;">
-            <strong>Why it matters:</strong> Expansion succeeds when customers recognize the brand instantly and
-            messages stay consistent—regardless of channel or market.
+            <strong>Why it matters:</strong> In expansion, trust is built through consistency—customers should feel the brand is established, clear, and dependable from the first interaction.
           </div>
         </aside>
 
@@ -425,7 +497,6 @@
     <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
   </footer>
 
-  <!-- Optional: reveal-on-scroll -->
   <script>
     (function () {
       const items = document.querySelectorAll(".reveal");
