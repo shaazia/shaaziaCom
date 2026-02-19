@@ -8,7 +8,6 @@
 
   <style>
     /* ---------- Editorial Case Study (page-local styles) ---------- */
-
     :root{
       --ink:#111;
       --muted:#666;
@@ -265,16 +264,16 @@
       <h1 class="title">Halliburton</h1>
 
       <p class="dek">
-        App and workflow design for field operations—built for low connectivity, fast data entry, and high-stakes decision-making.
-        The work focused on replacing error-prone manual processes with an offline-first mobile experience that syncs reliably when service returns.
+        As Lead Designer, I redesigned a field-operations mobile experience to support fast, accurate work in low-connectivity environments—improving
+        data capture workflows, decision visibility, and dashboard patterns used across teams.
       </p>
 
       <div class="metaRow">
+        <span class="chip">Lead Designer</span>
         <span class="chip">Mobile UX</span>
         <span class="chip">Offline-first</span>
         <span class="chip">Workflow Design</span>
-        <span class="chip">Industrial / Field Ops</span>
-        <span class="chip">Data Entry + Validation</span>
+        <span class="chip">Data Capture</span>
         <span class="chip">Dashboards</span>
       </div>
 
@@ -285,130 +284,134 @@
 
           <h2 class="reveal">Project summary</h2>
           <p class="reveal">
-            Field teams needed to capture critical information on the job—often in harsh environments, on shared devices,
-            and with unreliable connectivity. I designed a mobile workflow system that supports offline work, reduces input friction,
-            and helps teams confirm accuracy before submitting.
+            Field teams needed to capture critical information on the job—often in harsh environments, on shared devices, and with unreliable connectivity.
+            The work focused on replacing error-prone manual processes with a mobile workflow system that supports offline work and syncs reliably when service returns.
           </p>
 
           <div class="pull reveal">
-            Design goal: enable field teams to record and act on critical data quickly—without sacrificing accuracy, traceability, or confidence.
+            Design goal: enable teams to record and act on critical data quickly—without sacrificing accuracy, traceability, or confidence.
           </div>
+
+          <h2 class="reveal">My role</h2>
+          <p class="reveal">
+            I was the <strong>Lead Designer</strong> responsible for end-to-end workflow design, UI pattern definition, and high-fidelity execution.
+            I partnered with product and engineering to align on constraints (offline behavior, validation rules, and sync states) and produced
+            implementation-ready specs and prototypes.
+          </p>
 
           <h2 class="reveal">The challenge</h2>
           <p class="reveal">
-            Teams were using outdated systems that performed poorly in low-connectivity environments. Critical information was hard to find,
-            processes relied on manual steps, and data quality issues created rework and operational delays.
+            Existing tools performed poorly in the field. Connectivity drops made data entry unreliable, critical details were hard to find quickly,
+            and inconsistent patterns created errors that required follow-up and rework.
           </p>
 
           <h3 class="reveal">Key constraints</h3>
           <ul class="bullets reveal">
-            <li><strong>Connectivity:</strong> offline or intermittent service is common in the field</li>
+            <li><strong>Connectivity:</strong> offline or intermittent service is common on site</li>
             <li><strong>Time pressure:</strong> workflows must be fast, scannable, and resilient to interruptions</li>
-            <li><strong>Data integrity:</strong> inputs need validation, clear units, and review states before submission</li>
-            <li><strong>Traceability:</strong> users need confidence that changes are saved and actions are auditable</li>
+            <li><strong>Data integrity:</strong> inputs need validation, explicit units, and review at commit points</li>
+            <li><strong>Traceability:</strong> users need confidence that changes are saved and actions can be audited</li>
           </ul>
 
           <h2 class="reveal">Approach</h2>
           <p class="reveal">
-            I designed an offline-first mobile experience with predictable patterns for capture, review, and sync—so teams can work continuously
+            I designed an offline-first workflow model with predictable patterns for capture, review, and sync—so teams can keep working continuously
             and trust the system even when connectivity is inconsistent.
           </p>
 
           <ul class="bullets reveal">
-            <li><strong>Offline-first architecture:</strong> local save states, clear sync status, and conflict-safe updates</li>
-            <li><strong>Rapid data entry:</strong> minimized typing, optimized layout for quick scanning and input</li>
-            <li><strong>Decision support:</strong> surfaced “what matters now” with progressive disclosure for details</li>
-            <li><strong>Error prevention:</strong> units, validation rules, and review screens at commit points</li>
+            <li><strong>Offline-first behavior:</strong> local save states, clear sync indicators, and safe recovery when service returns</li>
+            <li><strong>Rapid data entry:</strong> minimized typing, reduced navigation depth, and optimized layout for quick scanning</li>
+            <li><strong>Progress + status:</strong> visible “what’s done / what’s next” with check states and review moments</li>
+            <li><strong>Error prevention:</strong> constrained inputs, validation rules, and confirmations before submission</li>
           </ul>
 
           <h2 class="reveal">Solution highlights</h2>
 
           <h3 class="reveal">1) Fast, confident data capture</h3>
           <p class="reveal">
-            Designed structured input screens that reduce friction and prevent mistakes—using clear labels, units, constrained inputs,
-            and review states that confirm “what will be submitted.”
+            Structured input screens focused on clarity and accuracy—using strong hierarchy, explicit units, and predictable commit points
+            so users can verify what will be submitted.
           </p>
 
           <figure class="reveal">
             <img src="../../assets/images/Haliburton/Halliburton6.webp"
-                 alt="Mobile calculator screen annotated with UI color and typography specifications for a field operations app" />
+                 alt="Mobile calculator screen annotated with UI specifications for a field operations app" />
             <figcaption>
-              High-clarity UI patterns designed for fast entry and low error rates: strong hierarchy, readable type, and explicit units.
+              High-clarity patterns for low-error input: readable type, strong hierarchy, and explicit units at key moments.
             </figcaption>
           </figure>
 
-          <h3 class="reveal">2) Workflow integration across tasks</h3>
+          <h3 class="reveal">2) Workflow patterns that survive interruptions</h3>
           <p class="reveal">
-            Built repeatable workflow patterns so field teams can move between steps without losing context. The structure supports interruptions,
-            preserves progress, and reduces the need to re-enter information.
+            Designed repeatable workflow structures so teams can pause and resume without losing context—preserving progress and reducing re-entry.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
               <img src="../../assets/images/Haliburton/Halliburton5.webp"
-                   alt="Field operations app screen showing a workflow step with structured inputs and navigation controls" />
+                   alt="Field operations app workflow step with structured inputs and navigation controls" />
               <figcaption>
-                Workflow step design: structured inputs + clear next actions for consistent task completion.
+                Workflow step design: clear next actions and consistent structure across tasks.
               </figcaption>
             </figure>
 
             <figure class="reveal">
               <img src="../../assets/images/Haliburton/Halliburton7.webp"
-                   alt="App screen showing a status or checklist view that supports progress tracking in a field workflow" />
+                   alt="Checklist or status view that supports progress tracking in a field workflow" />
               <figcaption>
-                Progress visibility: users can see what’s complete, what’s missing, and what needs review.
+                Progress visibility: what’s complete, what needs review, and what’s missing.
               </figcaption>
             </figure>
           </div>
 
-          <h3 class="reveal">3) Data visualization for operational visibility</h3>
+          <h3 class="reveal">3) At-a-glance visibility for action</h3>
           <p class="reveal">
-            Designed views that help teams understand status at a glance—surfacing trends, exceptions, and key indicators without requiring deep navigation.
+            Designed views that surface the few signals that drive action in the field—using progressive disclosure to keep screens scannable.
           </p>
 
           <figure class="reveal">
             <img src="../../assets/images/Haliburton/HaliburtonApp2.webp"
-                 alt="Mobile application screen showing operational metrics and data visualization for field operations" />
+                 alt="Mobile screen showing operational metrics and data visualization for field operations" />
             <figcaption>
-              Visual hierarchy designed for rapid comprehension: focus on the few signals that drive action in the field.
+              Visual hierarchy optimized for rapid comprehension: summary-first with fast paths to detail.
             </figcaption>
           </figure>
 
-          <h3 class="reveal">4) Dashboards and analytics</h3>
+          <h3 class="reveal">4) Dashboards for supervisors and stakeholders</h3>
           <p class="reveal">
-            Created dashboard patterns for supervisors and stakeholders to monitor work status, identify bottlenecks,
-            and spot quality issues earlier—without relying on manual rollups.
+            Created dashboard patterns to monitor work status, identify bottlenecks, and spot quality issues earlier—without relying on manual rollups.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
               <img src="../../assets/images/Haliburton/HaliburtonApp3.webp"
-                   alt="Analytics dashboard interface showing charts and performance summaries for operational workflows" />
+                   alt="Analytics dashboard interface showing charts and operational summaries" />
               <figcaption>
-                Dashboard layout: summary-first with drill-down paths to detail when needed.
+                Dashboard layout: key summaries first, with drill-down paths to detail as needed.
               </figcaption>
             </figure>
 
             <figure class="reveal">
               <img src="../../assets/images/Haliburton/HaliburtonApp4.webp"
-                   alt="System overview or architecture-style screen illustrating how app workflows connect to operational data" />
+                   alt="System overview illustrating how workflows connect to operational data" />
               <figcaption>
-                System view: clarifies how field inputs connect to downstream reporting and operational visibility.
+                System view: clarifies how field inputs connect to downstream reporting and visibility.
               </figcaption>
             </figure>
           </div>
 
           <h2 class="reveal">Outcome</h2>
           <p class="reveal">
-            The redesigned experience replaced paperwork-heavy processes with a more reliable, field-ready workflow system.
-            Teams gained faster capture, clearer review moments, and better visibility into work status—even when connectivity was inconsistent.
+            The redesigned experience established a more dependable, field-ready workflow system with clearer data capture, stronger review moments,
+            and improved visibility into operational status—supporting faster work while protecting accuracy under real-world constraints.
           </p>
 
           <h2 class="reveal">What I’d improve next</h2>
           <ul class="bullets reveal">
-            <li><strong>Usability in harsh conditions:</strong> test more extensively for glare, gloves, and one-handed use</li>
-            <li><strong>Sync transparency:</strong> expand conflict messaging and audit trails for edge cases</li>
-            <li><strong>Performance:</strong> optimize large lists and offline caches for older devices</li>
+            <li><strong>Harsh-condition usability:</strong> expand testing for glare, gloves, one-handed use, and vibration/motion contexts</li>
+            <li><strong>Sync transparency:</strong> strengthen messaging for conflicts, retries, and audit/history for edge cases</li>
+            <li><strong>Performance:</strong> optimize offline caches and large lists for older devices and shared hardware</li>
           </ul>
 
           <div class="divider"></div>
@@ -423,23 +426,23 @@
         <aside class="side reveal">
           <h3>Project snapshot</h3>
           <ul>
+            <li><strong>Client:</strong> Halliburton</li>
             <li><strong>Product:</strong> Field operations mobile app</li>
             <li><strong>Users:</strong> Field teams + supervisors</li>
             <li><strong>Environment:</strong> Low connectivity, time pressure</li>
-            <li><strong>Focus:</strong> Data capture, workflows, dashboards</li>
           </ul>
 
-          <h3 style="margin-top:18px;">My contribution</h3>
+          <h3 style="margin-top:18px;">My responsibilities</h3>
           <ul>
-            <li>Workflow + interaction design</li>
-            <li>UI patterns for rapid entry</li>
-            <li>Information hierarchy + navigation</li>
-            <li>Visualization + dashboard layouts</li>
+            <li>Led end-to-end workflow design</li>
+            <li>Defined UI patterns + hierarchy</li>
+            <li>Produced hi-fi screens + prototypes</li>
+            <li>Created specs for build clarity</li>
           </ul>
 
           <div class="callout">
-            <strong>Design principles:</strong> offline-first reliability, clarity at commit points, reduced input friction,
-            and visibility into status and progress.
+            <strong>Design principles:</strong> offline-first reliability, clarity at commit points,
+            reduced input friction, and visibility into status and progress.
           </div>
 
           <div class="callout" style="margin-top:12px;">
