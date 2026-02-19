@@ -256,6 +256,21 @@
       line-height: 1.7;
     }
 
+    /* Top callout (above the fold) */
+    .topCallout{
+      max-width: 92ch;
+      margin: 14px 0 18px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      color:#333;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .topCallout strong{ color: var(--ink); }
+
     .confidential{
       border: 1px solid #f0f0f0;
       background: #fff;
@@ -389,11 +404,16 @@
   <main id="content">
     <article class="caseWrap">
       <p class="kicker">Case Study</p>
-      <h1 class="title">AWS — Developer Experience & AI-Assisted Workflows</h1>
+      <h1 class="title">AWS — Developer Experience &amp; AI-Assisted Workflows</h1>
 
       <p class="dek">
-       Helping developers understand complex systems through clear, AI-assisted interaction patterns.
+        Helping developers understand complex systems through clear, AI-assisted interaction patterns.
       </p>
+
+      <!-- NEW: fast Staff-level summary above the fold -->
+      <div class="topCallout reveal">
+        <strong>What I owned:</strong> System-level interaction design and AI-assisted UX patterns for developer workflows—defining reusable models for state, trust, and failure handling in tight partnership with engineering.
+      </div>
 
       <div class="metaRow" aria-label="Project tags">
         <span class="chip">Developer Experience</span>
@@ -412,27 +432,32 @@
         <!-- MAIN COLUMN -->
         <div class="main">
 
-          <h2 class="reveal">The problem</h2>
+          <h2 class="reveal">Problem</h2>
           <p class="reveal">
-      Developers using large-scale cloud systems struggled to interpret system state, errors, and next steps—especially as AI assistance was introduced. The challenge was adding intelligence without overwhelming or interrupting developer flow.
+            Developers using large-scale cloud systems struggled to interpret system state, errors, and next steps—especially as AI assistance was introduced.
+            The challenge was adding intelligence without overwhelming or interrupting developer flow.
           </p>
-  
+
           <h2 class="reveal">What I did</h2>
           <p class="reveal">
-       I designed AI-assisted workflows and system-level UX patterns that translated complex technical behavior into understandable guidance. I worked in ambiguous problem spaces, partnering with product and engineering to define both UX and product direction. I focused on scalable interaction models that could be reused across teams.
+            I designed AI-assisted workflows and system-level UX patterns that translate complex technical behavior into understandable, actionable guidance.
+            I worked in ambiguous problem spaces alongside product and engineering to define both UX and product direction, focusing on interaction models
+            that could scale across teams.
           </p>
 
           <h2 class="reveal">Outcome</h2>
           <p class="reveal">
-         The designs improved usability across key workflows and helped establish consistent patterns for AI-assisted guidance. This work informed broader platform UX decisions and supported faster iteration without sacrificing clarity.
+            The designs improved usability across key workflows and helped establish consistent patterns for AI-assisted guidance. This work informed broader
+            platform UX decisions and supported faster iteration without sacrificing clarity, trust, or accountability.
           </p>
 
-          <h2 class="reveal">What I Owned</h2>
-             <p class="reveal">
-     System-level interaction design, AI-assisted UX patterns, and reusable workflow frameworks in close partnership with engineering.
-          </p>
+          <div class="pull reveal">
+            AI is only useful when its work is visible, reviewable, and easy to unblock.
+          </div>
 
           <!-- Initiative 1 -->
+          <h2 class="reveal">Workstreams</h2>
+
           <h3 class="reveal">1) Assigning issues and epics to Amazon Q</h3>
           <p class="reveal">
             Issue creation is a natural entry point: developers already describe intent, but translating that intent into structured,
@@ -580,11 +605,11 @@
             (issues, execution planning, and PR review) instead of feeling like a separate tool.
           </p>
           <ul class="bullets reveal">
-            <li><strong>Reduced ambiguity during execution:</strong> the activity feed centralized status, intent, and decision points.</li>
-            <li><strong>Preserved momentum:</strong> blocked states provided clear causes and next best actions instead of dead ends.</li>
+            <li><strong>Reduced ambiguity during execution:</strong> the activity feed centralized intent, status, and decision points.</li>
+            <li><strong>Designed for reliability:</strong> blocked states clarified cause and provided next best actions to preserve momentum.</li>
             <li><strong>Lowered review overhead:</strong> PR summaries improved orientation while keeping the diff and discussion as the anchor.</li>
-            <li><strong>Improved adoption safety:</strong> settings made identity, limits, and usage predictable for teams.</li>
-            <li><strong>Scalable pattern:</strong> reusable interaction + state models for AI in developer tools—automation with human accountability.</li>
+            <li><strong>Enabled safer adoption:</strong> settings made identity, limits, and usage understandable for teams.</li>
+            <li><strong>Platform impact:</strong> reusable interaction + state models for AI in developer tools—automation with human accountability.</li>
           </ul>
 
           <div class="confidential reveal">
