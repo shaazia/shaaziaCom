@@ -1,79 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haliburton | Portfolio</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo">Shaazia</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="container">
-            <h1>Haliburton</h1>
-            <p>App and workflow design for industrial solutions.</p>
-            
-            <div class="project-overview">
-                <div class="problem">
-                    <h2>The Challenge</h2>
-                    <p>Halliburton's field operations teams struggled with outdated systems that didn't work in low-connectivity environments. Critical data was difficult to access, manual processes were error-prone, and teams spent more time managing paperwork than solving problems.</p>
-                </div>
-                <div class="solution">
-                    <h2>Our Approach</h2>
-                    <p>We designed a mobile-first application that works offline and syncs when connectivity returns. Our UI emphasizes rapid data entry, decision support, and real-time visibility into operations. The new system reduced paperwork, decreased errors, and enabled field teams to focus on high-value work.</p>
-                </div>
-            </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halliburton | Portfolio</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
 
-            <div class="project-gallery">
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/HaliburtonApp1.webp" alt="Haliburton App 1">
-                    <h3>Application Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/Halliburton5.webp" alt="Halliburton 5">
-                    <h3>Workflow Integration</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/Halliburton6.webp" alt="Halliburton 6">
-                    <h3>Data Visualization</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/Halliburton7.webp" alt="Halliburton 7">
-                    <h3>Analytics Dashboard</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/HaliburtonApp2.webp" alt="Haliburton App 2">
-                    <h3>Mobile Application</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/HaliburtonApp3.webp" alt="Haliburton App 3">
-                    <h3>User Interface</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="../../assets/images/Haliburton/HaliburtonApp4.webp" alt="Haliburton App 4">
-                    <h3>System Architecture</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
-    </footer>
+  <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
+
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    .caseWrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .caseWrap{ padding-top: 44px; }
+    }
+
+    .dek{
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 82ch;
+      margin: 0 0 22px;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 12px 0 34px;
+    }
+
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    /* Two-column layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items:start;
+    }
+    @media (max-width: 940px){
+      .grid{ grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* Main column */
+    .main h2{
+      font-size: 22px;
+      margin: 44px 0 12px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main h3{
+      font-size: 18px;
+      margin: 26px 0 10px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .main p{
+      font-size: 16px;
+      line-height: 1.9;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 84ch;
+    }
+
+    .pull{
+      border-left: 3px solid var(--ink);
+      padding-left: 14px;
+      margin: 26px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .bullets{
+      margin: 10px 0 18px;
+      padding-left: 18px;
+      color:#333;
+    }
+    .bullets li{
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    /* Images */
+    figure{
+      margin: 34px 0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    figcaption{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 12px 14px;
+      background:#fff;
+      border-top: 1px solid #efefef;
+      line-height: 1.6;
+    }
+
+    .twoUp{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .twoUp{ grid-template-columns: 1fr; }
+    }
+
+    .divider{
+      margin: 64px 0 0;
+      border-top: 1px solid #eee;
+    }
+
+    /* Sidebar */
+    .side{
+      position: sticky;
+      top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 940px){
+      .side{ position: static; }
+    }
+
+    .side h3{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .side ul{
+      padding-left: 18px;
+      margin: 0 0 18px;
+      color:#333;
+    }
+
+    .side li{
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .callout{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Bottom nav */
+    .navBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      margin-top: 24px;
+      flex-wrap:wrap;
+    }
+    .navBottom a{
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .navBottom a:hover{ background:#f7f7f7; }
+
+    /* Optional: reveal-on-scroll */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
+    }
+
+    /* Accessibility helper (skip link) */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius: 12px;
+      z-index:999;
+    }
+    .skip-link:focus{ left:10px; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="logo">Shaazia</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <article class="caseWrap">
+      <p class="kicker">Case Study</p>
+      <h1 class="title">Halliburton</h1>
+
+      <p class="dek">
+        App and workflow design for field operations—built for low connectivity, fast data entry, and high-stakes decision-making.
+        The work focused on replacing error-prone manual processes with an offline-first mobile experience that syncs reliably when service returns.
+      </p>
+
+      <div class="metaRow">
+        <span class="chip">Mobile UX</span>
+        <span class="chip">Offline-first</span>
+        <span class="chip">Workflow Design</span>
+        <span class="chip">Industrial / Field Ops</span>
+        <span class="chip">Data Entry + Validation</span>
+        <span class="chip">Dashboards</span>
+      </div>
+
+      <div class="grid">
+
+        <!-- MAIN COLUMN -->
+        <div class="main">
+
+          <h2 class="reveal">Project summary</h2>
+          <p class="reveal">
+            Field teams needed to capture critical information on the job—often in harsh environments, on shared devices,
+            and with unreliable connectivity. I designed a mobile workflow system that supports offline work, reduces input friction,
+            and helps teams confirm accuracy before submitting.
+          </p>
+
+          <div class="pull reveal">
+            Design goal: enable field teams to record and act on critical data quickly—without sacrificing accuracy, traceability, or confidence.
+          </div>
+
+          <h2 class="reveal">The challenge</h2>
+          <p class="reveal">
+            Teams were using outdated systems that performed poorly in low-connectivity environments. Critical information was hard to find,
+            processes relied on manual steps, and data quality issues created rework and operational delays.
+          </p>
+
+          <h3 class="reveal">Key constraints</h3>
+          <ul class="bullets reveal">
+            <li><strong>Connectivity:</strong> offline or intermittent service is common in the field</li>
+            <li><strong>Time pressure:</strong> workflows must be fast, scannable, and resilient to interruptions</li>
+            <li><strong>Data integrity:</strong> inputs need validation, clear units, and review states before submission</li>
+            <li><strong>Traceability:</strong> users need confidence that changes are saved and actions are auditable</li>
+          </ul>
+
+          <h2 class="reveal">Approach</h2>
+          <p class="reveal">
+            I designed an offline-first mobile experience with predictable patterns for capture, review, and sync—so teams can work continuously
+            and trust the system even when connectivity is inconsistent.
+          </p>
+
+          <ul class="bullets reveal">
+            <li><strong>Offline-first architecture:</strong> local save states, clear sync status, and conflict-safe updates</li>
+            <li><strong>Rapid data entry:</strong> minimized typing, optimized layout for quick scanning and input</li>
+            <li><strong>Decision support:</strong> surfaced “what matters now” with progressive disclosure for details</li>
+            <li><strong>Error prevention:</strong> units, validation rules, and review screens at commit points</li>
+          </ul>
+
+          <h2 class="reveal">Solution highlights</h2>
+
+          <h3 class="reveal">1) Fast, confident data capture</h3>
+          <p class="reveal">
+            Designed structured input screens that reduce friction and prevent mistakes—using clear labels, units, constrained inputs,
+            and review states that confirm “what will be submitted.”
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/Haliburton/Halliburton6.webp"
+                 alt="Mobile calculator screen annotated with UI color and typography specifications for a field operations app" />
+            <figcaption>
+              High-clarity UI patterns designed for fast entry and low error rates: strong hierarchy, readable type, and explicit units.
+            </figcaption>
+          </figure>
+
+          <h3 class="reveal">2) Workflow integration across tasks</h3>
+          <p class="reveal">
+            Built repeatable workflow patterns so field teams can move between steps without losing context. The structure supports interruptions,
+            preserves progress, and reduces the need to re-enter information.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/Haliburton/Halliburton5.webp"
+                   alt="Field operations app screen showing a workflow step with structured inputs and navigation controls" />
+              <figcaption>
+                Workflow step design: structured inputs + clear next actions for consistent task completion.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/Haliburton/Halliburton7.webp"
+                   alt="App screen showing a status or checklist view that supports progress tracking in a field workflow" />
+              <figcaption>
+                Progress visibility: users can see what’s complete, what’s missing, and what needs review.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h3 class="reveal">3) Data visualization for operational visibility</h3>
+          <p class="reveal">
+            Designed views that help teams understand status at a glance—surfacing trends, exceptions, and key indicators without requiring deep navigation.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/Haliburton/HaliburtonApp2.webp"
+                 alt="Mobile application screen showing operational metrics and data visualization for field operations" />
+            <figcaption>
+              Visual hierarchy designed for rapid comprehension: focus on the few signals that drive action in the field.
+            </figcaption>
+          </figure>
+
+          <h3 class="reveal">4) Dashboards and analytics</h3>
+          <p class="reveal">
+            Created dashboard patterns for supervisors and stakeholders to monitor work status, identify bottlenecks,
+            and spot quality issues earlier—without relying on manual rollups.
+          </p>
+
+          <div class="twoUp">
+            <figure class="reveal">
+              <img src="../../assets/images/Haliburton/HaliburtonApp3.webp"
+                   alt="Analytics dashboard interface showing charts and performance summaries for operational workflows" />
+              <figcaption>
+                Dashboard layout: summary-first with drill-down paths to detail when needed.
+              </figcaption>
+            </figure>
+
+            <figure class="reveal">
+              <img src="../../assets/images/Haliburton/HaliburtonApp4.webp"
+                   alt="System overview or architecture-style screen illustrating how app workflows connect to operational data" />
+              <figcaption>
+                System view: clarifies how field inputs connect to downstream reporting and operational visibility.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 class="reveal">Outcome</h2>
+          <p class="reveal">
+            The redesigned experience replaced paperwork-heavy processes with a more reliable, field-ready workflow system.
+            Teams gained faster capture, clearer review moments, and better visibility into work status—even when connectivity was inconsistent.
+          </p>
+
+          <h2 class="reveal">What I’d improve next</h2>
+          <ul class="bullets reveal">
+            <li><strong>Usability in harsh conditions:</strong> test more extensively for glare, gloves, and one-handed use</li>
+            <li><strong>Sync transparency:</strong> expand conflict messaging and audit trails for edge cases</li>
+            <li><strong>Performance:</strong> optimize large lists and offline caches for older devices</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="navBottom">
+            <a href="../portfolio.html">← Back to Portfolio</a>
+            <a href="../../index.html#contact">Start a conversation →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="side reveal">
+          <h3>Project snapshot</h3>
+          <ul>
+            <li><strong>Product:</strong> Field operations mobile app</li>
+            <li><strong>Users:</strong> Field teams + supervisors</li>
+            <li><strong>Environment:</strong> Low connectivity, time pressure</li>
+            <li><strong>Focus:</strong> Data capture, workflows, dashboards</li>
+          </ul>
+
+          <h3 style="margin-top:18px;">My contribution</h3>
+          <ul>
+            <li>Workflow + interaction design</li>
+            <li>UI patterns for rapid entry</li>
+            <li>Information hierarchy + navigation</li>
+            <li>Visualization + dashboard layouts</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Design principles:</strong> offline-first reliability, clarity at commit points, reduced input friction,
+            and visibility into status and progress.
+          </div>
+
+          <div class="callout" style="margin-top:12px;">
+            <strong>Why it matters:</strong> Field tools only succeed when they’re dependable under real constraints—connectivity, speed, and accuracy.
+          </div>
+        </aside>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
