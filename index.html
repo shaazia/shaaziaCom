@@ -3,371 +3,553 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shaazia Stonehocker | Product Designer</title>
+  <title>Shaazia Stonehocker | Lead Product Designer</title>
 
-  <link rel="stylesheet" href="/css/styles.css" />
+  <!-- Your existing global styles -->
+  <link rel="stylesheet" href="./css/styles.css" />
 
-  <!-- Minimal additions to support the new “snapshot” row + optional thumbnail images -->
   <style>
-    .snapshotRow{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin:1.25rem 0 1rem;
+    /* ---------- Homepage (page-local best-practice styles) ---------- */
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --panel:#fafafa;
+      --shadow: 0 14px 34px rgba(0,0,0,.06);
+      --shadowHover: 0 18px 46px rgba(0,0,0,.10);
+      --radius: 18px;
+      --max: 1120px;
     }
-    .snapItem{
-      border:1px solid rgba(0,0,0,.08);
-      border-radius:14px;
-      padding:10px 12px;
-      min-width:180px;
-      flex:1 1 180px;
-      background: rgba(255,255,255,.6);
-    }
-    .snapLabel{ font-size:.8rem; opacity:.7; margin-bottom:2px; }
-    .snapValue{ font-size:.95rem; font-weight:600; }
 
-    /* Optional: if you swap thumbPh to real images later */
+    /* A11y */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius: 12px;
+      z-index:999;
+    }
+    .skip-link:focus{ left:10px; }
+
+    main{ display:block; }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 20px 92px;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 26px;
+      align-items:start;
+      margin-top: 14px;
+    }
+    @media (max-width: 940px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .title{
+      font-size: 48px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 0 0 14px;
+      font-weight: 650;
+      color: var(--ink);
+    }
+    @media (max-width: 680px){
+      .title{ font-size: 34px; }
+      .wrap{ padding-top: 40px; }
+    }
+
+    .lede{
+      font-size: 17px;
+      line-height: 1.85;
+      color: #333;
+      margin: 0 0 16px;
+      max-width: 86ch;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 14px 0 18px;
+    }
+    .chip{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      text-decoration:none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover{
+      background:#f7f7f7;
+      box-shadow: var(--shadow);
+      transform: translateY(-1px);
+    }
+    .btnPrimary{
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+    .btnPrimary:hover{
+      background:#000;
+      border-color:#000;
+    }
+
+    /* Right-side hero panel */
+    .panel{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .panel h2{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .panel p{
+      font-size: 14px;
+      line-height: 1.75;
+      color:#333;
+      margin: 0 0 12px;
+    }
+    .panel ul{
+      margin: 0;
+      padding-left: 18px;
+      color:#333;
+    }
+    .panel li{
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* Section headers */
+    .sectionTitle{
+      font-size: 20px;
+      margin: 44px 0 10px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .sectionNote{
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 18px;
+      line-height: 1.75;
+      max-width: 92ch;
+    }
+
+    /* Featured work grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card{
+      grid-column: span 4;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease;
+      display:flex;
+      flex-direction:column;
+      min-height: 100%;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadowHover);
+    }
+    @media (max-width: 980px){
+      .card{ grid-column: span 6; }
+    }
+    @media (max-width: 680px){
+      .card{ grid-column: span 12; }
+    }
+
+    .thumb{
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #eee;
+      overflow:hidden;
+    }
     .thumb img{
       width:100%;
-      height:180px;
-      object-fit:cover;
+      height:100%;
+      object-fit: cover;
       display:block;
-      border-radius:12px;
+      transform: scale(1.01);
+      transition: transform .25s ease;
+    }
+    .card:hover .thumb img{ transform: scale(1.04); }
+    .thumb::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0));
+      pointer-events:none;
+      opacity: .85;
+    }
+
+    .cardBody{
+      padding: 16px 16px 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .cardTitle{
+      font-size: 18px;
+      margin: 0;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    .cardTitle a{
+      color: inherit;
+      text-decoration: none;
+    }
+    .cardTitle a:focus-visible{
+      outline: 3px solid #111;
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+    .cardMeta{
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cardDesc{
+      font-size: 14px;
+      line-height: 1.75;
+      color: #333;
+      margin: 0;
+    }
+    .tagRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 2px;
+    }
+    .tag{
+      font-size: 12px;
+      color:#555;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 7px 9px;
+    }
+
+    /* Process / strengths */
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+    @media (max-width: 940px){
+      .twoCol{ grid-template-columns: 1fr; }
+    }
+
+    .miniCard{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .miniCard h3{
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .miniCard p{
+      margin: 0;
+      color:#333;
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    /* Contact section */
+    .contact{
+      margin-top: 46px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .contact h2{
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+    .contact p{
+      margin: 0 0 14px;
+      color:#333;
+      line-height: 1.8;
+      max-width: 92ch;
+      font-size: 15px;
+    }
+
+    /* Reveal-on-scroll */
+    .reveal{ opacity:0; transform: translateY(10px); }
+    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header>
     <nav>
-      <a href="/index.html" class="logo">Shaazia</a>
+      <a href="./index.html" class="logo">Shaazia</a>
       <ul class="nav-links">
-        <li><a href="/pages/portfolio.html">Portfolio</a></li>
-        <li><a href="/pages/approach.html">Approach</a></li>
-        <li><a href="/index.html#contact">Contact</a></li>
+        <li><a href="./index.html" aria-current="page">Home</a></li>
+        <li><a href="./pages/portfolio.html">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
+  <main id="content">
+    <section class="wrap">
 
-    <!-- ================= HERO ================= -->
-    <section class="hero heroSplit">
-      <div class="heroText">
-        <h1>Product design leader</h1>
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="home-title">
+        <div class="reveal">
+          <p class="kicker">Lead Product Designer</p>
+          <h1 class="title" id="home-title">I design clear, trust-first experiences—built to scale.</h1>
 
-        <h2 style="opacity:.95;">
-          Working backward from real customer needs to create intuitive, trustworthy, human experiences.
-        </h2>
+          <p class="lede">
+            I’m Shaazia Stonehocker. I lead UX and brand work across mobile, enterprise, and multi-channel experiences—especially where
+            clarity and confidence matter (financial services, AI support, and field tools).
+          </p>
 
+          <div class="metaRow" aria-label="Design specialties">
+            <span class="chip">Complex workflows</span>
+            <span class="chip">Mobile (iOS + Android)</span>
+            <span class="chip">Design systems + specs</span>
+            <span class="chip">Brand + marketing</span>
+            <span class="chip">Trust + compliance</span>
+          </div>
+
+          <div class="ctaRow" role="group" aria-label="Primary actions">
+            <a class="btn btnPrimary" href="./pages/portfolio.html">View portfolio</a>
+            <!-- Update to your real resume path -->
+            <a class="btn" href="./assets/Shaazia-Stonehocker-Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+            <!-- Update to your real email -->
+            <a class="btn" href="mailto:shaazia@example.com">Email me</a>
+          </div>
+        </div>
+
+        <aside class="panel reveal" aria-label="What I bring">
+          <h2>How I help teams ship</h2>
+          <p>
+            I’m strongest when the experience is complex, high-stakes, or cross-channel—where users need to feel confident at every commit point.
+          </p>
+          <ul>
+            <li><strong>Systems thinking:</strong> reusable patterns, clear IA, scalable specs</li>
+            <li><strong>Trust-first UX:</strong> review states, confirmations, transparent error recovery</li>
+            <li><strong>Delivery-ready:</strong> prototypes + documentation that reduce build ambiguity</li>
+            <li><strong>Cross-channel clarity:</strong> consistent journeys across digital + physical touchpoints</li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- FEATURED WORK -->
+      <section aria-labelledby="featured" class="reveal">
+        <h2 class="sectionTitle" id="featured">Featured work</h2>
+        <p class="sectionNote">
+          A few projects that show my end-to-end approach: strategy → workflows → high-fidelity execution → spec-ready delivery.
+        </p>
+
+        <div class="grid" aria-label="Featured projects">
+
+          <!-- Mobile Banking -->
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/images/MobileBankingApp/ATMScreen2.webp"
+                   alt="Mobile banking promotional creative showing the app on a phone" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./pages/projects/mobile-banking-app.html">Mobile Banking App (iOS + Android)</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
+              <p class="cardDesc">
+                Redesigned core banking workflows (bill pay, transfers, login/auth, settings) and created detailed specs, flows, and prototypes.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Mobile UX</span>
+                <span class="tag">Financial UX</span>
+                <span class="tag">Specs + Flows</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Branch Expansion -->
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/images/BranchExpansionandBranding/WoodforestMarketing.webp"
+                   alt="Woodforest marketing creative with brand messaging" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./pages/projects/branch-expansion-branding.html">Branch Expansion & Branding</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> VP, Marketing &amp; UX · Lead Designer</p>
+              <p class="cardDesc">
+                Built a scalable brand and rollout system across in-branch, print, and digital touchpoints to support new-market expansion.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Brand System</span>
+                <span class="tag">Campaigns</span>
+                <span class="tag">In-branch</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Halliburton -->
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/images/Haliburton/HaliburtonApp2.webp"
+                   alt="Field operations app screen showing operational metrics and charts" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./pages/projects/haliburton.html">Halliburton Field Ops App</a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
+              <p class="cardDesc">
+                Designed offline-first workflows and dashboards for field teams operating under time pressure and low connectivity.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Workflow Design</span>
+                <span class="tag">Dashboards</span>
+                <span class="tag">Offline-first</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="ctaRow" style="margin-top:16px;">
+          <a class="btn" href="./pages/portfolio.html">View all projects →</a>
+        </div>
+      </section>
+
+      <!-- HOW I WORK -->
+      <section aria-labelledby="how" class="reveal">
+        <h2 class="sectionTitle" id="how">How I work</h2>
+        <p class="sectionNote">
+          I’m comfortable leading from ambiguity to shipped work—balancing user needs, business constraints, and implementation realities.
+        </p>
+
+        <div class="twoCol">
+          <div class="miniCard">
+            <h3>1) Understand the real constraint</h3>
+            <p>Define what’s hard (time pressure, risk, compliance, connectivity, scale), then design around it with the right patterns and hierarchy.</p>
+          </div>
+
+          <div class="miniCard">
+            <h3>2) Design for confident decisions</h3>
+            <p>Make commit points obvious. Use review states, confirmations, and clear recovery so users feel in control—especially in financial UX.</p>
+          </div>
+
+          <div class="miniCard">
+            <h3>3) Build systems, not one-offs</h3>
+            <p>Create reusable components, documented flows, and spec-ready assets so teams can ship consistently and iterate without redesigning everything.</p>
+          </div>
+
+          <div class="miniCard">
+            <h3>4) Deliver with clarity</h3>
+            <p>Partner closely with product and engineering to reduce ambiguity—using prototypes and documentation that accelerate implementation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact reveal" aria-label="Contact">
+        <h2>Let’s talk</h2>
         <p>
-          I design seamless customer journeys across chat, voice, devices, and screens—with a focus on AI conversational
-          experiences that feel reliable, explainable, and human. I simplify high-stakes workflows, design multimodal
-          support experiences, and define interaction patterns for AI systems so complex products feel intuitive and
-          supportive.
+          If you’re hiring for Product Design leadership—or need a designer who can go from strategy to specs to shipped work—reach out.
         </p>
 
-        <!-- QUICK SCAN / SNAPSHOT 
-        <div class="snapshotRow" aria-label="Quick overview">
-          <div class="snapItem">
-            <div class="snapLabel">Focus</div>
-            <div class="snapValue">AI support + multimodal UX</div>
-          </div>
-          <div class="snapItem">
-            <div class="snapLabel">Strengths</div>
-            <div class="snapValue">0→1 vision, prototyping, systems</div>
-          </div>
-          <div class="snapItem">
-            <div class="snapLabel">Shipped</div>
-            <div class="snapValue">Chat, voice, device surfaces</div>
-          </div>
-        </div>-->
+        <div class="ctaRow" role="group" aria-label="Contact actions">
+          <a class="btn btnPrimary" href="mailto:shaazia@example.com">Email me</a>
+          <a class="btn" href="./pages/portfolio.html">View portfolio</a>
+          <a class="btn" href="./assets/Shaazia-Stonehocker-Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+        </div>
 
-        <p style="opacity:0.85; font-size:1.05rem; margin-top:0;">
-          Experience across Amazon, AWS, Woodforest National Bank, and global brands including AT&amp;T, Google, Nike, and Infiniti.
+        <p style="margin-top:12px; color: var(--muted); font-size: 13px; line-height: 1.7;">
+          Update the email and resume links above with your real URLs before publishing.
         </p>
+      </section>
 
-        <div>
-          <a href="/pages/portfolio.html" class="btn">View portfolio</a>
-          <a href="/assets/Shaazia-Stonehocker-Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">
-            Download resume
-          </a>
-          <a href="/index.html#contact" class="btn btn-secondary">Contact</a>
-        </div>
-      </div>
-
-      <div class="heroImage">
-        <img src="/assets/images/shaazia.jpg" alt="Shaazia Stonehocker portrait" />
-      </div>
     </section>
-
-        <!-- ================= LOGO SCROLLER ================= -->
-    <section class="logoScroller">
-      <div class="logoScrollerTrack">
-        <div class="logoScrollerRow">
-          <span>Amazon</span>
-          <span>AWS</span>
-          <span>Prime Video</span>
-          <span>Alexa</span>
-          <span>Google</span>
-          <span>AT&amp;T</span>
-          <span>Nike</span>
-          <span>Infiniti</span>
-          <span>HP</span>
-          <span>Khoros</span>
-          <span>PWC</span>
-          <span>Arthur Andersen</span>
-
-          <!-- duplicate for seamless loop -->
-          <span>Amazon</span>
-          <span>AWS</span>
-          <span>Prime Video</span>
-          <span>Alexa</span>
-          <span>Google</span>
-          <span>AT&amp;T</span>
-          <span>Nike</span>
-          <span>Infiniti</span>
-          <span>HP</span>
-          <span>Khoros</span>
-          <span>PWC</span>
-          <span>Arthur Andersen</span>
-        </div>
-      </div>
-    </section>
-<!-- ================= FEATURED WORK (ABOVE THE FOLD) ================= -->
-<!-- ================= FEATURED / SELECTED WORK (ABOVE THE FOLD) ================= -->
-<section class="workSection">
-  <div class="workHead">
-    <div>
-      <div class="workKicker"><h1>Selected Work.</h1></div>
-      <p class="workSub">A curated selection of projects that reflect my focus on clarity, trust, and scalable UX.</p>
-    </div>
-
-    <a class="workAll" href="/pages/portfolio.html" aria-label="View all projects">
-      View all projects <span class="workAllArrow">→</span>
-    </a>
-  </div>
-
-  <div class="workGrid">
-    <!-- Card 1 -->
-<a href="/pages/projects/amazon-customer-service.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
-    <img src="/assets/images/thumbs/amazon-customer-service.jpg" alt="Amazon Customer Service AI experiences" />
-  </div></div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Amazon Customer Service</div>
-      <div class="workDesc">This page represents multiple Amazon Customer Service programs that are not yet public. The work spans conversational AI design, proactive support experiences, and cross-device continuity across chat, voice, and device surfaces. The shared goal: help customers resolve issues quickly and confidently—often before they need to contact support.</div>
-    </div>
-
-  </div>
-</a>
-
-    <!-- Card 2 -->
- <a href="/pages/projects/amazon-codecatalyst.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
- <img src="/assets/images/thumbs/amazon-codecatalyst.jpg" alt="Amazon CodeCatalyst with Amazon Q" />
- </div> </div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Amazon CodeCatalyst + Amazon Q</div>
-      <div class="workDesc">Amazon CodeCatalyst is a developer platform where issues, planning, and pull requests translate directly into production code. This work focused on integrating Amazon Q into these workflows in a way that supports automation without eroding trust, ownership, or review discipline.</div>
-    </div>
-
-
-  </div>
-</a>
-     <!-- Card 3 -->
-  <a href="/pages/projects/Pvliveeventshelpbub.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
-   <img src="/assets/images/thumbs/prime-live-events-help.jpg" alt="Prime Video Live Events Help Hub" />
- </div> </div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Prime Video Live Events Help Hub</div>
-      <div class="workDesc">    A redesign of the Prime Video Live Events Help Hub—built to help customers get access,
-        sign in, and troubleshoot live streaming issues faster while maintaining series branding
-        (Thursday Night Football, NASCAR, and more)..</div>
-    </div>
-
-
-  </div>
-</a>
-
-     <!-- Card 5 -->
-  <a href="/pages/projects/mobile-banking-app.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
-   <img src="/assets/images/thumbs/mobile-banking-app.jpg" alt="Prime Video Live Events Help Hub" />
- </div> </div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Woodforest National Bank</div>
-      <div class="workDesc">I led three connected initiatives to modernize mobile banking and improve how customers move between digital and in-branch service: (1) a native iOS + Android app redesign, (2) a multi-channel adoption campaign, and (3) a cross-channel journey analysis to ensure seamless transitions and feature parity.</div>
-    </div>
-
-  
-  </div>
-</a>
-     <!-- Card 5 -->
-  <a href="/pages/projects/branch-expansion-branding.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
-   <img src="/assets/images/thumbs/wnbbranding.jpg" alt="Prime Video Live Events Help Hub" />
- </div> </div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Woodforest National Bank</div>
-      <div class="workDesc">I pioneered UX at Woodforest National Bank, leading the creation of a scalable brand and in-branch experience system deployed across 750+ branches in 17 states as Walmart’s largest banking partner.</div>
-    </div>
-
-  </div>
-</a>
-
-
-
-
-
-     <!-- Card 5 -->
-  <a href="/pages/projects/haliburton.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
-   <img src="/assets/images/thumbs/halliburtonthumb.jpg" alt="Prime Video Live Events Help Hub" />
- </div> </div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Haliburton</div>
-      <div class="workDesc">I designed a mobile-first application that works offline and syncs when connectivity returns. Our UI emphasizes rapid data entry, decision support, and real-time visibility into operations. The new system reduced paperwork, decreased errors, and enabled field teams to focus on high-value work.</div>
-    </div>
-
-  </div>
-</a>
-     <!-- Card 5 -->
-  <a href="/pages/projects/community-design.html" class="workCard">
-  <div class="workMedia">
-     <div class="workMediaInner">
-   <img src="/assets/images/thumbs/communities.jpg" alt="Prime Video Live Events Help Hub" />
- </div> </div>
-
-  <div class="workFrame">
-    <div class="workText">
-      <div class="workTitle">Community and Conversation Experiences</div>
-      <div class="workDesc">  I designed community and conversation experiences for large brands—creating scalable information architecture,
-        interaction patterns, and moderation-ready UI systems that turn support and product discussion into healthy,
-        high-signal communities.</div>
-    </div>
-
-  </div>
-</a>
-  </div>
-</section>
-
-
-
-
-
-    <!-- ================= WHAT I WORK ON ================= -->
-    <section>
-      <h2>My focus</h2>
-      <p class="section-subtitle" style="text-align:center;">
-        In a fast-paced, ambiguous environment, rapid iteration is essential. I rely on fast prototyping and
-        <strong>"vibe coding"</strong> to test assumptions early, applying the Amazon mindset that most decisions are two-way
-        doors—meant to be explored, learned from, and refined.
-      </p>
-
-      <div class="cards-grid">
-
-        <div class="card">
-          <h3>AI conversational and multimodal experiences</h3>
-          <p>
-            I design AI conversational experiences that feel less like automation and more like dependable guidance.
-            I also build multimodal patterns that streamline handoffs between touch, voice, and screen—so customers
-            can start in one place and finish confidently in another.
-          </p>
-
-          <div class="cardLinks">
-            <span class="cardLinksTitle">Work examples</span>
-            <a href="/pages/projects/amazon-customer-service.html" class="cardCta">Amazon Multimodal, AI chatbot →</a>
-            <a href="/pages/projects/amazon-codecatalyst.html" class="cardCta">AWS Amazon Q AI chatbot →</a>
-          </div>
-        </div>
-
-        <a href="/pages/approach.html#what-i-work-on" class="card cardLink">
-          <h3>End-to-end customer journeys</h3>
-          <p>
-            End-to-end customer journeys that connect moments across time, channels, and systems into experiences that feel
-            intentional and complete.
-          </p>
-          <span class="cardCta">Explore →</span>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ================= HOW I APPROACH DESIGN ================= -->
-    <section>
-      <h2>My super powers</h2>
-      <p class="section-subtitle" style="text-align:center;">
-        I’m most effective in ambiguous problem spaces—shaping direction early and staying hands-on.
-      </p>
-
-      <div class="steps">
-
-        <a href="/pages/projects/customer-obsession.html" class="step stepLink">
-          <strong>Customer obsession</strong>
-          Working backwards from the customer problem to align on the right solution.
-          <span class="cardCta">See approach →</span>
-        </a>
-
-        <a href="/pages/approach.html#how-i-design" class="step stepLink">
-          <strong>Invent and simplify</strong>
-          Think big and innovate, then simplify to land on the best customer experience.
-          <span class="cardCta">See approach →</span>
-        </a>
-
-        <a href="/pages/approach.html#how-i-design" class="step stepLink">
-          <strong>Dive deep</strong>
-          The devil is in the details when it comes to good usable design.
-          <span class="cardCta">See approach →</span>
-        </a>
-
-      </div>
-    </section>
-
-    
-
-    <!-- ================= CTA ================= -->
-    <section>
-      <h2>Let’s talk</h2>
-      <p class="section-subtitle" style="text-align:center;">
-        If you’re interested in my work or want to explore a role together, I’d love to connect.
-      </p>
-      <div style="text-align:center;">
-        <a href="/index.html#contact" class="btn">Start a conversation</a>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
   </footer>
 
-  <!-- Reveal-on-scroll -->
+  <!-- Optional: reveal-on-scroll -->
   <script>
     (function () {
       const items = document.querySelectorAll(".reveal");
+      if (!items.length) return;
+
       if (!("IntersectionObserver" in window)) {
         items.forEach(el => el.classList.add("is-visible"));
         return;
       }
+
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -376,6 +558,7 @@
           }
         });
       }, { threshold: 0.12 });
+
       items.forEach(el => io.observe(el));
     })();
   </script>
