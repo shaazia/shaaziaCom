@@ -1376,3 +1376,12 @@ figure a.lb-link:focus-visible{
   content: none !important;
   display: none !important;
 }
+/* Safety reset in case the marker was implemented via background/padding */
+.caseWrap h2,
+.caseWrap h3,
+.caseWrap .main h2,
+.caseWrap .main h3{
+  background: none !important;
+  padding-left: 0 !important;
+}
+
