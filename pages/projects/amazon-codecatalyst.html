@@ -244,231 +244,217 @@
     </nav>
   </header>
 
-  <main>
-    <article class="caseWrap">
-      <p class="kicker">Case Study</p>
-      <h1 class="title">Amazon Q in Developer Worflow</h1>
 
-     <p class="dek">
-  Integrating Amazon Q into Amazon CodeCatalyst to support AI-assisted issue creation,
-  task planning, and pull request review—designed to make AI activity visible,
-  reviewable, and easy for developers to control. <br/><a href="https://aws.amazon.com/codecatalyst/">Amazon CodeCatalyst Website</a>
-</p>
+<!-- MAIN COLUMN -->
+<div class="main">
 
+  <!-- Context / Situation -->
+  <h2 class="reveal">Context</h2>
+  <p class="reveal">
+    Amazon CodeCatalyst is a developer platform where issues, planning, and pull requests
+    translate directly into production code. This work focused on integrating Amazon Q
+    into these workflows in a way that supports automation without eroding trust,
+    ownership, or review discipline.
+  </p>
 
-      <div class="metaRow">
-        <span class="chip">UX Design</span>
-        <span class="chip">AI Workflow Integration</span>
-        <span class="chip">Information Design</span>
-        <span class="chip">Enterprise Product</span>
-        <span class="chip">Developer Experience</span>
-      </div>
+  <p class="reveal">
+    The core challenge was not introducing AI capability, but determining how Amazon Q
+    should participate in developer workflows: when it should act independently,
+    how its progress should be communicated, and where human review must remain explicit.
+  </p>
 
-      <div class="grid">
+  <div class="pull reveal">
+    The design goal: make Amazon Q feel like a reliable teammate—working in the background,
+    visible when it matters, and always accountable to human review.
+  </div>
 
-        <!-- MAIN COLUMN -->
-        <div class="main">
+  <!-- Task -->
+  <h2 class="reveal">My responsibility</h2>
+  <ul class="bullets reveal">
+    <li>Design AI-assisted workflows for issue creation, task execution, and pull request review</li>
+    <li>Define interaction patterns that balance visibility, trust, and cognitive load</li>
+    <li>Design failure states and recovery paths without breaking developer flow</li>
+    <li>Ensure AI actions remain reviewable, reversible, and clearly attributable</li>
+    <li>Partner closely with product, engineering, and applied science teams</li>
+  </ul>
 
-          <h2 class="reveal">Context</h2>
-     
-          <p class="reveal">
-             This project focuses on integrating Amazon Q directly into core CodeCatalyst workflows,
-  enabling AI-assisted issue creation, structured task planning, and pull request review.
-  The design challenge was not adding AI—but shaping how and where Amazon Q shows up so
-  developers understand what it’s doing, what it will change, and when human review
-  is required. 
-          </p>
+  <!-- Initiative 1 -->
+  <h2 class="reveal">Initiative 1: Assigning issues and epics to Amazon Q</h2>
+  <p class="reveal">
+    Issue creation is a natural entry point for AI assistance: developers already express
+    intent, but translating that intent into structured, executable work takes time.
+    The opportunity was to allow developers to assign issues and epics directly to Amazon Q
+    to generate plans and code—without overwhelming users with implementation details.
+  </p>
 
-          <div class="pull reveal">
-            The design goal: make AI assistance feel like a teammate—visible, scoped, and reviewable—rather than a black box.
-          </div>
+  <p class="reveal">
+    A key design tension emerged early: the more internal AI data we exposed, the less likely
+    developers were to validate the output. Too little visibility felt opaque; too much
+    detail reduced trust and slowed adoption. The design challenge was to surface just
+    enough information to support confidence and review.
+  </p>
 
-          <h2 class="reveal">Create an issue with AI support</h2>
-          <p class="reveal">
-            The “Create issue” flow is a natural entry point for AI: users already describe intent,
-            and the system can help structure a plan. The key is making the step-up from
-            “idea” to “actionable work” feel lightweight—without hiding important configuration.
-          </p>
+  <figure class="reveal">
+    <img src="../../assets/images/CodeCatalyst/frame-4739.jpg" alt="Create issue modal with issue title and description fields">
+    <figcaption>
+      Issue creation begins with a familiar form—keeping the cognitive load low while capturing intent.
+    </figcaption>
+  </figure>
 
-          <figure class="reveal">
-            <img src="../../assets/images/CodeCatalyst/frame-4739.jpg" alt="Create issue modal with issue title and description fields">
-            <figcaption>
-              Issue creation begins with a familiar form. The layout supports quick entry and leaves space for structured details.
-            </figcaption>
-          </figure>
+  <figure class="reveal">
+    <img src="../../assets/images/CodeCatalyst/frame-4740.jpg" alt="Create issue modal showing Amazon Q assignee and repository selection">
+    <figcaption>
+      Assigning an issue to Amazon Q introduces guardrails: repository context, scope, and execution boundaries.
+    </figcaption>
+  </figure>
 
-          <figure class="reveal">
-            <img src="../../assets/images/CodeCatalyst/frame-4740.jpg" alt="Create issue modal showing Amazon Q assignee and repository selection">
-            <figcaption>
-              Assigning to Amazon Q introduces a second layer: selecting a source repo and choosing guardrails for execution.
-            </figcaption>
-          </figure>
+  <!-- Action: Trust Surface -->
+  <h2 class="reveal">Activity feed as a trust surface</h2>
+  <p class="reveal">
+    Once Amazon Q is assigned work, developers need a clear way to understand what the AI
+    is doing without monitoring every step. The activity feed was designed as a dedicated
+    trust surface—summarizing intent, progress, and decision points rather than exposing raw execution data.
+  </p>
 
-          <h2 class="reveal">Activity feed as a “trust surface”</h2>
-          <p class="reveal">
-            Once AI is assigned, the product needs a clear place where progress is visible and reviewable.
-            The activity feed becomes the trust surface: it should show what’s complete, what’s next,
-            and where user approval is required—without overwhelming the page.
-          </p>
+  <p class="reveal">
+    This approach acknowledges an important behavioral insight: developers are more likely
+    to review and validate AI output when the system communicates progress in structured,
+    human-readable terms.
+  </p>
 
-          <figure class="reveal">
-            <img src="../../assets/images/CodeCatalyst/frame-4761.jpg" alt="Issue page with Amazon Q activity feed showing background and approach steps">
-            <figcaption>
-              When Amazon Q is assigned to an issue, the activity feed becomes the primary trust
-  surface—showing how the AI interprets the request, what steps it plans to take,
-  and where progress pauses for review or approval.
-            </figcaption>
-          </figure>
+  <figure class="reveal">
+    <img src="../../assets/images/CodeCatalyst/frame-4761.jpg" alt="Issue page with Amazon Q activity feed showing background and approach steps">
+    <figcaption>
+      The activity feed shows how Amazon Q interprets the request, what it plans to do,
+      and where work pauses for review—without overwhelming the interface.
+    </figcaption>
+  </figure>
 
-          <h2 class="reveal">Handling failure states without breaking flow</h2>
-          <p class="reveal">
-            When AI can’t continue, the experience should clearly communicate what happened and what to do next.
-            The goal isn’t to “hide” the failure—it’s to keep momentum by offering a sensible path forward.
-          </p>
+  <!-- Failure States -->
+  <h2 class="reveal">Designing for failure without breaking momentum</h2>
+  <p class="reveal">
+    AI-assisted workflows must assume failure as a first-class state. When Amazon Q
+    cannot proceed—due to missing context, permissions, or conflicts—the experience
+    should be explicit, calm, and forward-looking.
+  </p>
 
-          <div class="twoUp">
-            <figure class="reveal">
-              <img src="../../assets/images/CodeCatalyst/issue-page.jpg" alt="Issue page with Amazon Q progress notification">
-              <figcaption>
-                Lightweight status messaging helps users understand that work is underway—without hijacking attention.
-              </figcaption>
-            </figure>
+  <p class="reveal">
+    Instead of treating failures as errors to hide, the UI focuses on preserving momentum:
+    clearly explaining what happened, what was affected, and what the developer can do next.
+  </p>
 
-            <figure class="reveal">
-              <img src="../../assets/images/CodeCatalyst/issue-page2.jpg" alt="Issue page showing Amazon Q blocked and error notification">
-              <figcaption>
-                When blocked, the UI should be explicit: what failed, what’s impacted, and the next best action (e.g., reassign or review).
-              </figcaption>
-            </figure>
-          </div>
+  <div class="twoUp">
+    <figure class="reveal">
+      <img src="../../assets/images/CodeCatalyst/issue-page.jpg" alt="Issue page with Amazon Q progress notification">
+      <figcaption>
+        Lightweight progress messaging communicates activity without interrupting flow.
+      </figcaption>
+    </figure>
 
-          <h2 class="reveal">Pull request review support</h2>
-          <p class="reveal">
-           Amazon Q also supports pull request review by summarizing comment threads and surfacing
-  key feedback, helping reviewers orient faster without replacing human judgment or
-  obscuring the underlying code and discussion.
+    <figure class="reveal">
+      <img src="../../assets/images/CodeCatalyst/issue-page2.jpg" alt="Issue page showing Amazon Q blocked and error notification">
+      <figcaption>
+        When blocked, the UI clearly states what failed and provides a next best action.
+      </figcaption>
+    </figure>
+  </div>
 
-          <div class="miniGrid">
-            <figure class="reveal">
-              <img src="../../assets/images/CodeCatalyst/pr-details-overview2.jpg" alt="Pull request details page overview tab with summarize comments action">
-              <figcaption>
-                Entry point: PR overview with a visible “Summarize comments” action.
-              </figcaption>
-            </figure>
+  <!-- Initiative 2 -->
+  <h2 class="reveal">Initiative 2: Amazon Q in the pull request workflow</h2>
+  <p class="reveal">
+    Pull requests are already information-dense environments. Introducing AI support here
+    required careful restraint: assistance needed to reduce review effort without adding noise
+    or obscuring accountability.
+  </p>
 
-            <figure class="reveal">
-              <img src="../../assets/images/CodeCatalyst/pr-details.jpg" alt="Pull request details page showing summary content">
-              <figcaption>
-                The summary is presented as guidance—supporting review without replacing human decision-making.
-              </figcaption>
-            </figure>
-          </div>
+  <p class="reveal">
+    Amazon Q was designed to support repetitive, cognitively heavy tasks—such as summarizing
+    comment threads, drafting PR descriptions, and proposing updates based on reviewer feedback—
+    while keeping the source of truth firmly anchored in code and discussion.
+  </p>
 
-          <figure class="reveal">
-            <img src="../../assets/images/CodeCatalyst/pr-details-changes.jpg" alt="Pull request changes tab showing diff and inline comments">
-            <figcaption>
-              The changes view anchors the work in reality: diff + comments. AI support should connect back to source of truth.
-            </figcaption>
-          </figure>
+  <div class="miniGrid">
+    <figure class="reveal">
+      <img src="../../assets/images/CodeCatalyst/pr-details-overview2.jpg" alt="Pull request overview with summarize comments action">
+      <figcaption>
+        Entry point: a clearly labeled, optional summary action within the PR overview.
+      </figcaption>
+    </figure>
 
-          <div class="twoUp">
-            <figure class="reveal">
-              <img src="../../assets/images/CodeCatalyst/pr-details-new-comment.jpg" alt="PR page with new comment added and summary prompt">
-              <figcaption>
-                When new comments arrive, the UI prompts for an updated summary—keeping summaries current and clearly time-scoped.
-              </figcaption>
-            </figure>
+    <figure class="reveal">
+      <img src="../../assets/images/CodeCatalyst/pr-details.jpg" alt="Pull request details page showing summary content">
+      <figcaption>
+        Summaries are presented as guidance—never replacing code, comments, or reviewer judgment.
+      </figcaption>
+    </figure>
+  </div>
 
-            <figure class="reveal">
-              <img src="../../assets/images/CodeCatalyst/replies-activity-oldest-first.jpg" alt="PR comments thread with replies and activity visible, sorted oldest first">
-              <figcaption>
-                Thread readability matters. Sorting, visibility of replies, and activity cues reduce review friction.
-              </figcaption>
-            </figure>
-          </div>
+  <figure class="reveal">
+    <img src="../../assets/images/CodeCatalyst/pr-details-changes.jpg" alt="Pull request changes tab showing diff and inline comments">
+    <figcaption>
+      The diff remains the anchor. AI assistance always points back to the source of truth.
+    </figcaption>
+  </figure>
 
-          <h2 class="reveal">Controls, limits, and transparency</h2>
-          <p class="reveal">
-            AI features often come with usage limits, permissions, and identity context. These settings are part of the UX:
-            they should be discoverable, understandable, and reassuring—especially in enterprise environments.
-          </p>
+  <div class="twoUp">
+    <figure class="reveal">
+      <img src="../../assets/images/CodeCatalyst/pr-details-new-comment.jpg" alt="PR page with new comment added and summary prompt">
+      <figcaption>
+        When new feedback arrives, summaries prompt refresh—making scope and timing explicit.
+      </figcaption>
+    </figure>
 
-          <figure class="reveal">
-            <img src="../../assets/images/CodeCatalyst/user-settings.jpg" alt="User settings page showing generative AI feature usage and personal access tokens">
-            <figcaption>
-              Settings communicate identity, usage, and access. Clear limits help teams adopt AI responsibly and predictably.
-            </figcaption>
-          </figure>
+    <figure class="reveal">
+      <img src="../../assets/images/CodeCatalyst/replies-activity-oldest-first.jpg" alt="PR comments thread with replies visible">
+      <figcaption>
+        Thread structure and ordering reduce cognitive overhead during review.
+      </figcaption>
+    </figure>
+  </div>
 
-          <h2 class="reveal">Outcome</h2>
-          <p class="reveal">
-            This body of work demonstrates a practical pattern for AI in developer tools:
-            embed assistance at the moments where intent becomes structured work (issues and PRs),
-            make progress visible through a readable activity feed, and preserve control through clear guardrails and settings.
-          </p>
-          <h2 class="reveal">Impact</h2>
+  <!-- Initiative 3 -->
+  <h2 class="reveal">Initiative 3: Subscription controls, limits, and transparency</h2>
+  <p class="reveal">
+    AI capabilities in enterprise tools come with usage limits, permissions, and identity context.
+    These constraints are part of the experience and must be understandable—not hidden.
+  </p>
 
-<p class="reveal">
-  Integrating Amazon Q into CodeCatalyst shifted AI from a background capability
-  to a visible, reviewable part of the developer workflow. By embedding Amazon Q
-  directly into issue creation, execution planning, and pull request review, the
-  experience made AI intent and progress explicit—reducing ambiguity and helping
-  teams understand what the system was doing and why.
-</p>
+  <p class="reveal">
+    The goal was to design controls that feel predictable and empowering rather than restrictive,
+    allowing teams to adopt AI responsibly while maintaining clarity around access and cost.
+  </p>
 
-<p class="reveal">
-  The structured activity feed established a clear trust surface, showing progress,
-  decision points, and failure states in a way that supported developer confidence
-  rather than undermining it. Explicit pause points and approval moments reinforced
-  human control while still enabling meaningful automation.
-</p>
+  <figure class="reveal">
+    <img src="../../assets/images/CodeCatalyst/user-settings.jpg" alt="User settings page showing generative AI usage and access">
+    <figcaption>
+      Clear settings communicate usage, limits, and identity—supporting responsible adoption.
+    </figcaption>
+  </figure>
 
-<p class="reveal">
-  In pull request workflows, Amazon Q summaries helped reviewers orient more quickly
-  to discussion context without replacing human judgment or obscuring the underlying
-  code. The result was an experience that supported speed, clarity, and accountability
-  in equal measure.
-</p>
+  <!-- Results -->
+  <h2 class="reveal">Results and impact</h2>
+  <p class="reveal">
+    Integrating Amazon Q into CodeCatalyst shifted AI from an abstract capability
+    to a visible, reviewable participant in developer workflows. Developers could
+    see what the system was doing, why it was doing it, and when human input was required.
+  </p>
 
+  <p class="reveal">
+    The activity feed established a clear trust surface, failure states preserved momentum,
+    and pull request summaries reduced orientation cost without weakening accountability.
+    Together, these patterns created a scalable model for embedding generative AI into
+    developer tools—where automation accelerates work but responsibility remains human.
+  </p>
 
-          <div class="divider"></div>
+  <div class="divider"></div>
 
-          <div class="navBottom">
-            <a href="../portfolio.html">← Back to Portfolio</a>
-            <a href="../../index.html#contact">Start a conversation →</a>
-          </div>
-        </div>
-
-        <!-- SIDEBAR -->
-        <aside class="side reveal">
-          <h3>Project snapshot</h3>
-          <ul>
-            <li><strong>Product:</strong> Amazon CodeCatalyst</li>
-            <li><strong>Focus:</strong> AI-assisted issues + PR review</li>
-            <li><strong>AI:</strong> Amazon Q integration</li>
-            <li><strong>Artifacts:</strong> Flows, UI patterns, states</li>
-          </ul>
-
-          <h3 style="margin-top:18px;">Design themes</h3>
-          <ul>
-            <li>Make AI work visible</li>
-            <li>Keep users in control</li>
-            <li>Design for failure states</li>
-            <li>Summaries must be time-scoped</li>
-          </ul>
-
-         <div class="callout">
-  <strong>Amazon Q integration:</strong> AI assistance is embedded at key moments—issue
-  creation, execution planning, and PR review—while preserving developer control through
-  visible progress, approvals, and clear limits.  <br/><strong>What this unlocked:</strong> A scalable pattern for integrating generative
-  AI into developer tools—where progress is visible, decisions are reviewable, and
-  responsibility remains clearly human.
+  <div class="navBottom">
+    <a href="../portfolio.html">← Back to Portfolio</a>
+    <a href="../../index.html#contact">Start a conversation →</a>
+  </div>
 </div>
-        </aside>
 
-      </div>
-    </article>
-  </main>
+
 
   <footer>
     <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
