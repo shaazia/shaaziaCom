@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../../css/styles.css" />
 
   <style>
+    /* ---------- Editorial Case Study (page-local styles) ---------- */
     :root{
       --ink:#111;
       --muted:#666;
@@ -14,10 +15,24 @@
       --panel:#fafafa;
       --shadow: 0 14px 34px rgba(0,0,0,.06);
       --radius: 18px;
+      --max: 1120px;
     }
 
+    /* A11y: skip link */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius: 12px;
+      z-index:999;
+    }
+    .skip-link:focus{ left:10px; }
+
     .caseWrap{
-      max-width: 1120px;
+      max-width: var(--max);
       margin: 0 auto;
       padding: 64px 20px 96px;
     }
@@ -48,8 +63,8 @@
       font-size: 18px;
       line-height: 1.75;
       color: #333;
-      max-width: 82ch;
-      margin: 0 0 22px;
+      max-width: 92ch;
+      margin: 0 0 18px;
     }
 
     .metaRow{
@@ -58,7 +73,6 @@
       gap:10px;
       margin: 12px 0 34px;
     }
-
     .chip{
       font-size: 12px;
       color:#555;
@@ -68,6 +82,7 @@
       background: #fff;
     }
 
+    /* Two-column layout */
     .grid{
       display:grid;
       grid-template-columns: 2.2fr 1fr;
@@ -78,6 +93,7 @@
       .grid{ grid-template-columns: 1fr; gap: 28px; }
     }
 
+    /* Main column */
     .main h2{
       font-size: 22px;
       margin: 44px 0 12px;
@@ -90,7 +106,7 @@
       line-height: 1.9;
       color: #333;
       margin: 0 0 16px;
-      max-width: 84ch;
+      max-width: 92ch;
     }
 
     .pull{
@@ -112,6 +128,37 @@
       line-height: 1.8;
     }
 
+    .callouts{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 18px 0 6px;
+    }
+    @media (max-width: 760px){
+      .callouts{ grid-template-columns: 1fr; }
+    }
+    .miniCard{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    .miniCard h3{
+      font-size: 13px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    .miniCard p{
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color:#333;
+    }
+
+    /* Images */
     figure{
       margin: 34px 0;
       border-radius: var(--radius);
@@ -149,6 +196,7 @@
       border-top: 1px solid #eee;
     }
 
+    /* Sidebar */
     .side{
       position: sticky;
       top: 24px;
@@ -175,7 +223,6 @@
       margin: 0 0 18px;
       color:#333;
     }
-
     .side li{
       margin-bottom: 10px;
       line-height: 1.6;
@@ -192,6 +239,7 @@
       line-height: 1.7;
     }
 
+    /* Bottom nav */
     .navBottom{
       display:flex;
       justify-content:space-between;
@@ -209,6 +257,7 @@
     }
     .navBottom a:hover{ background:#f7f7f7; }
 
+    /* Optional: reveal-on-scroll */
     .reveal{ opacity:0; transform: translateY(10px); }
     .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
     @media (prefers-reduced-motion: reduce){
@@ -218,6 +267,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header>
     <nav>
       <a href="../../index.html" class="logo">Shaazia</a>
@@ -229,146 +280,165 @@
     </nav>
   </header>
 
-  <main>
+  <main id="content">
     <article class="caseWrap">
       <p class="kicker">Case Study</p>
       <h1 class="title">Mobile Banking App</h1>
 
       <p class="dek">
-        Led three initiatives to modernize mobile banking: a native iOS and Android app redesign,
-        a multi-channel adoption campaign across in-branch and digital touchpoints, and a cross-channel
-        journey analysis to ensure seamless transitions and feature parity between branch and remote banking.
+        Led three initiatives to modernize mobile banking: a native iOS + Android redesign, a multi-channel adoption campaign,
+        and a cross-channel journey analysis to improve parity and transitions between branch and remote banking.
       </p>
 
-      <div class="metaRow">
+      <div class="metaRow" aria-label="Project tags">
         <span class="chip">Lead Designer</span>
-        <span class="chip">Mobile iOS &amp; Android</span>
+        <span class="chip">Native iOS &amp; Android</span>
         <span class="chip">Financial UX</span>
-        <span class="chip">Workflow &amp; Specs</span>
+        <span class="chip">Workflow + Specs</span>
         <span class="chip">Adoption Marketing</span>
         <span class="chip">Cross-Channel Strategy</span>
       </div>
 
       <div class="grid">
-
+        <!-- MAIN -->
         <div class="main">
-          <h2 class="reveal">Overview</h2>
+
+          <h2 class="reveal">Context</h2>
           <p class="reveal">
-            I led three connected initiatives to modernize mobile banking and improve how customers move between digital and in-branch service:
-            (1) a native iOS + Android app redesign, (2) a multi-channel adoption campaign, and (3) a cross-channel journey analysis to ensure
-            seamless transitions and feature parity.
+            Customers increasingly manage finances in short, high-distraction mobile sessions. The existing experience made
+            core tasks feel harder than they needed to be—especially transfers, bill pay, and authentication—because patterns
+            were inconsistent and important details were difficult to verify before committing.
           </p>
 
           <div class="pull reveal">
-            My role: Lead designer and UX pioneer at the bank—owning end-to-end workflows, specs, and high-fidelity execution across product and marketing touchpoints.
+            Design goal: reduce steps and cognitive load while increasing transaction confidence—so customers complete tasks
+            quickly, correctly, and without needing support.
           </div>
 
-          <h2 class="reveal">Initiative 1: Mobile App Redesign (iOS &amp; Android)</h2>
-
-          <p class="reveal"><strong>Situation</strong><br>
-            Customers increasingly manage finances in short, high-distraction mobile sessions. The existing experience made core tasks feel harder than they needed to be—especially transfers, bill pay, and authentication—due to inconsistent patterns and unclear hierarchy.
+          <h2 class="reveal">My role</h2>
+          <p class="reveal">
+            I served as the <strong>lead designer</strong> and helped pioneer UX at the bank—owning end-to-end workflow redesign,
+            spec-ready documentation, and high-fidelity execution across product and marketing touchpoints.
           </p>
 
-          <p class="reveal"><strong>Task</strong><br>
-            As the lead designer, I owned the redesign of the native iOS and Android mobile banking experience and created implementation-ready documentation that could scale across teams.
+          <div class="callouts reveal">
+            <div class="miniCard">
+              <h3>Ownership</h3>
+              <p>Information architecture, workflows, UI patterns, prototypes, and implementation-ready specs.</p>
+            </div>
+            <div class="miniCard">
+              <h3>Partners</h3>
+              <p>Product, engineering, compliance/security, marketing, and branch stakeholders.</p>
+            </div>
+          </div>
+
+          <h2 class="reveal">Constraints</h2>
+          <ul class="bullets reveal">
+            <li><strong>Trust + compliance:</strong> make verification and consent explicit at commit points (review/confirm/error recovery).</li>
+            <li><strong>Security patterns:</strong> login, second factor, and password recovery needed to be predictable and low-friction.</li>
+            <li><strong>Platform parity:</strong> consistent behavior across native iOS and Android.</li>
+            <li><strong>Channel transitions:</strong> customers move between branch, mobile, and support—handoffs needed continuity.</li>
+          </ul>
+
+          <h2 class="reveal">What I delivered</h2>
+          <p class="reveal">
+            This work included three connected initiatives—each designed to improve day-to-day mobile banking while aligning product,
+            marketing, and branch experiences.
           </p>
 
-          <p class="reveal"><strong>Action</strong><br>
-            I redesigned the experience around task-based navigation, predictable security patterns, and transaction transparency—balancing usability with compliance and trust expectations.
+          <!-- INITIATIVE 1 -->
+          <h2 class="reveal">Initiative 1: Native app redesign</h2>
+          <p class="reveal">
+            I redesigned the mobile banking experience around <strong>task-based navigation</strong>, <strong>consistent UI patterns</strong>,
+            and <strong>transaction transparency</strong>—balancing usability with security expectations by making key details easy to
+            verify before committing.
           </p>
 
           <ul class="bullets reveal">
-            <li><strong>End-to-end workflow redesign:</strong> account overview, navigation, bill pay, transfers, and account management</li>
-            <li><strong>Authentication &amp; recovery:</strong> login, second-factor verification, forgot password, and error recovery states</li>
-            <li><strong>Money movement:</strong> Western Union transfers, peer-to-peer transfers, internal/external transfers</li>
-            <li><strong>Customer control:</strong> settings, personal information management, and supporting account controls</li>
-            <li><strong>Confidence at commit points:</strong> review states, confirmations, and clear content rules to reduce perceived risk</li>
-            <li><strong>Spec-ready delivery:</strong> detailed journey flows, screen-level specifications, and prototypes for build clarity</li>
+            <li><strong>Core journeys:</strong> account overview, navigation, bill pay, transfers, and account management.</li>
+            <li><strong>Authentication &amp; recovery:</strong> login, second-factor verification, forgot password, and error recovery states.</li>
+            <li><strong>Money movement:</strong> Western Union transfers, peer-to-peer transfers, and internal/external transfers.</li>
+            <li><strong>Customer control:</strong> settings, personal information management, and supporting account controls.</li>
+            <li><strong>Spec-ready delivery:</strong> detailed journey flows, screen-level specifications, and prototypes for build clarity.</li>
           </ul>
 
-          <p class="reveal"><strong>Result</strong><br>
-            Delivered a clearer, more scalable mobile foundation with streamlined workflows, consistent patterns, and detailed specifications that reduced ambiguity for implementation and supported future iteration.
+          <p class="reveal">
+            <strong>Result:</strong> Delivered a clearer, more scalable mobile foundation with streamlined workflows, consistent patterns,
+            and detailed specifications that reduced ambiguity for implementation and supported future iteration.
           </p>
 
+          <!-- ARTIFACTS -->
           <h2 class="reveal">Artifacts</h2>
           <p class="reveal">
-            Deliverables included high-fidelity UI, interactive prototypes, and detailed workflow specifications to align partners and accelerate delivery.
+            Deliverables included high-fidelity UI, interactive prototypes, and workflow specifications to align partners and accelerate delivery.
           </p>
 
           <figure class="reveal">
-            <img src="../../assets/images/MobileBankingApp/Picture4.jpg" alt="Mobile banking app promotional visual showing the app on a phone">
-            <figcaption>Campaign creative used across channels to communicate mobile banking value and reinforce adoption.</figcaption>
+            <img src="../../assets/images/MobileBankingApp/ATMScreen2.webp" alt="Mobile banking campaign visual showing the app on a phone">
+            <figcaption>
+              Campaign creative used across channels to communicate mobile banking value and reinforce adoption.
+            </figcaption>
           </figure>
 
           <h2 class="reveal">Design specs: mobile workflows</h2>
           <p class="reveal">
-            I produced end-to-end flows and screen-level specifications to improve consistency, reduce implementation ambiguity, and support iteration based on real customer behavior.
+            I produced end-to-end flows and screen-level specifications to improve consistency, reduce implementation ambiguity,
+            and support iteration based on real customer behavior.
           </p>
 
           <div class="twoUp">
             <figure class="reveal">
-              <img src="../../assets/images/MobileBankingApp/Picture2.png" alt="Mobile banking specifications showing multiple screens and annotated interactions">
+              <img src="../../assets/images/MobileBankingApp/MobileBankingAppSpecs1.webp" alt="Mobile banking specifications showing multiple screens and annotated interactions">
               <figcaption>Reusable screen and interaction specs to ensure consistent navigation across key journeys.</figcaption>
             </figure>
 
             <figure class="reveal">
-              <img src="../../assets/images/MobileBankingApp/Picture3.png" alt="Mobile banking specifications showing detailed flow states and content rules">
+              <img src="../../assets/images/MobileBankingApp/MobileBankingAppSpecs2.webp" alt="Mobile banking specifications showing detailed flow states and content rules">
               <figcaption>Flow states and content rules, including error handling and confirmations to increase confidence.</figcaption>
             </figure>
           </div>
 
-          <h2 class="reveal">Initiative 2: Mobile App Marketing &amp; Adoption</h2>
-
-          <p class="reveal"><strong>Situation</strong><br>
-            After launching new features, the bank needed to drive awareness and adoption across a large footprint where customers encountered the brand both in-person and digitally.
-          </p>
-
-          <p class="reveal"><strong>Task</strong><br>
-            Design and scale a multi-channel marketing system that promoted the mobile app and made new capabilities easy to understand—wherever customers interacted with the bank.
-          </p>
-
-          <p class="reveal"><strong>Action</strong><br>
-            I created a consistent set of promotional assets across in-branch and digital touchpoints, ensuring the marketing story matched the product experience.
+          <!-- INITIATIVE 2 -->
+          <h2 class="reveal">Initiative 2: Adoption marketing</h2>
+          <p class="reveal">
+            After launching new features, the bank needed to drive awareness and adoption across a large footprint where customers
+            encountered the brand both in-person and digitally.
           </p>
 
           <ul class="bullets reveal">
-            <li><strong>In-branch rollout:</strong> digital signage and print across <strong>750+ branches in 17 states</strong></li>
-            <li><strong>ATM surfaces:</strong> screen creative aligned with mobile messaging and feature education</li>
-            <li><strong>Email &amp; web:</strong> campaigns and site assets to highlight new mobile capabilities and drive uptake</li>
-            <li><strong>Brochures:</strong> clear feature storytelling designed for quick scan and customer reassurance</li>
+            <li><strong>In-branch rollout:</strong> digital signage and print across <strong>750+ branches in 17 states</strong>.</li>
+            <li><strong>ATM surfaces:</strong> screen creative aligned with mobile messaging and feature education.</li>
+            <li><strong>Email &amp; web:</strong> campaigns and site assets to highlight capabilities and drive uptake.</li>
+            <li><strong>Brochures:</strong> feature storytelling designed for quick scan and reassurance.</li>
           </ul>
 
-          <p class="reveal"><strong>Result</strong><br>
-            Customers encountered a unified message across physical and digital channels, reinforcing awareness of new features and supporting adoption of mobile banking behaviors.
+          <p class="reveal">
+            <strong>Result:</strong> Customers encountered a unified message across physical and digital channels, reinforcing awareness of new features
+            and supporting adoption of mobile banking behaviors.
           </p>
 
-          <h2 class="reveal">Initiative 3: Cross-Channel Banking Journey Analysis</h2>
-
-          <p class="reveal"><strong>Situation</strong><br>
-            Banking is rarely a single-channel experience. Customers move between branch visits, mobile self-service, and assisted support—yet gaps in parity and handoffs can create confusion and duplicated effort.
-          </p>
-
-          <p class="reveal"><strong>Task</strong><br>
-            Understand and map how customers engage with banking in person and remotely, then identify opportunities to improve transitions and ensure feature parity across channels.
-          </p>
-
-          <p class="reveal"><strong>Action</strong><br>
-            I mapped cross-channel journeys, aligned stakeholders on where friction occurred, and used artifacts to prioritize improvements that made experiences feel connected—rather than separate products.
+          <!-- INITIATIVE 3 -->
+          <h2 class="reveal">Initiative 3: Cross-channel journey analysis</h2>
+          <p class="reveal">
+            Banking is rarely a single-channel experience. Customers move between branch visits, mobile self-service, and assisted support—yet gaps
+            in parity and handoffs can create confusion and duplicated effort.
           </p>
 
           <ul class="bullets reveal">
-            <li><strong>Journey mapping:</strong> documented how customers transition between branch, mobile, and support</li>
-            <li><strong>Parity analysis:</strong> identified mismatches where mobile did not support common in-branch outcomes</li>
-            <li><strong>Prioritization inputs:</strong> clarified high-value moments for mobile to reduce friction and increase continuity</li>
+            <li><strong>Journey mapping:</strong> documented transitions between branch, mobile, and support.</li>
+            <li><strong>Parity analysis:</strong> identified mismatches where mobile did not support common in-branch outcomes.</li>
+            <li><strong>Prioritization inputs:</strong> clarified high-value moments for mobile to reduce friction and improve continuity.</li>
           </ul>
 
-          <p class="reveal"><strong>Result</strong><br>
-            Provided a clear view of where digital experiences needed better continuity with branch banking, helping teams prioritize parity and reduce friction in channel transitions.
+          <p class="reveal">
+            <strong>Result:</strong> Provided a clear view of where digital experiences needed better continuity with branch banking, helping teams prioritize
+            parity improvements and reduce friction in channel transitions.
           </p>
 
           <h2 class="reveal">UX strategy: where mobile fits in the ecosystem</h2>
           <p class="reveal">
-            I mapped how customers move between self-service, branch touchpoints, and assisted support to identify high-value moments where mobile can reduce friction and improve continuity.
+            I mapped how customers move between self-service, branch touchpoints, and assisted support to identify high-value moments where mobile can
+            reduce friction and improve continuity.
           </p>
 
           <figure class="reveal">
@@ -378,7 +448,8 @@
 
           <h2 class="reveal">Personas: designing for real banking behaviors</h2>
           <p class="reveal">
-            Personas grounded the work in real constraints—technology comfort levels, banking habits, and pain points—so workflows served both confident mobile users and customers who need extra reassurance.
+            Personas grounded the work in real constraints—technology comfort levels, banking habits, and pain points—so workflows served both confident
+            mobile users and customers who need extra reassurance.
           </p>
 
           <div class="twoUp">
@@ -393,7 +464,16 @@
             </figure>
           </div>
 
-    
+          <h2 class="reveal">Process flow: account opening complexity</h2>
+          <p class="reveal">
+            I used process flows to make compliance-driven complexity explicit, align decision points with stakeholders, and identify opportunities to reduce
+            drop-off through clearer guidance.
+          </p>
+
+          <figure class="reveal">
+            <img src="../../assets/images/MobileBankingApp/WoodforestProcessFlow.webp" alt="Account opening process flow showing steps, decisions, and verification stages">
+            <figcaption>Process flow showing decision points and verification steps to support simplification and clearer customer guidance.</figcaption>
+          </figure>
 
           <h2 class="reveal">Outcome</h2>
           <p class="reveal">
@@ -409,6 +489,7 @@
           </div>
         </div>
 
+        <!-- SIDEBAR -->
         <aside class="side reveal">
           <h3>Project snapshot</h3>
           <ul>
@@ -428,8 +509,8 @@
           </ul>
 
           <div class="callout">
-            <strong>What I led:</strong> (1) native iOS/Android app redesign + spec system, (2) multi-channel marketing rollout, and
-            (3) cross-channel journey analysis to improve parity and transitions between branch and digital banking.
+            <strong>What I led:</strong> native iOS/Android redesign + spec system, multi-channel marketing rollout,
+            and cross-channel journey analysis to improve parity between branch and digital banking.
           </div>
 
           <div class="callout" style="margin-top:12px;">
@@ -445,13 +526,17 @@
     <p>&copy; 2026 Shaazia Stonehocker. All rights reserved.</p>
   </footer>
 
+  <!-- Optional: reveal-on-scroll -->
   <script>
     (function () {
       const items = document.querySelectorAll(".reveal");
+      if (!items.length) return;
+
       if (!("IntersectionObserver" in window)) {
         items.forEach(el => el.classList.add("is-visible"));
         return;
       }
+
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -460,6 +545,7 @@
           }
         });
       }, { threshold: 0.12 });
+
       items.forEach(el => io.observe(el));
     })();
   </script>
