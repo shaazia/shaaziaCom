@@ -131,36 +131,31 @@
       border-color:#000;
     }
 
-    /* Right-side hero panel */
-    .panel{
+    /* ---------- NEW: Right-side hero image ---------- */
+    .heroMedia{
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
-      background: var(--panel);
+      background: #fff;
       box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    .panel h2{
-      font-size: 13px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit: cover;
+      aspect-ratio: 4 / 5; /* nice portrait shape */
+    }
+    .heroMedia figcaption{
+      padding: 10px 12px 12px;
+      font-size: 12px;
       color: var(--muted);
-      margin: 0 0 10px;
+      line-height: 1.5;
+      border-top: 1px solid var(--border);
+      background: rgba(250,250,250,.7);
     }
-    .panel p{
-      font-size: 14px;
-      line-height: 1.75;
-      color:#333;
-      margin: 0 0 12px;
-    }
-    .panel ul{
-      margin: 0;
-      padding-left: 18px;
-      color:#333;
-    }
-    .panel li{
-      margin-bottom: 8px;
-      line-height: 1.6;
-      font-size: 14px;
+    @media (max-width: 940px){
+      .heroMedia img{ aspect-ratio: 16 / 10; } /* better on stacked layout */
     }
 
     /* Section headers */
@@ -365,14 +360,12 @@
         <div class="reveal">
           <p class="kicker">Lead Product Designer</p>
           <h1 class="title" id="home-title">
-  Lead Product Designer with experience designing at Amazon scale.
-</h1>
+            Lead Product Designer with experience designing at Amazon scale.
+          </h1>
 
-
-     <p class="lede">
-  Hi. I am Shaazia Stonehocker. I design thoughtful product experiences for complex systems—where people, data, and AI need to work together seamlessly. My work spans conversational AI, developer tools, and high-trust financial platforms, with a focus on clarity, reliability, and human-centered decision making. I’m especially drawn to problems where design helps people feel confident navigating complexity.
-</p>
-
+          <p class="lede">
+            Hi. I am Shaazia Stonehocker. I design thoughtful product experiences for complex systems—where people, data, and AI need to work together seamlessly. My work spans conversational AI, developer tools, and high-trust financial platforms, with a focus on clarity, reliability, and human-centered decision making. I’m especially drawn to problems where design helps people feel confident navigating complexity.
+          </p>
 
           <div class="metaRow" aria-label="Design specialties">
             <span class="chip">Complex workflows</span>
@@ -384,117 +377,109 @@
 
           <div class="ctaRow" role="group" aria-label="Primary actions">
             <a class="btn btnPrimary" href="./pages/portfolio.html">View portfolio</a>
-            <!-- Update to your real resume path -->
             <a class="btn" href="./pages/Shaazia StonehockerSite.pdf" target="_blank" rel="noopener">Download resume</a>
-            <!-- Update to your real email -->
             <a class="btn" href="mailto:shaazia.stonehocker@gmail.com">Email me</a>
           </div>
         </div>
 
-        <aside class="panel reveal" aria-label="What I bring">
-          <h2>How I help teams ship</h2>
-          <p>
-           Across multiple roles, I’ve contributed to evolving shared design systems that power complex, multi-workflow products. My focus has been on building flexible, well-documented patterns that scale across teams while maintaining visual quality, accessibility, and brand integrity. This work often lives at the intersection of product, systems, and platform UX.
-          </p>
-          <ul>
-            <li><strong>Systems thinking:</strong> reusable patterns, clear IA, scalable specs</li>
-            <li><strong>Trust-first UX:</strong> review states, confirmations, transparent error recovery</li>
-            <li><strong>Delivery-ready:</strong> prototypes + documentation that reduce build ambiguity</li>
-            <li><strong>Cross-channel clarity:</strong> consistent journeys across digital + physical touchpoints</li>
-          </ul>
-        </aside>
+        <!-- RIGHT COLUMN: PHOTO -->
+        <figure class="heroMedia reveal" aria-label="Portrait of Shaazia">
+          <!-- If Shaazia.jpg is in the same folder as index.html, this path is correct. -->
+          <!-- If it's in /assets/images/, change to: ./assets/images/Shaazia.jpg -->
+          <img src="./assets/images/shaazia.jpg" alt="Shaazia Stonehocker" loading="eager" />
+          <figcaption>Lead Product Designer • Conversational AI • Developer tools • High-trust platforms</figcaption>
+        </figure>
       </section>
 
       <!-- FEATURED WORK -->
-<section aria-labelledby="featured" class="reveal">
-  <h2 class="sectionTitle" id="featured">Featured work</h2>
-  <p class="sectionNote">
-    Recent Amazon projects focused on AI-powered support, complex workflows, and large-scale customer experiences.
-  </p>
-
-  <div class="grid" aria-label="Featured projects">
-
-    <!-- Amazon Customer Service -->
-    <article class="card">
-      <div class="thumb">
-        <img src="./assets/images/thumbs/amazon-customer-service.jpg"
-             alt="Amazon Customer Service experience showing AI-powered chat and support workflows" />
-      </div>
-      <div class="cardBody">
-        <h3 class="cardTitle">
-          <a href="./pages/projects/amazon-customer-service.html">
-          AI-Powered Support & Conversational UX (Amazon)
-          </a>
-        </h3>
-        <p class="cardMeta"><strong>Role:</strong> Lead Product Designer</p>
-        <p class="cardDesc">
-          Led UX for AI-driven customer support across chat and voice, designing multimodal workflows that help customers resolve
-          high-stress issues with clarity, speed, and trust.
+      <section aria-labelledby="featured" class="reveal">
+        <h2 class="sectionTitle" id="featured">Featured work</h2>
+        <p class="sectionNote">
+          Recent Amazon projects focused on AI-powered support, complex workflows, and large-scale customer experiences.
         </p>
-        <div class="tagRow" aria-label="Tags">
-          <span class="tag">Conversational UX</span>
-          <span class="tag">AI Support</span>
-          <span class="tag">Enterprise Scale</span>
+
+        <div class="grid" aria-label="Featured projects">
+
+          <!-- Amazon Customer Service -->
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/images/thumbs/amazon-customer-service.jpg"
+                   alt="Amazon Customer Service experience showing AI-powered chat and support workflows" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./pages/projects/amazon-customer-service.html">
+                  AI-Powered Support & Conversational UX (Amazon)
+                </a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Product Designer</p>
+              <p class="cardDesc">
+                Led UX for AI-driven customer support across chat and voice, designing multimodal workflows that help customers resolve
+                high-stress issues with clarity, speed, and trust.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Conversational UX</span>
+                <span class="tag">AI Support</span>
+                <span class="tag">Enterprise Scale</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Amazon CodeCatalyst -->
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/images/thumbs/amazon-codecatalyst.jpg"
+                   alt="Amazon CodeCatalyst interface showing developer workflows and project management features" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./pages/projects/amazon-codecatalyst.html">
+                  Developer Experience &amp; AI-Assisted Workflows (AWS)
+                </a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
+              <p class="cardDesc">
+                Designed workflows and UX patterns for a developer platform integrating Amazon Q,
+                balancing power, clarity, and usability for complex technical users.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Developer UX</span>
+                <span class="tag">AI Integration</span>
+                <span class="tag">Workflow Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mobile Banking App -->
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/images/thumbs/mobile-banking-app.jpg"
+                   alt="Mobile Banking App (iOS + Android)" />
+            </div>
+            <div class="cardBody">
+              <h3 class="cardTitle">
+                <a href="./pages/projects/mobile-banking-app.html">
+                  Mobile Banking App (iOS + Android)
+                </a>
+              </h3>
+              <p class="cardMeta"><strong>Role:</strong> Senior UX Designer</p>
+              <p class="cardDesc">
+                Led a native iOS + Android redesign across core banking journeys and delivered detailed specs, flows, and prototypes.
+              </p>
+              <div class="tagRow" aria-label="Tags">
+                <span class="tag">Mobile UX</span>
+                <span class="tag">Financail UX</span>
+                <span class="tag">High trust platforms</span>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </div>
-    </article>
 
-    <!-- Amazon CodeCatalyst -->
-    <article class="card">
-      <div class="thumb">
-        <img src="./assets/images/thumbs/amazon-codecatalyst.jpg"
-             alt="Amazon CodeCatalyst interface showing developer workflows and project management features" />
-      </div>
-      <div class="cardBody">
-        <h3 class="cardTitle">
-          <a href="./pages/projects/amazon-codecatalyst.html">
-            Developer Experience &amp; AI-Assisted Workflows (AWS)
-          </a>
-        </h3>
-        <p class="cardMeta"><strong>Role:</strong> Lead Designer</p>
-        <p class="cardDesc">
-          Designed workflows and UX patterns for a developer platform integrating Amazon Q,
-          balancing power, clarity, and usability for complex technical users.
-        </p>
-        <div class="tagRow" aria-label="Tags">
-          <span class="tag">Developer UX</span>
-          <span class="tag">AI Integration</span>
-          <span class="tag">Workflow Design</span>
+        <div class="ctaRow" style="margin-top:16px;">
+          <a class="btn" href="./pages/portfolio.html">View all projects →</a>
         </div>
-      </div>
-    </article>
-
-    <!-- Prime Video Help Hub -->
-    <article class="card">
-      <div class="thumb">
-        <img src="./assets/images/thumbs/mobile-banking-app.jpg"
-             alt="Mobile Banking App (iOS + Android)" />
-      </div>
-      <div class="cardBody">
-        <h3 class="cardTitle">
-          <a href="./pages/projects/mobile-banking-app.html">
-           Mobile Banking App (iOS + Android)
-          </a>
-        </h3>
-        <p class="cardMeta"><strong>Role:</strong> Senior UX Designer</p>
-        <p class="cardDesc">
-        Led a native iOS + Android redesign across core banking journeys and delivered detailed specs, flows, and prototypes.
-        </p>
-        <div class="tagRow" aria-label="Tags">
-          <span class="tag">Mobile UX</span>
-          <span class="tag">Financail UX</span>
-          <span class="tag">High trust platforms </span>
-        </div>
-      </div>
-    </article>
-
-  </div>
-
-  <div class="ctaRow" style="margin-top:16px;">
-    <a class="btn" href="./pages/portfolio.html">View all projects →</a>
-  </div>
-</section>
-
+      </section>
 
       <!-- HOW I WORK -->
       <section aria-labelledby="how" class="reveal">
@@ -534,7 +519,7 @@
         </p>
 
         <div class="ctaRow" role="group" aria-label="Contact actions">
-        <a class="btn" href="mailto:shaazia.stonehocker@gmail.com">Email me</a>
+          <a class="btn" href="mailto:shaazia.stonehocker@gmail.com">Email me</a>
           <a class="btn" href="./pages/portfolio.html">View portfolio</a>
           <a class="btn" href="./pages/Shaazia StonehockerSite.pdf" target="_blank" rel="noopener">Download resume</a>
         </div>
