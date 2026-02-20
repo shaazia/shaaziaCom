@@ -139,13 +139,20 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .heroMedia img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit: cover;
-      aspect-ratio: 4 / 5; /* nice portrait shape */
-    }
+.heroMedia img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit: cover;
+  object-position: center top; /* 👈 keeps top visible, crops bottom */
+  aspect-ratio: 4 / 5;
+}
+@media (max-width: 940px){
+  .heroMedia img{
+    aspect-ratio: 16 / 10;
+    object-position: center top;
+  }
+}
     .heroMedia figcaption{
       padding: 10px 12px 12px;
       font-size: 12px;
