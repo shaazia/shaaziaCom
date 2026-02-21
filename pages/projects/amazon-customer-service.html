@@ -6,255 +6,7 @@
   <title>Amazon Customer Service | Portfolio</title>
   <link rel="stylesheet" href="../../css/styles.css" />
 
-  <style>
-    /* ---------- Case Study (page-local polish) ---------- */
-    :root{
-      --ink:#111;
-      --muted:#666;
-      --border:#e9e9e9;
-      --panel:#fafafa;
-      --shadow: 0 14px 34px rgba(0,0,0,.06);
-      --shadowHover: 0 18px 46px rgba(0,0,0,.10);
-      --radius: 18px;
-      --max: 1120px;
-    }
-
-    main{ display:block; }
-
-    /* Layout */
-    .caseWrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 64px 20px 96px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.7fr .9fr;
-      gap: 22px;
-      align-items:start;
-      margin-top: 18px;
-    }
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    .main{
-      min-width: 0;
-    }
-
-    .side{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      position: sticky;
-      top: 18px;
-    }
-    @media (max-width: 980px){
-      .side{ position: static; }
-    }
-
-    /* Type system */
-    .kicker{
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 12px;
-    }
-
-    .title{
-      font-size: 44px;
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      margin: 0 0 14px;
-      color: var(--ink);
-      font-weight: 680;
-    }
-    @media (max-width: 680px){
-      .title{ font-size: 34px; }
-      .caseWrap{ padding-top: 44px; }
-    }
-
-    .dek{
-      font-size: 17px;
-      line-height: 1.85;
-      color: #333;
-      margin: 0 0 18px;
-      max-width: 88ch;
-    }
-
-    /* New title classes (non-destructive) */
-    .sectionTitle{
-      font-size: 22px;
-      margin: 34px 0 10px;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      line-height: 1.25;
-    }
-    .subTitle{
-      font-size: 18px;
-      margin: 24px 0 10px;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-    }
-    .minorTitle{
-      font-size: 14px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 18px 0 8px;
-    }
-
-    /* Better spacing for headings without changing content */
-    .main h2{ font-size: 22px; margin: 34px 0 10px; color: var(--ink); letter-spacing: -0.01em; }
-    .main h3{ font-size: 18px; margin: 24px 0 10px; color: var(--ink); letter-spacing: -0.01em; }
-    .main h4{ font-size: 14px; margin: 18px 0 8px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
-
-    .main p{
-      font-size: 15px;
-      line-height: 1.9;
-      color:#333;
-      margin: 0 0 14px;
-      max-width: 92ch;
-    }
-
-    /* Meta chips */
-    .metaRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin: 14px 0 8px;
-    }
-    .chip{
-      font-size: 12px;
-      color:#555;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 10px;
-      background: #fff;
-    }
-
-    /* Lists */
-    .bullets{
-      margin: 0 0 14px;
-      padding-left: 18px;
-    }
-    .bullets li{
-      margin: 0 0 10px;
-      line-height: 1.8;
-      color:#333;
-      font-size: 15px;
-    }
-
-    /* Figures */
-    figure{
-      margin: 18px 0 22px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow:hidden;
-      background:#fff;
-      box-shadow: var(--shadow);
-    }
-    figure img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-    figcaption{
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--muted);
-      padding: 10px 12px 12px;
-      border-top: 1px solid var(--border);
-      background: rgba(250,250,250,.7);
-    }
-
-    /* Pull quote / callout */
-    .pull{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: var(--shadow);
-      padding: 16px;
-      font-size: 15px;
-      line-height: 1.85;
-      color:#222;
-      margin: 18px 0 22px;
-    }
-
-    /* Sidebar blocks */
-    .side h3{
-      margin: 0 0 10px;
-      font-size: 16px;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-    .side p{
-      margin: 0 0 12px;
-      font-size: 14px;
-      line-height: 1.8;
-      color:#333;
-    }
-    .callout{
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(255,255,255,.75);
-      padding: 12px 12px;
-      box-shadow: 0 10px 22px rgba(0,0,0,.05);
-      margin: 12px 0 0;
-      font-size: 14px;
-      line-height: 1.8;
-      color:#333;
-    }
-    .callout strong{ color: var(--ink); }
-
-    /* Divider + bottom nav */
-    .divider{
-      height: 1px;
-      background: var(--border);
-      margin: 28px 0 18px;
-    }
-    .navBottom a{
-      text-decoration:none;
-      color: var(--ink);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      border-radius: 14px;
-      display:inline-block;
-      background:#fff;
-      box-shadow: var(--shadow);
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .navBottom a:hover{
-      background:#f7f7f7;
-      box-shadow: var(--shadowHover);
-      transform: translateY(-1px);
-    }
-
-    /* Reveal-on-scroll */
-    .reveal{ opacity:0; transform: translateY(10px); }
-    .reveal.is-visible{ opacity:1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
-    @media (prefers-reduced-motion: reduce){
-      .reveal, .reveal.is-visible{ opacity:1; transform:none; transition:none; }
-    }
-
-    /* A11y: keep skip-link usable if not in global css */
-    .skip-link{
-      position:absolute;
-      left:-999px;
-      top:10px;
-      background:#fff;
-      border:1px solid var(--border);
-      padding:10px 12px;
-      border-radius: 12px;
-      z-index:999;
-    }
-    .skip-link:focus{ left:10px; }
-  </style>
+  
 </head>
 
 <body>
@@ -277,10 +29,11 @@
       <h1 class="title">AI-Powered Support & Conversational UX (Amazon)</h1>
 
       <p class="dek">
-        I led the design of proactive, AI-driven customer support experiences that helped customers resolve common issues—such as unknown charges, delivery disruptions, and subscription management—directly within the Amazon app. By anticipating friction and guiding resolution through multimodal conversational flows and automated self-service paths, this work reduced uncertainty-driven contact volume and enabled faster, more confident problem resolution without human escalation.
+      I led the design of proactive, AI-driven customer support experiences that helped customers resolve common issues—such as unknown charges, delivery disruptions, and subscription management—directly within the Amazon app. By anticipating friction and guiding resolution through multimodal conversational flows and automated self-service paths, this work reduced uncertainty-driven contact volume and enabled faster, more confident problem resolution without human escalation.
       </p>
 
       <!-- NEW: fast Staff-level summary above the fold -->
+   
 
       <div class="metaRow" aria-label="Project tags">
         <span class="chip">AI Support</span>
@@ -295,27 +48,31 @@
 
         <!-- MAIN COLUMN -->
         <div class="main">
+  
+
 
           <h2 class="reveal">My role</h2>
           <p class="reveal">
-            As a staff-level IC designer, I led interaction and conversational design for three large-scale initiatives, including AI chatbots, the Customer Service homepage, and cross-channel digital, device, and Alexa support.
+          As a staff-level IC designer, I led interaction and conversational design for three large-scale initiatives, including AI chatbots, the Customer Service homepage, and cross-channel digital, device, and Alexa support. 
+
           </p>
+    
 
           <h2 class="reveal">Initiatives</h2>
-          <ul class="bullets reveal">
+             <ul class="bullets reveal">
+           
             <li><strong>Customer Service Homepage:</strong> Led a design initiative to transform the Customer Service homepage into a proactive, AI-driven experience that enables fast issue resolution through multimodal conversations, intelligent predictions, and personalized recommendations—often preventing issues before customers need to ask for help.</li>
-            <li><strong>Digital, devices, and Alexa support:</strong> Led cross-functional design collaboration to unify Amazon Customer Service across devices and enable proactive device troubleshooting.</li>
+            <li><strong>Digital, devices, and Alexa support:</strong> Led cross-functional design collaboration to unify Amazon Customer Service across devices and enable proactive device troubleshooting. </li>
+         
           </ul>
 
           <h2 class="reveal">AI Chatbot - Conversation design</h2>
           <p class="reveal">
-            <strong> My role</strong>
-            <p>I led the design of chatbot automation that enabled customers to investigate unknown charges and manage digital subscriptions—including Prime Video, Amazon Music, Kindle Unlimited, and Kids+—directly within the Amazon app. I partnered closely with product and engineering to align on technical feasibility and ensure policy and compliance requirements were met.</p>
-            <strong>Design challenges</strong>
-            <p>Designing effective AI chatbot experiences required addressing three core challenges. First, accurately identifying customer intent across both free-text input and menu-based selections to route customers to the correct resolution path. Second, defining appropriate guardrails to prevent misuse while maintaining a flexible, customer-friendly experience. Third, determining when and how to provide an escape hatch to human support, ensuring customers could connect with an associate at the right moment without prematurely escalating issues.</p>
-          </p>
-
-          <figure class="reveal">
+       <strong> My role</strong>
+       <p>I led the design of chatbot automation that enabled customers to investigate unknown charges and manage digital subscriptions—including Prime Video, Amazon Music, Kindle Unlimited, and Kids+—directly within the Amazon app. I partnered closely with product and engineering to align on technical feasibility and ensure policy and compliance requirements were met.</p>
+       <strong>Design challenges</strong> 
+       <p>Designing effective AI chatbot experiences required addressing three core challenges. First, accurately identifying customer intent across both free-text input and menu-based selections to route customers to the correct resolution path. Second, defining appropriate guardrails to prevent misuse while maintaining a flexible, customer-friendly experience. Third, determining when and how to provide an escape hatch to human support, ensuring customers could connect with an associate at the right moment without prematurely escalating issues.</p>
+</p>                        <figure class="reveal">
             <img
               src="../../assets/images/AmazonCustomerService/flow.jpg"
               alt="Customer notification that proactively explains a subscription renewal and provides clear actions"
@@ -323,33 +80,32 @@
             <figcaption>
               Image is conceptional only: Proactive notification and abilitty to manage subscriptions in AI chatbot.
             </figcaption>
-          </figure>
+  </figure>
 
           <h4 class="reveal">Unknown charges</h4>
-          <p class="reveal"></p>
-
+          <p class="reveal">
+ 
+          </p>
           <ul class="bullets reveal">
-            <strong>Problem</strong>
-            <p>Approximately half a million customers contact Customer Service each year to investigate unknown charges. Improving self-service and automation capabilities created an opportunity for customers to resolve these concerns quickly and confidently without requiring human intervention.</p>
+            <strong>Problem</strong> <p>Approximately half a million customers contact Customer Service each year to investigate unknown charges. Improving self-service and automation capabilities created an opportunity for customers to resolve these concerns quickly and confidently without requiring human intervention.</p>
+    <strong>Design considerations</strong> <p>
+Customers often did not know what they were being charged for, making it impractical to simply present a long list of transactions. Instead, we designed a guided conversational flow that helped narrow context through progressive questions, allowing the system to determine and surface the relevant charge without overwhelming the customer.
+Once the charge was identified, the experience focused on meeting customers where they were—supporting immediate resolution through clear next steps. In many cases, this resulted in canceling subscriptions the customer was unaware of, including trial subscriptions that had automatically renewed. </p>
+          <div class="pull reveal">   <strong>Impact</strong> <p>Automating self-service flows <strong>reduced this contact volume by approximately 30%</strong>, while also decreasing time to resolution and enabling customers to more quickly review and take action on potential account issues.</p>
+                     </div>
+       <h3 class="reveal">Digital subscription management</h3>  <p>Managing digital subscriptions—such as canceling services, changing add-on channels, or switching plans—previously required customers to log in on a desktop or contact Customer Service. This created an opportunity to introduce automation that enables customers to manage Prime Video, Amazon Music, Kindle Unlimited, and Kids+ subscriptions directly within the Amazon app.</p> 
 
-            <strong>Design considerations</strong>
-            <p>
-              Customers often did not know what they were being charged for, making it impractical to simply present a long list of transactions. Instead, we designed a guided conversational flow that helped narrow context through progressive questions, allowing the system to determine and surface the relevant charge without overwhelming the customer.
-              Once the charge was identified, the experience focused on meeting customers where they were—supporting immediate resolution through clear next steps. In many cases, this resulted in canceling subscriptions the customer was unaware of, including trial subscriptions that had automatically renewed.
-            </p>
 
-            <strong>Impact</strong>
-            <p>Automating self-service flows <strong>reduced this contact volume by approximately 30%</strong>, while also decreasing time to resolution and enabling customers to more quickly review and take action on potential account issues.</p>
-
-            <h3 class="reveal">Digital subscription management</h3>
-            <p>Managing digital subscriptions—such as canceling services, changing add-on channels, or switching plans—previously required customers to log in on a desktop or contact Customer Service. This created an opportunity to introduce automation that enables customers to manage Prime Video, Amazon Music, Kindle Unlimited, and Kids+ subscriptions directly within the Amazon app.</p>
-          </ul>
-
-          <div class="pull reveal">
-            By automating subscription management, customers were able to self-serve without contacting support—driving a substantial reduction in annual contact volume, with some subscriptions seeing <strong>contact reductions of over 50%</strong>. This work improved clarity and task success in AI-assisted support while increasing customer confidence.
+          
+          </ul> <div class="pull reveal">
+By automating subscription management, customers were able to self-serve without contacting support—driving a substantial reduction in annual contact volume, with some subscriptions seeing <strong>contact reductions of over 50%</strong>. This work improved clarity and task success in AI-assisted support while increasing customer confidence.
           </div>
 
-          <figure class="reveal">
+
+              Image is conceptional only: Proactive notification and abilitty to manage subscriptions in AI chatbot.
+            </figcaption>
+  </figure>
+              <figure class="reveal">
             <img
               src="../../assets/images/AmazonCustomerService/SubscriptionNotification.png"
               alt="Customer notification that proactively explains a subscription renewal and provides clear actions"
@@ -357,13 +113,16 @@
             <figcaption>
               Image is conceptional only: Proactive notification and abilitty to manage subscriptions in AI chatbot.
             </figcaption>
-          </figure>
+  </figure>
+  
 
           <h3 class="reveal">2) Customer Service Homepage</h3>
           <p class="reveal">
-            Designed proactive experiences that surface and resolve common issues ahead of customer contact, reducing uncertainty-driven support inquiries through alerts for expiring payment methods, delivery disruptions, and self-resolvable account issues.
+       Designed proactive experiences that surface and resolve common issues ahead of customer contact, reducing uncertainty-driven support inquiries through alerts for expiring payment methods, delivery disruptions, and self-resolvable account issues.
           </p>
+     
 
+        
           <figure class="reveal">
             <img
               src="../../assets/images/AmazonCustomerService/CShomepage.png"
@@ -380,8 +139,9 @@
 
           <h3 class="reveal">3) Digital, devices & Alexa support</h3>
           <p class="reveal">
-            Designed the integration of device support into Customer Service, enabling proactive issue resolution that helps customers diagnose and resolve critical software issues before contacting support. Provided a centralized location for visibility into customers’ registered Amazon devices.
+Designed the integration of device support into Customer Service, enabling proactive issue resolution that helps customers diagnose and resolve critical software issues before contacting support. Provided a centralized location for visibility into customers’ registered Amazon devices.
           </p>
+   
 
           <h2 class="reveal">Outcomes</h2>
           <p class="reveal">
@@ -392,12 +152,16 @@
             <li><strong>Significantly reduced manual handling</strong> of contacts related to unknown charges.</li>
             <li><strong>Decreased resolution time</strong> of routine charge clarification requests.</li>
             <li><strong>Freed associate capacity</strong> to focus on more complex customer issues.</li>
+        
           </ul>
+
+      
 
           <div class="divider"></div>
 
           <div class="navBottom">
             <a href="../portfolio.html">← Back to Portfolio</a>
+  
           </div>
         </div>
 
@@ -417,8 +181,9 @@
           </div>
 
           <div class="callout" style="margin-top:12px;">
-            <strong>Confidentiality note:</strong> Visual designs, detailed flows, and metrics for these initiatives are not public.
-            This page describes the scope and design approach without sharing confidential artifacts.
+                  <strong>Confidentiality note:</strong> Visual designs, detailed flows, and metrics for these initiatives are not public.
+              This page describes the scope and design approach without sharing confidential artifacts.
+            </p>
           </div>
         </aside>
 
