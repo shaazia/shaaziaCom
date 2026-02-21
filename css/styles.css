@@ -935,3 +935,23 @@ footer a:hover{ text-decoration: underline; color: var(--ink); }
     transition: none !important;
   }
 }
+  .miniCard{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    .miniCard h3{
+      font-size: 13px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    .miniCard p{
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color:#333;
+    }
