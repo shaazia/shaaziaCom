@@ -390,3 +390,102 @@ footer{
   padding: 2rem;
   border-top: 1px solid var(--border);
 }
+/* =========================
+   Editorial case study blocks
+   ========================= */
+
+.caseWrap{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 64px 20px 96px;
+}
+
+/* One reusable “story block” */
+.story{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: start;
+  padding: 40px 0;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+.story:first-of-type{ border-top: 0; padding-top: 12px; }
+
+/* Flip order for alternating sections */
+.story.flip .copy{ order: 2; }
+.story.flip .media{ order: 1; }
+
+.copy{
+  max-width: 72ch;
+}
+
+/* Editorial labels + headings */
+.eyebrow{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.copy h2{
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.copy p{
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+  margin: 0 0 14px;
+}
+
+/* Metric callout (no bullets, but still scannable) */
+.metric{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(37,99,235,.18);
+  border-radius: 14px;
+  background: rgba(37,99,235,.06);
+  color: #111;
+}
+.metric strong{ color: #111; }
+
+/* Media styling */
+.media{
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.10);
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+}
+
+.media img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media figcaption{
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+  background: #fff;
+  border-top: 1px solid #efefef;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px){
+  .story{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 0;
+  }
+  .story.flip .copy,
+  .story.flip .media{ order: initial; }
+}
