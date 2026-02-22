@@ -20,8 +20,7 @@
 /* Editorial story blocks: copy (left) + media (right) */
 .caseWrap .story{
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
+
   align-items: start;
   padding: 34px 0;
   border-top: 1px solid rgba(0,0,0,.06);
