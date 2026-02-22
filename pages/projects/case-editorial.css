@@ -1,0 +1,85 @@
+/* case-editorial.css
+   Editorial two-column blocks for THIS case study only.
+   Load AFTER /css/styles.css
+*/
+
+.caseWrap .main h2,
+.caseWrap .main h3,
+.caseWrap .main h4{
+  margin: 0 0 12px;
+}
+
+/* Keep the overall layout: main + sidebar */
+.caseWrap .grid{
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Editorial story blocks: copy (left) + media (right) */
+.caseWrap .story{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: start;
+  padding: 34px 0;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+.caseWrap .story:first-of-type{
+  border-top: 0;
+  padding-top: 10px;
+}
+
+/* If a story has only copy, let it span full width */
+.caseWrap .story > .copy:only-child{
+  grid-column: 1 / -1;
+}
+
+/* Optional alternating layout */
+.caseWrap .story.flip .copy{ order: 2; }
+.caseWrap .story.flip .media{ order: 1; }
+
+/* Copy column */
+.caseWrap .story .copy p{
+  margin: 0 0 14px;
+}
+
+/* Media card */
+.caseWrap .story .media{
+  margin: 0;
+}
+.caseWrap .story .media img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make miniCard work nicely inside the editorial copy column */
+.caseWrap .story .miniCard{
+  margin-top: 12px;
+}
+
+/* Pull quote spacing */
+.caseWrap .story .pull{
+  margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 940px){
+  .caseWrap .grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .caseWrap .side{ position: static; }
+}
+
+@media (max-width: 900px){
+  .caseWrap .story{
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 26px 0;
+  }
+  .caseWrap .story.flip .copy,
+  .caseWrap .story.flip .media{ order: initial; }
+}
