@@ -948,7 +948,8 @@ footer a:hover{ text-decoration: underline; color: var(--ink); }
   .workMediaInner img{
     transition: none !important;
   }
-}.problem-layout {
+}
+.problem-layout {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;
