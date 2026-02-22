@@ -232,9 +232,9 @@ nav{
 
 .media figcaption{
   padding: 12px 14px;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: #000000;
   background:#fff;
   border-top: 1px solid #efefef;
 }
